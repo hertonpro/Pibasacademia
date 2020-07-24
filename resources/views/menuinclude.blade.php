@@ -1,6 +1,7 @@
-<nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar">
+    <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar bg-light navbar-scroll">
+    
     <a href="{{ url('/home') }}" class="navbar-brand d-flex align-items-center" href="#">
-        <img class="brand-img d-inline-block align-top mr-10" src="dist/img/logo-dark.png" alt="PiBas" />
+        <img class="brand-img d-inline-block align-top mr-10" src="dist/img/logo.png" alt="PiBas" />
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedColor1"
      aria-controls="navbarSupportedColor1" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,13 +11,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedColor1">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
+                <a href="{{ url('/home') }}" class="navbar-brand font-weight-700" >Pibasacademia</a>
+            </li>
+            <li class="nav-item">
                 <a href="{{ url('/apropos') }}" class="nav-link" >Apropos</a>
             </li>
             <li class="nav-item">
                 <a href="{{ url('/blog') }}" class="nav-link" >Blog</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ url('/contact') }}" class="nav-link" >Contact</a>
             </li>
             <li class="nav-item">
                 <a href="{{ url('/faq') }}" class="nav-link" >Faq</a>

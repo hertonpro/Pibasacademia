@@ -13,7 +13,7 @@ class ContactController extends Controller
             // $contact= Contactmodel::status();
             // $contact= Contactmodel::where('status','=', 1)->get();
             // $contact=Contactmodel::with('liste')->paginate(20);
-        return view('/admin/Contact/liste',
+        return view('/admin/Contact/Liste',
         ['contact'=>$contact]);
     }
     public function create()

@@ -65,7 +65,7 @@
                                              </thead>
                                              <tbody>
                                                 {{ $i=1 }}
-                                               @foreach ($contact as $contac)
+                                               @foreach ($contact ?? '' as $contac)
                                                  <tr>
                                                     <td>{{ $i++ }}</td>
                                                     <td>{{ $contac->adresse }}</td>

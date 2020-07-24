@@ -17,8 +17,8 @@ use RealRashid\SweetAlert\Facades\Alert;
 Route::get('/', function () {
 
 
-    return view('Home');
-    //  return view('admin/dashboard1');
+    // return view('home');
+     return view('admin/Contact/Liste');
 
 });
 
