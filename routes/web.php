@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 
     // return view('home');
-     return view('admin/Contact/Liste');
+     return view('home');
 
 });
 

@@ -1,36 +1,11 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-  {{-- entete de page  --}}
-  @include('head');
-{{-- fin entete de page  --}}
+@extends('layoutadmin')
 
-
-<head>
-
-
-<body>
-    <!-- Preloader
-    <div class="preloader-it">
-        <div class="loader-pendulums"></div>
-    </div>
-    --><!-- /Preloader -->
-
-	<!-- HK Wrapper -->
-	<div class="hk-wrapper hk-vertical-nav">
-        {{-- menu horizontal  --}}
-        @include('menu');
-        {{-- fin menu horizontal --}}
-        {{-- menu verital  --}}
-        @include('menulateral');
-         {{-- fin menu verital  --}}
-
-         <!-- Main Content -->
-         <div class="hk-pg-wrapper">
+@section('content')
              <!-- Breadcrumb -->
              <nav class="hk-breadcrumb" aria-label="breadcrumb">
                  <ol class="breadcrumb breadcrumb-light bg-transparent">
-                     <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                     <li class="breadcrumb-item active" aria-current="page">Data Table</li>
+                     <li class="breadcrumb-item"><a href="#">Admin</a></li>
+                     <li class="breadcrumb-item active" aria-current="page">Contacts</li>
                  </ol>
              </nav>
              <!-- /Breadcrumb -->
@@ -40,7 +15,7 @@
 
                  <!-- Title -->
                  <div class="hk-pg-header">
-                     <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="database"></i></span></span>Data Tables</h4>
+                     <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="list"></i></span></span>Liste contactes</h4>
                  </div>
                  <!-- /Title -->
 
@@ -50,6 +25,8 @@
                          <section class="hk-sec-wrapper">
                              <h5 class="hk-sec-title">Data Table</h5>
                              <p class="mb-40">Add advanced interaction controls to HTML tables like <code>search, pagination & selectors</code>. For responsive table just add the <code>responsive: true</code> to your DataTables function. <a href="https://datatables.net/reference/option/" target="_blank">View all options</a>.</p>
+                             <a class="btn btn-primary" data-toggle="dropdown" href="./admin/contact/elie'}}" aria-expanded="false" role="button">
+
                              <div class="row">
                                  <div class="col-sm">
                                      <div class="table-wrap">
@@ -98,9 +75,4 @@
                          </section>
                 </div>
             </div>
-        </div>
-    </div>
-
-        @include('footer')
-
-
+@endsection     

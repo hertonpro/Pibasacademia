@@ -1,4 +1,4 @@
-    <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar bg-light navbar-scroll">
+    <nav class="navbar navbar-expand-xl fixed-top hk-navbar bg-white navbar-scroll">
     
     <a href="{{ url('/home') }}" class="navbar-brand d-flex align-items-center" href="#">
         <img class="brand-img d-inline-block align-top mr-10" src="dist/img/logo.png" alt="PiBas" />

@@ -46,7 +46,7 @@ class ContactController extends Controller
         // dd('fjdkssjsd');
         $contact=Contactmodel::where('id',$contact)->firstOrfail();
         // $contact=Contactmodel::find($contact);
-        return view('admin.Contact.single',compact('contact'));
+        return view('/admin/Contact/single',compact('contact'));
     }
      public function edit(Contactmodel $contact)
     {

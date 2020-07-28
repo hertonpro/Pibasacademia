@@ -16,7 +16,7 @@
                 <div class="hk-pg-wrapper hk-auth-wrapper">
                     <header class="d-flex justify-content-between align-items-center">
                         <a class="d-flex text-blue text-center auth-brand" href="#">
-                            PBas
+                            Pibasacademia
                         </a>
                         <div class="btn-group btn-group-sm">
                             <a href="#" class="btn btn-outline-secondary">Help</a>
