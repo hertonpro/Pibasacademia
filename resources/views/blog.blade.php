@@ -1,121 +1,293 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-  {{-- entete de page  --}}
-  @include('head')
-{{-- fin entete de page  --}}
+@extends('layout')
 
+@section('content')
 
-<head>
+<!-- contents -->
+<div class="container bg-white mt-3 p-5">
 
-
-<body>
-    @include('menuinclude')
-    <!-- Main Content -->
-    <div class="hk-pg-wrapper">
-
-        <!-- Container -->
-        <div class="container-fluid">
-
-            <!-- Row -->
-            <div class="row">
-                <div class="col-xl-12 pa-0">
-                    <div class="container mt-sm-60 mt-30">
-                        <div class="hk-row">
-                            <div class="col-xl-12">
-                                <div class="card-body">
-                                    <div class="user-activity">
-                                        <div class="media">
-                                            <div class="media-img-wrap">
-                                                <div class="avatar avatar-sm">
-                                                    <img src="dist/img/avatar2.jpg" alt="user" class="avatar-img rounded-circle">
-                                                </div>
-                                            </div>
-                                            <div class="media-body">
-                                                <div>
-                                                    <span class="d-block mb-5"><span class="font-weight-500 text-dark text-capitalize"></span>PiBas ACADEMIA<span class="pl-5">PiBas team.</span></span>
-                                                    <span class="d-block font-13 mb-30"></span>
-                                                </div>
-                                                <div class="card d-inline-block">
-                                                    <div class="card-body">
-                                                        <div class="d-flex flex-wrap">
-                                                            <img class="d-86 rounded mb-15 mr-15" src="dist/img/img-PiBas1.jpg" alt="PiBas">
-                                                            <div class="w-65">
-                                                                <h6 class="mb-10">VISION </h6>
-                                                                <p>-	Devenir un programme de référence pouvant s’imposer dans le pays, tel qui tout le monde devra y passer (obligatoirement) avant d’intégrer chaque structure de travail. Ici PiBas ACADEMIA s’assure une qualité de formation
-                                                                    supérieure et suffisante pour préparer au monde de l’emploi. En réussissant cette option, cela pourra bénéficier aux membres de PiBas ACADEMIA parce qu’à chaque fois c’est ceux qui qui seront appeler à intégrer les nouveau ;
-                                                                     pourtant pour chaque nouvelle unité il y a de l’argent qui s’augmente dans les comptes de la personne l’ayant invité.
-                                                                     <br>
-                                                                    -	Anéantir la pauvreté en procurant à tous les adhérents des bénéfices selon leurs travaux, parce que craque adhérant sera automatiquement travailleur et s’il est actif il peut se faire des millions.
-                                                                    <br> -	Créer un monde sans chômeur : C’est-à-dire remplacer le statut de chômeur par celui d’entrepreneur. caque adhérant est travailleur et employeur en même temps. Il devient entrepreneur pourtant un entrepreneur n’est pas un chômeur.
-                                                                   </p>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-footer text-muted justify-content-between">
-                                                        <div><span class="text-dark">0,00</span> Nouveau (0 new)</div>
-                                                        <button class="btn btn-xs btn-primary ml-15 w-sm-100p"></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <div class="media-body">
-                                            <div>
-                                                <span class="d-block mb-5"><span class="font-weight-500 text-dark text-capitalize"></span>PiBas ACADEMIA<span class="pl-5">PiBas team.</span></span>
-                                                <span class="d-block font-13 mb-30"></span>
-                                            </div>
-                                            <div class="card d-inline-block">
-                                                <div class="card-body">
-                                                    <div class="d-flex flex-wrap">
-                                                        <img class="d-86 rounded mb-15 mr-15" src="dist/img/img-PiBas1.jpg" alt="PiBas">
-                                                        <div class="w-65">
-                                                            <h6 class="mb-10">VISION </h6>
-                                                            <p>-	Devenir un programme de référence pouvant s’imposer dans le pays, tel qui tout le monde devra y passer (obligatoirement) avant d’intégrer chaque structure de travail. Ici PiBas ACADEMIA s’assure une qualité de formation
-                                                                supérieure et suffisante pour préparer au monde de l’emploi. En réussissant cette option, cela pourra bénéficier aux membres de PiBas ACADEMIA parce qu’à chaque fois c’est ceux qui qui seront appeler à intégrer les nouveau ;
-                                                                 pourtant pour chaque nouvelle unité il y a de l’argent qui s’augmente dans les comptes de la personne l’ayant invité.
-                                                                 <br>
-                                                                -	Anéantir la pauvreté en procurant à tous les adhérents des bénéfices selon leurs travaux, parce que craque adhérant sera automatiquement travailleur et s’il est actif il peut se faire des millions.
-                                                                <br> -	Créer un monde sans chômeur : C’est-à-dire remplacer le statut de chômeur par celui d’entrepreneur. caque adhérant est travailleur et employeur en même temps. Il devient entrepreneur pourtant un entrepreneur n’est pas un chômeur.
-                                                               </p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="card-footer text-muted justify-content-between">
-                                                    <div><span class="text-dark">0,00</span> Nouveau (0 new)</div>
-                                                    <button class="btn btn-xs btn-primary ml-15 w-sm-100p"></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                        <div class="media">
-                                            <div class="media-img-wrap">
-                                                <div class="avatar avatar-sm">
-                                                    <img src="dist/img/avatar4.jpg" alt="user" class="avatar-img rounded-circle">
-                                                </div>
-                                            </div>
-                                            <div class="media-body">
-                                                <div>
-                                                    
-                                                    <span class="d-block mb-5"><span class="font-weight-500 text-dark text-capitalize">Billy Flowers</span><span class="pl-5">lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled.</span></span>
-                                                    <span class="d-block font-13">1 day ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                <P> </P>
-                                </div>
-                            </div>
-
-                            </div>
+    <div class="row">
+        <div class="col-8">
+            <div class="card-body">
+                <div class="card">
+                    <div class="position-relative">
+                        <img class="card-img-top d-block" src="dist/img/ga.jpg" alt="Card image cap">
+                        <a href="#" class="btn m-3 btn-dark btn-wth-icon icon-wthot-bg btn-rounded btn-pg-link"><span
+                                class="icon-label "><i class="ion ion-md-link"></i></span><span
+                                class="btn-text">Article</span></a>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">Bacon chicken turducken spare ribs.</h2>
+                        <p class="card-text">Of course, we'd be remiss not to include the veritable cadre of lorem ipsum
+                            knock offs
+                            featuring: Bacon Ipsum, Hipster Ipsum, Corporate Ipsum, Legal Ipsum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="card-deck">
+                    <div class="card">
+                        <img class="card-img-top" src="dist/img/cas1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">The Tony Elumelu Foundation Opens Applications for 5th Cyclee</h5>
+                            <a class="card-text" href="#"><small class="text-muted">+ Plus</small></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="dist/img/cas2.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Sommet de l'Union africaine : à Niamey, le Nigeria et le Bénin</h5>
+                            <a class="card-text" href="#"><small class="text-muted">+ Plus</small></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- /Row -->
         </div>
-        <!-- /Container -->
-    <!-- /Main Content -->
+        <div class="col-4">
+            <div class="card card-profile-feed">
+                <div class="card-header card-header-action">
+                    <h6>les catégories</h6>
+                    <div class="d-flex align-items-center card-action-wrap">
+                        <div class="inline-block dropdown">
+                            <a class="dropdown-toggle no-caret" data-toggle="dropdown" href="#" aria-expanded="false"
+                                role="button"><i class="ion ion-ios-more"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item border-0">
+                        <div class="media align-items-center">
+                            <div class="d-flex media-img-wrap mr-15">
+                                <div class="avatar avatar-sm">
+                                    <img src="dist/img/avatar1.jpg" alt="user" class="avatar-img rounded-circle">
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <span class="d-block text-dark text-capitalize">Evie Ono</span>
+                                <span class="d-block font-13">Apple Inc</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item border-0">
+                        <div class="media align-items-center">
+                            <div class="d-flex media-img-wrap mr-15">
+                                <div class="avatar avatar-sm">
+                                    <img src="dist/img/avatar2.jpg" alt="user" class="avatar-img rounded-circle">
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <span class="d-block text-dark text-capitalize">Clay Masse</span>
+                                <span class="d-block font-13">Hencework.com</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item border-0">
+                        <div class="media align-items-center">
+                            <div class="d-flex media-img-wrap mr-15">
+                                <div class="avatar avatar-sm">
+                                    <img src="dist/img/avatar3.jpg" alt="user" class="avatar-img rounded-circle">
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <span class="d-block text-dark text-capitalize">Madelyn Rascon</span>
+                                <span class="d-block font-13">Godaddy.co.in</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item border-0">
+                        <div class="media align-items-center">
+                            <div class="d-flex media-img-wrap mr-15">
+                                <div class="avatar avatar-sm">
+                                    <img src="dist/img/avatar4.jpg" alt="user" class="avatar-img rounded-circle">
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <span class="d-block text-dark text-capitalize">Mitsoku Heid</span>
+                                <span class="d-block font-13">Flipkart</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item border-0">
+                        <div class="media align-items-center">
+                            <div class="d-flex media-img-wrap mr-15">
+                                <div class="avatar avatar-sm">
+                                    <img src="dist/img/avatar5.jpg" alt="user" class="avatar-img rounded-circle">
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <span class="d-block text-dark text-capitalize">Eziquiel Merideth</span>
+                                <span class="d-block font-13">Paypal</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item border-0">
+                        <div class="media align-items-center">
+                            <div class="d-flex media-img-wrap mr-15">
+                                <div class="avatar avatar-sm">
+                                    <img src="dist/img/avatar6.jpg" alt="user" class="avatar-img rounded-circle">
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <span class="d-block text-dark text-capitalize">Johnie Metoyer</span>
+                                <span class="d-block font-13">Robocon</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {{-- Gallerie --}}
+    <!-- Row -->
+    <div class="row mt-3">
 
+        <div class="col-xl-12">
+            <section class="hk-sec-wrapper hk-gallery-wrap" id="Gallerie">
+                <div class="hk-pg-header">
+                    <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i
+                                    data-feather="layers"></i></span></span>Gallerie</h4>
+                </div>
+                <ul class="nav nav-light nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">Library</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Video</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Album</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" role="tabpanel">
+                        <h6 class="mt-30 mb-20">22 October</h6>
+                        <div class="row hk-gallery">
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10" data-src="dist/img/gallery/mock1.jpg">
+                                <a href="#" class="">
+                                    <div class="gallery-img"
+                                        style="background-image:url('dist/img/gallery/mock1.jpg');">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10"
+                                data-src="http://www.youtube.com/watch?v=Pq9yPrLWMyU"
+                                data-poster="dist/img/gallery/mock2.jpg">
+                                <a href="#" class="">
+                                    <div class="gallery-img"
+                                        style="background-image:url('dist/img/gallery/mock2.jpg');">
+                                    </div>
+                                    <i class="ion ion-ios-play"></i>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10" data-src="dist/img/gallery/mock3.jpg">
+                                <a href="#" class="">
+                                    <div class="gallery-img"
+                                        style="background-image:url('dist/img/gallery/mock3.jpg');">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10" data-src="http://vimeo.com/1084537"
+                                data-poster="dist/img/gallery/mock4.jpg">
+                                <a href="#" class="">
+                                    <div class="gallery-img"
+                                        style="background-image:url('dist/img/gallery/mock4.jpg');">
+                                    </div>
+                                    <i class="ion ion-ios-play"></i>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10" data-src="dist/img/gallery/mock5.jpg">
+                                <a href="#" class="">
+                                    <div class="gallery-img"
+                                        style="background-image:url('dist/img/gallery/mock5.jpg');">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10" data-src="dist/img/gallery/mock6.jpg">
+                                <a href="#" class="">
+                                    <div class="gallery-img"
+                                        style="background-image:url('dist/img/gallery/mock6.jpg');">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10" data-src="dist/img/gallery/mock7.jpg">
+                                <a href="#" class="">
+                                    <div class="gallery-img"
+                                        style="background-image:url('dist/img/gallery/mock7.jpg');">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10" data-src="dist/img/gallery/mock8.jpg">
+                                <a href="#" class="">
+                                    <div class="gallery-img"
+                                        style="background-image:url('dist/img/gallery/mock8.jpg');">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10" data-src="dist/img/gallery/mock9.jpg">
+                                <a href="#" class="">
+                                    <div class="gallery-img"
+                                        style="background-image:url('dist/img/gallery/mock9.jpg');">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10" data-src="dist/img/gallery/mock10.jpg">
+                                <a href="#" class="">
+                                    <div class="gallery-img"
+                                        style="background-image:url('dist/img/gallery/mock10.jpg');">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <h6 class="mt-30 mb-20">Yesterday</h6>
+                        <div class="row hk-gallery">
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10" data-src="dist/img/gallery/mock11.jpg">
+                                <a href="#" class="">
+                                    <div class="gallery-img"
+                                        style="background-image:url('dist/img/gallery/mock11.jpg');">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10"
+                                data-src="http://www.youtube.com/watch?v=Pq9yPrLWMyU"
+                                data-poster="dist/img/gallery/mock2.jpg">
+                                <a href="#" class="">
+                                    <div class="gallery-img"
+                                        style="background-image:url('dist/img/gallery/mock12.jpg');">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10" data-src="dist/img/gallery/mock13.jpg">
+                                <a href="#" class="">
+                                    <div class="gallery-img"
+                                        style="background-image:url('dist/img/gallery/mock13.jpg');">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10" data-src="http://vimeo.com/1084537"
+                                data-poster="dist/img/gallery/mock4.jpg">
+                                <a href="#" class="">
+                                    <div class="gallery-img"
+                                        style="background-image:url('dist/img/gallery/mock14.jpg');">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10" data-src="dist/img/gallery/mock15.jpg">
+                                <a href="#" class="">
+                                    <div class="gallery-img"
+                                        style="background-image:url('dist/img/gallery/mock15.jpg');">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- /Row -->
+</div>
 
+<!-- contents -->
+@endsection

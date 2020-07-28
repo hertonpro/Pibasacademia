@@ -18,10 +18,13 @@
             </li>
             <li class="nav-item">
                 <a href="{{ url('/blog') }}" class="nav-link" >Blog</a>
+            </li><li class="nav-item">
+                <a href="{{ url('/blog') }}" class="nav-link">Gallerie</a>
             </li>
             <li class="nav-item">
                 <a href="{{ url('/faq') }}" class="nav-link" >Faq</a>
             </li>
+            
         </ul>
 
         <ul class="navbar-nav align-items-center flex-row">
