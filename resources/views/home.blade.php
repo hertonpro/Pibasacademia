@@ -16,17 +16,27 @@
 
             <div class="col-6 text-right border-right border-secondary">
                 <h3 class="text-primary ">PiBas ACADEMIA</h3><br>
-                <p class="mb-40">PiBas ACADEMIA est un centre d’excellence qui permet aux diplômés d’avoir un bagage exigé pour faire face aux
-                défis qui dominent le monde du travail. Ce bagage consiste pour l’instant d’abord en l’apprentissage de l’anglais de
-                base, de l’informatique bureautique ainsi que de l’entrepreneuriat. L’entrepreneuriat est instauré ici pour permettre
-                aux apprenants ayant eu une connaissance leur permettant de pouvoir travailler, de commencer à créer leur propre
-                business qui peut marcher beaucoup plus facilement, plus que le travail qu’ils auraient eu s’ils étaient embauchés, bien
-                que ceci reste une probabilité. Et dans le cadre pratique, ces apprenants disposent d’une possibilité de pouvoir être
-                accompagné par les partenaires de PiBas ACADEMIA pour leur offrir des prêts d’argent remboursables qui peuvent les aider
-                à démarrer leur business. Les avantages de ce prêt ici sont tels que, pour l’avoir dans certaines conditions vous n’êtes
-                pas nécessairement obligés de donner des gages ou des hypothèques comme garantie de paiement de votre créance, mais
-                aussi il s’agit d’un prêt qui va vous arriver pendant que vous avez déjà eu une formation suffisante en entrepreneuriat
-                pouvant vous permettre d’émerger en évitant des risques à ne pas prendre.</p>
+                <p class="mb-40">PiBas ACADEMIA est un centre d’excellence qui permet aux diplômés d’avoir un bagage
+                    exigé pour faire face aux
+                    défis qui dominent le monde du travail. Ce bagage consiste pour l’instant d’abord en l’apprentissage
+                    de l’anglais de
+                    base, de l’informatique bureautique ainsi que de l’entrepreneuriat. L’entrepreneuriat est instauré
+                    ici pour permettre
+                    aux apprenants ayant eu une connaissance leur permettant de pouvoir travailler, de commencer à créer
+                    leur propre
+                    business qui peut marcher beaucoup plus facilement, plus que le travail qu’ils auraient eu s’ils
+                    étaient embauchés, bien
+                    que ceci reste une probabilité. Et dans le cadre pratique, ces apprenants disposent d’une
+                    possibilité de pouvoir être
+                    accompagné par les partenaires de PiBas ACADEMIA pour leur offrir des prêts d’argent remboursables
+                    qui peuvent les aider
+                    à démarrer leur business. Les avantages de ce prêt ici sont tels que, pour l’avoir dans certaines
+                    conditions vous n’êtes
+                    pas nécessairement obligés de donner des gages ou des hypothèques comme garantie de paiement de
+                    votre créance, mais
+                    aussi il s’agit d’un prêt qui va vous arriver pendant que vous avez déjà eu une formation suffisante
+                    en entrepreneuriat
+                    pouvant vous permettre d’émerger en évitant des risques à ne pas prendre.</p>
             </div>
             <div class="col-6 text-left">
                 <h3 class="text-primary ">Qui est concerné par le programme</h3><br>
@@ -222,16 +232,25 @@
             </div>
             <div class=" mt-4 text-center p-5">
                 <h3 class="text-primary ">Pourquoi PiBas ACADEMIA ?</h3><br>
-                <p class="mb-40">Contrairement au fonctionnement d’autres académies, le programme qu’utilise PiBas ACADEMIA a été initié dans la cadre de
-                la lutte contre le chômage, contre la pauvreté mais aussi dans le cadre de renforcement de capacité des jeunes à pouvoir
-                affronter les situations difficiles de la vie financière ainsi que professionnelle.<br>
-                Ayant constaté que le taux de chômage a atteint un niveau considérablement plus élevé en République Démocratique du
-                Congo, il y a urgence. Il est donc important de lutter contre le chômage en dotant à la population, non seulement d’une
-                connaissance aux programmes de base dont le monde professionnel a besoin (tels que l’anglais, l’informatique et
-                l’entrepreneuriat), mais aussi et surtout de doter à cette population formée d’une occupation dont elle peut vivre parce
-                qu’elle rémunère, ainsi que d’une possibilité d’avoir un prêt d’argent remboursable pouvant leur permettre de marier
-                leurs connaissances à la pratique.</p>
+                <p class="mb-40">Contrairement au fonctionnement d’autres académies, le programme qu’utilise PiBas
+                    ACADEMIA a été initié dans la cadre de
+                    la lutte contre le chômage, contre la pauvreté mais aussi dans le cadre de renforcement de capacité
+                    des jeunes à pouvoir
+                    affronter les situations difficiles de la vie financière ainsi que professionnelle.<br>
+                    Ayant constaté que le taux de chômage a atteint un niveau considérablement plus élevé en République
+                    Démocratique du
+                    Congo, il y a urgence. Il est donc important de lutter contre le chômage en dotant à la population,
+                    non seulement d’une
+                    connaissance aux programmes de base dont le monde professionnel a besoin (tels que l’anglais,
+                    l’informatique et
+                    l’entrepreneuriat), mais aussi et surtout de doter à cette population formée d’une occupation dont
+                    elle peut vivre parce
+                    qu’elle rémunère, ainsi que d’une possibilité d’avoir un prêt d’argent remboursable pouvant leur
+                    permettre de marier
+                    leurs connaissances à la pratique.</p>
+                <img src="dist/img/remp.jpg" class="img-fluid" alt="Responsive image">
             </div>
+            {{-- include contact informations --}}
             @include('cont')
         </div>
 
