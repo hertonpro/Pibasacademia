@@ -122,6 +122,10 @@
                 </div>
             </div>
         </div>
+        <div class="container bg-white mt-3 p-5">
+            {{-- include contact informations --}}
+            @include('cont')
+        </div>
     </div>
     <!-- /Row -->
 </div>

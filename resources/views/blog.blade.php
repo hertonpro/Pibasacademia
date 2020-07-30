@@ -45,7 +45,7 @@
         <div class="col-4">
             <div class="card card-profile-feed">
                 <div class="card-header card-header-action">
-                    <h6>les catégories</h6>
+                    <h6>Dernier actualités</h6>
                     <div class="d-flex align-items-center card-action-wrap">
                         <div class="inline-block dropdown">
                             <a class="dropdown-toggle no-caret" data-toggle="dropdown" href="#" aria-expanded="false"
@@ -141,7 +141,7 @@
     <div class="row mt-3">
 
         <div class="col-xl-12">
-            <section class="hk-sec-wrapper hk-gallery-wrap" id="Gallerie">
+            <section class="hk-sec-wrapper hk-gallery-wrap" id="gallerie">
                 <div class="hk-pg-header">
                     <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i
                                     data-feather="layers"></i></span></span>Gallerie</h4>
@@ -287,6 +287,8 @@
         </div>
     </div>
     <!-- /Row -->
+    {{-- include contact informations --}}
+    @include('cont')
 </div>
 
 <!-- contents -->
