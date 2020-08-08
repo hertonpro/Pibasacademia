@@ -4,21 +4,19 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFormationModelsTable extends Migration
+class CreateFormationMSTable extends Migration
 {
     /**
      * Run the migrations.
-     *formateurmodels
+     *
      * @return void
      */
     public function up()
     {
-        Schema::create('formation_models', function (Blueprint $table) {
+        Schema::create('formation_m_s', function (Blueprint $table) {
             $table->bigIncrements('formation_id');
-            $table->string('name');
-            $table->string('email');
-            $table->string('phone');
-            $table->string('password');
+            $table->string('resume');
+            $table->string('titre');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateFormationModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('formation_models');
+        Schema::dropIfExists('formation_m_s');
     }
 }

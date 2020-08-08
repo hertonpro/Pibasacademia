@@ -1,9 +1,8 @@
 @extends('layoutadmin')
 @section('content')
-                            <p class="text-center hk-title">
                                     PiBas Marketing <br>
-                                <a href="{{ url('/formations/create') }}" class="btn btn-gradient-info">Ajouter</a>
-                                <a href="{{ url('/formations') }}" class="btn btn-gradient-info">Liste</a>
+                                <a href="{{ url('/liencours/create') }}" class="btn btn-gradient-info">Ajouter</a>
+                                <a href="{{ url('/liencours') }}" class="btn btn-gradient-info">Liste</a>
                             </p>
                                 @if(session()->get('success'))
                                     <div class="alert alert-success">
@@ -28,15 +27,20 @@
                                         </div><br />
                                         @endif
                                     </div>
-                                        <form method="post" action="/formations">
+                                        <form method="post" action="/liencours">
                                             <div class="form-group">
                                                 @csrf
-                                                <label for="name">Titre</label>
-                                                <input type="text" class="form-control" name="titre"/>
+                                                <label for="name">Cours</label>
+                                                <select class="form-control" name="cours" id="">
+                                                <option selected> choisir le cours</option>
+                                                @foreach ($lien as $item)
+                                                <option value="{{$items->cours_id}}">{{$items->titre}}</option>
+                                                @endforeach
+                                            </select>
                                             </div>
                                             <div class="form-group">
-                                                <label for="email">Resume</label>
-                                                <input type="text" class="form-control" name="resume"/>
+                                                <label for="lien">Lien</label>
+                                                <input type="text" class="form-control" id="lien" name="link"/>
                                             </div>
 
                                             <button type="submit" class="btn btn-block btn-danger">Enregister</button>
