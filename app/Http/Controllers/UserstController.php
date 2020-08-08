@@ -18,7 +18,7 @@ class AproposController extends Controller
     public function index()
     {
             $aproposs = aproposmodel::all();
-        return view('systhem/apropos/index', compact('aproposs'));
+        return view('system/apropos/index', compact('aproposs'));
     }
 
     /**
@@ -32,7 +32,7 @@ class AproposController extends Controller
         if ($aproposs->count()>0) {
             return redirect('/aproposs')->with('Non', 'l\'aujouse fait une fois!<br>Supprimer ou Modier ');
         }else{
-        return view('systhem/apropos/create');
+        return view('system/apropos/create');
         }
     }
 
@@ -75,7 +75,7 @@ class AproposController extends Controller
     {
         // $aproposs = aproposmodel::findOrFail($apropos_id);
         $aproposs = aproposmodel::where('apropos_id', $apropos_id)->firstOrfail();
-        return view('systhem/apropos/update', compact('aproposs'));
+        return view('system/apropos/update', compact('aproposs'));
     }
 
     /**

@@ -18,7 +18,7 @@ class CoursController extends Controller
     public function index()
     {
         $courss = Coursmodel::all();
-        return view('systhem/formation/index', compact('courss'));
+        return view('system/formation/index', compact('courss'));
     }
 
     /**

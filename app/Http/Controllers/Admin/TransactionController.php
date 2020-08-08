@@ -11,6 +11,6 @@ class TransactionController extends Controller
     public function index()
     {
         //
-        return view('systhem/transaction');
+        return view('system/transaction');
     }
 }

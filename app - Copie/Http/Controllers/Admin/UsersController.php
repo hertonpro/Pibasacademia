@@ -34,7 +34,7 @@ class UsersController extends Controller
     public function index()
     {
         //$articles = articles::all();
-        return view('systhem/users/index');
+        return view('system/users/index');
     }
 
     /**
@@ -45,7 +45,7 @@ class UsersController extends Controller
     public function create()
     {
         //
-        return view('systhem/users/create');
+        return view('system/users/create');
     }
 
     /**
@@ -130,7 +130,7 @@ class UsersController extends Controller
 
             }
 
-            return view('systhem/users/confirm', compact('pp','password1'));
+            return view('system/users/confirm', compact('pp','password1'));
        }else{
             return redirect('/users/create')->with('Erreur', 'article has not been saved!'); 
        }
@@ -151,7 +151,7 @@ class UsersController extends Controller
     public function show(user $user)
     {
         //
-        return view('systhem/users/confirm');
+        return view('system/users/confirm');
     }
 
     /**
@@ -163,7 +163,7 @@ class UsersController extends Controller
     public function edit(user $user)
     {
         //
-        return view('systhem/users/update');
+        return view('system/users/update');
     }
 
     /**

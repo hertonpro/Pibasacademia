@@ -85,6 +85,6 @@ class AdminController extends Controller
     public function transaction(admin $admin)
     {
         //
-        return view('systhem/transaction');
+        return view('system/transaction');
     }
 }

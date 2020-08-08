@@ -57,13 +57,13 @@
 			$role=Auth::user()->role
 			@endphp
 			@if ($role== '0')
-			@include('systhem/client')
+			@include('system/client')
 			@elseif ($role=== '1')
-			@include('systhem/super')
+			@include('system/super')
 			@elseif ($role=== '2')
-			@include('systhem/admin')
+			@include('system/admin')
 			@elseif ($role=== '3')
-			@include('systhem/Ac')
+			@include('system/Ac')
 			@else
 			@yield('content')
 			@endif

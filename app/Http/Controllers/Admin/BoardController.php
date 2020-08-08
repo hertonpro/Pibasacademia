@@ -11,6 +11,6 @@ class BoardController extends Controller
 public function index()
     {
         //$articles = articles::all();
-        return view('systhem/board');
+        return view('system/board');
     }
 }
