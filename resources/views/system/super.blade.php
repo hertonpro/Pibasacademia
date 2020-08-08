@@ -14,7 +14,7 @@
                         </div>
                         <div>
                             <span class="d-block display-5 text-dark mb-5">{{$countclients->count()}}</span>
-                            <a href="{{url('admin/clients')}}"><small class="d-block">Liste de membres</small></a>
+                            <a href="{{url('clients')}}"><small class="d-block">Liste de membres</small></a>
 
                         </div>
                     </div>
@@ -34,8 +34,8 @@
                             </div>
                         </div>
                         <div>
-                            <span class="d-block display-5 text-dark mb-5"></span>
-                            <small class="d-block">50 Membres enregistrés</small>
+                            <span class="d-block display-5 text-dark mb-5">{{$countclients->count()*100}} $</span>
+                            <small class="d-block">{{$countclients->count()}} Membres enregistrés</small>
                         </div>
                     </div>
                 </div>
@@ -225,55 +225,64 @@
 
     <div class="col-lg-4">
 <a href="board" class="btn btn-info btn-block"> Page d'administration</a>
-        <div class="card card-profile-feed">
+<div class="card card-profile-feed">
             <div class="card-header card-header-action">
                 <div class="media align-items-center">
-
+        
                     <div class="media-body">
-                        <div class="text-capitalize font-weight-500 text-dark">Dernier retrait</div>
+                        <div class="text-capitalize font-weight-500 text-dark">Opérration</div>
                     </div>
                 </div>
-
+        
             </div>
             <div class="row text-center">
                 <div class="col-4 border-right pr-0">
                     <div class="pa-15">
                         <span class="d-block display-6 text-dark mb-5">154</span>
-                        <span class="d-block text-capitalize font-14">Associés</span>
+                        <a href=""><span class="d-block text-capitalize font-14">Demande</span></a>
                     </div>
                 </div>
                 <div class="col-4 border-right px-0">
                     <div class="pa-15">
                         <span class="d-block display-6 text-dark mb-5">65</span>
-                        <span class="d-block text-capitalize font-14">Membres</span>
+                        <span class="d-block text-capitalize font-14">Validées</span>
                     </div>
                 </div>
                 <div class="col-4 pl-0">
                     <div class="pa-15">
                         <span class="d-block display-6 text-dark mb-5">433</span>
-                        <span class="d-block text-capitalize font-14">PiBas</span>
+                        <span class="d-block text-capitalize font-14">Faitées</span>
                     </div>
                 </div>
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><span><i
-                            class="ion ion-md-calendar font-18 text-light-20 mr-10"></i><span>Cours</span></span><span
-                        class="ml-5 text-dark">Anglai le 5.22.2020</span></li>
-                <li class="list-group-item"><span><i
-                            class="ion ion-md-briefcase font-18 text-light-20 mr-10"></i><span>Worked
-                            at:</span></span><span class="ml-5 text-dark">Graduation</span></li>
-                <li class="list-group-item"><span><i class="ion ion-md-home font-18 text-light-20 mr-10"></i><span>Lives
-                            in:</span></span><span class="ml-5 text-dark">Webinaire</span></li>
-
-            </ul>
+        
         </div>
-        <div class="card bg-primary text-center border-0">
-            <div class="twitter-slider-wrap card-body">
-                <div class="twitter-icon text-center mb-15">
-                    <i class="fa fa-twitter"></i>
+        
+        <div class="card card-profile-feed">
+            <div class="card-header card-header-action">
+                <div class="media align-items-center">
+        
+                    <div class="media-body">
+                        <div class="text-capitalize font-weight-500 text-dark">Formation</div>
+                    </div>
                 </div>
-                <div id="tweets_fetch" class="owl-carousel owl-theme"></div>
+        
             </div>
+            <div class="row text-center">
+                <div class="col-6 border-right pr-0">
+                    <div class="pa-15">
+                        <span class="d-block display-6 text-dark mb-5">154</span>
+                        <a href=""><span class="d-block text-capitalize font-14">Demande</span></a>
+                    </div>
+                </div>
+                <div class="col-6 border-right px-0">
+                    <div class="pa-15">
+                        <span class="d-block display-6 text-dark mb-5">65</span>
+                        <span class="d-block text-capitalize font-14">Inscrits</span>
+                    </div>
+                </div>
+            </div>
+        
         </div>
     </div>
 </div>
