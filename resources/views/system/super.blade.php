@@ -34,7 +34,7 @@
                             </div>
                         </div>
                         <div>
-                            <span class="d-block display-5 text-dark mb-5"></span>
+                            <span class="d-block display-5 text-dark mb-5">{{$countclients->count()*100}} $</span>
                             <small class="d-block">50 Membres enregistrés</small>
                         </div>
                     </div>

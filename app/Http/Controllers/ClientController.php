@@ -21,7 +21,7 @@ class ClientController extends Controller
     public function index()
     {
         $clients = Clientmodele::all();
-        return view('admin/client/index', compact('clients'));
+        return view('system/client/index', compact('clients'));
     }
 
     /**
