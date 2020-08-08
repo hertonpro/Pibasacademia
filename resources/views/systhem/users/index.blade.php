@@ -27,7 +27,8 @@
 			<div class="col-lg-6">
 				<div class="button-list">
 					<a href="#" class="btn btn-dark btn-wth-icon icon-wthot-bg btn-rounded"><span
-							class="btn-text">Message</span><span class="icon-label"><i class="icon ion-md-mail"></i>
+							class="btn-text">Message {{Auth::user()->role}}</span><span class="icon-label"><i
+								class="icon ion-md-mail"></i>
 						</span></a>
 				</div>
 			</div>
@@ -53,15 +54,15 @@
 	<div class="tab-pane fade show active" role="tabpanel">
 		<div class="container">
 			@php
-			$role=1
+			$role=Auth::user()->role
 			@endphp
-			@if ($role=== 0)
+			@if ($role== '0')
 			@include('systhem/client')
-			@elseif ($role=== 1)
+			@elseif ($role=== '1')
 			@include('systhem/super')
-			@elseif ($role=== 2)
+			@elseif ($role=== '2')
 			@include('systhem/admin')
-			@elseif ($role=== 3)
+			@elseif ($role=== '3')
 			@include('systhem/Ac')
 			@else
 			@yield('content')

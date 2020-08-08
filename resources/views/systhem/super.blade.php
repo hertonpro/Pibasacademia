@@ -224,6 +224,7 @@
     </div>
 
     <div class="col-lg-4">
+<a href="board" class="btn btn-info btn-block"> Page d'administration</a>
         <div class="card card-profile-feed">
             <div class="card-header card-header-action">
                 <div class="media align-items-center">

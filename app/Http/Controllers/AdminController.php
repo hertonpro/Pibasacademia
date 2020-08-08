@@ -74,7 +74,7 @@ class AdminController extends Controller
 
     protected function create(request $data){
 
-       $password1 = request('name1').''.request('name2');
+       $password1 = substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCEFGHIJKLMNOPQRSTUVWXYZ0123456789'),1, 10);
        $pin = 'PBHR-'.date("Y-m-d H:i").'-DT';
 
        if(request('parrain') == 'PBHR-001-DT' || User::where('pin', request('parrain'))->exists()){
@@ -94,11 +94,19 @@ class AdminController extends Controller
             'password' => Hash::make($password1)
         ]);
 
-        return redirect('/newUser')->with('completed', 'article has been saved!');
+        $pp = User::where('pin', $pin)->firstOrfail();
+        return view('admin/admin/confirmation', compact('pp','password1'));
     }
+
+
 
      public function newUser(){
         return view('admin/admin/newUser');
+    }
+
+
+    public function algo(){
+        //return view('admin/admin/newUser');
     }
 
     /**

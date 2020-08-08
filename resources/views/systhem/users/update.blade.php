@@ -1,101 +1,121 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-  {{-- entete de page  --}}
-  @include('head')
-{{-- fin entete de page  --}}
+@extends('layoutadmin')
+
+@section('content')
+
+<!-- Title -->
+<div class="hk-pg-header">
+    <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i
+                    data-feather="toggle-right"></i></span></span>Créer un nouveau membre</h4>
 
 
-<head>
 
+</div>
+<!-- /Title -->
+<div class="row">
+    <div class="col-xl-12 pa-0 m-3">
+        <div class=" py-xl-0 py-50">
+            <div class="auth-form w-xxl-55 w-xl-75 w-sm-90 w-100">
+                <form action="{{ url('/users') }}" method="post">
+                    @csrf
+                    <h1 class="display-4 mb-10">Formulaire d'adhésion</h1>
+                    <p class="mb-30">Les informations doivent être vraies et vérifiables, car elles pourront être
+                        utilisées.</p>
 
-<style>
-  .push-top {
-    margin-top: 50px;
-  }
-</style>
-<body>
-    <!-- Preloader
-    <div class="preloader-it">
-        <div class="loader-pendulums"></div>
-    </div>
-    <!-- /Preloader -->
+                    <div>
+                        <div class="form-row">
 
-	<!-- HK Wrapper -->
-	<div class="hk-wrapper hk-vertical-nav">
-        {{-- menu horizontal  --}}
-        @include('menu')
-        {{-- fin menu horizontal --}}
-        {{-- menu verital  --}}
-        @include('menulateral')
-         {{-- fin menu verital  --}}
+                            <div class="col-md-6 form-group">
+                                <input class="form-control @error('name1') is-invalid @enderror"
+                                    placeholder="First name" name="name1" value="" type="text" required>
+                                @error('name1')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input class="form-control @error('name2') is-invalid @enderror" placeholder="Last name"
+                                    name="name2" value="" type="text" required>
+                                @error('name2')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
 
-         <!-- Setting Panel -->
-         <!-- Main Content -->
-         <div class="hk-pg-wrapper">
-            <!-- Container -->
-             <div class="container">
-                 <!-- Title -->
-                 <div class="hk-pg-header">
-                     <h4 class="hk-pg-title"><span class="pg-title-icon">
-                         <span class="feather-icon"><i data-feather="external-link">
-                             </i></span></span>Apropos du pied de page</h4>
-                 </div>
-                 <!-- /Title -->
-
-                 <!-- Row -->
-                 <div class="row">
-                     <div class="col-xl-12">
-                    <section class="hk-sec-wrapper">
-                            <p class="pull-right hk-title">
-                                    PiBas Marketing <br>
-                                <a href="{{ url('/aproposs/create') }}" class="btn btn-gradient-info">Ajouter</a>
-                                <a href="{{ url('/aproposs') }}" class="btn btn-gradient-info">Liste</a>
-                            </p>
-                                @if(session()->get('success'))
-                                    <div class="alert alert-success">
-                                    {{ session()->get('success') }}
-                                    </div><br />
-                                @endif
-
-                                @if(session()->get('success'))
-                                    <div class="alert alert-success">
-                                    {{ session()->get('success') }}
-                                    </div><br />
-                                @endif
-
-                                    <div class="card-body">
-                                        @if ($errors->any())
-                                        <div class="alert alert-danger">
-                                            <ul>
-                                                @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                                @endforeach
-                                            </ul>
-                                        </div><br />
-                                        @endif
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">@</span>
                                     </div>
-                                <form method="post" action="{{ route('aproposs.update',  $aproposs->apropos_id) }}">
-                                    <div class="form-group">
-                                        @csrf
-                                        @method('PUT')
-
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <div class="col-sm">
-                                            <div class="tinymce-wrap">
-                                                <textarea class="tinymce" name="password" value="{{ $aproposs->password }}">
-                                                    {{$aproposs->password }}
-                                                </textarea>
-                                            </div>
-                                        </div>
-                                        {{-- <input type="text" class="form-control" name="password" value="{{ $aproposs->password }}"/> --}}
-                                    </div>
-                                    <button type="submit" class="btn btn-block btn-danger">PUBLIER</button>
-                                    </form>
+                                    <input class="form-control @error('email') is-invalid @enderror"
+                                        placeholder="Adresse mail" name="email" type="Email" required>
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
-                        </section>
-                    </div>
-                </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">+243</span>
+                                    </div>
+                                    <input class="form-control @error('numTel') is-invalid @enderror"
+                                        placeholder="Numero de telephone" name="numTel" type="number" required>
+                                    @error('numTel')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">NN carte</span>
+                                    </div>
+                                    <input class="form-control @error('numCart') is-invalid @enderror"
+                                        placeholder="Numero de la carte d'identite" name="numCart" type="text" required>
+
+                                    @error('numCart')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">PIN parrain</span>
+                                    </div>
+                                    <input class="form-control @error('parrain') is-invalid @enderror"
+                                        placeholder="le code pin du parrain" name="parrain" type="text" required>
+
+                                    @error('parrain')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-primary btn-block" type="submit"><a class="text-warning"
+                                    href="{{ url('/users/confirm') }}">Enregistre</a> </button>
+                        </div>
+
+
+                </form>
             </div>
-        @include('footer')
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- contents -->
+@endsection

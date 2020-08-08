@@ -14,7 +14,7 @@
                             </div>
                         </div>
                         <div>
-                            <span class="d-block display-5 text-dark mb-5">850$</span>
+                            <span class="d-block display-5 text-dark mb-5">{{Auth::user()->montant}} $</span>
                             <small class="d-block">85 Downline</small>
                         </div>
                     </div>
@@ -41,6 +41,12 @@
                     </div>
                 </div>
             </div>
+            {{-- calule de nombre des PC  --}}
+            @php
+            $nontant=intval(Auth::user()->montant);
+            $pc= $nontant/80;
+            @endphp
+            {{-- calule de nombre des PC  --}}
             <div class="col-sm-6">
                 <div class="card card-sm">
                     <div class="card-body">
@@ -52,8 +58,10 @@
                                 <span class="badge badge-primary  badge-sm"></span>
                             </div>
                         </div>
+
+                       
                         <div>
-                            <span class="d-block display-5 text-dark mb-5">10 Pc</span>
+                            <span class="d-block display-5 text-dark mb-5">{{intval($pc)}} Pc</span>
                             <small class="d-block">80 Downline</small>
                         </div>
                     </div>

@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('pin')->unique();
             $table->string('parrain')->index();
             $table->string('role');
+            $table->string('montant');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layoutadmin')
 
 @section('content')
 
@@ -9,8 +9,7 @@
 </style>
 
 <div class="push-top">
-    <a href="{{ url('/formations/create') }}" class="btn btn-gradient-info">Ajouter</a>
-    <a href="{{ url('/formations') }}" class="btn btn-gradient-info">Liste</a>
+    <a href="{{ url('/users/create') }}" class="btn btn-gradient-info">Ajouter</a>
 
   @if(session()->get('success'))
     <div class="alert alert-success">
@@ -20,24 +19,22 @@
   <table class="table">
     <thead>
         <tr class="table-warning">
-          <td>ID</td>
-          <td>Name</td>
-          <td>Email</td>
-          <td>Phone</td>
-          <td>Password</td>
+          <td>nom copmlet</td>
+          <td>adresse mail</td>
+          <td>numero Tel</td>
+          <td>Compte</td>
           <td class="text-center">Action</td>
         </tr>
     </thead>
     <tbody>
         @foreach($student as $formations)
         <tr>
-            <td>{{$formations->id}}</td>
-            <td>{{$formations->name}}</td>
-            <td>{{$formations->email}}</td>
-            <td>{{$formations->phone}}</td>
-            <td>{{$formations->password}}</td>
+            <td>{{$users->name1.' '.$users->name2}}</td>
+            <td>{{$users->email}}</td>
+            <td>{{$users->numTel}}</td>
+            <td>${{$users->montant}}</td>
             <td class="text-center">
-                <a href="{{ route('formations.edit', $formations->id)}}" class="btn btn-primary btn-sm"">Edit</a>
+                <a href="{{ route('formations.edit', $formations->id)}}" class="btn btn-primary btn-sm">Edit</a>
                 <form action="{{ route('formations.destroy', $formations->id)}}" method="post" style="display: inline-block">
                     @csrf
                     @method('DELETE')

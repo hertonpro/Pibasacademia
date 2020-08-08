@@ -1,8 +1,9 @@
-@extends('layoutadmin')
+@extends('layoutst')
 
 @section('content')
 
-
+<!-- HK Wrapper -->
+<div class="hk-wrapper">
                     <div class="col-xl-12 pa-0">
                         <div class=" py-xl-0 py-50">
                             <div class="auth-form w-xxl-55 w-xl-75 w-sm-90 w-100">
@@ -126,5 +127,6 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
 @endsection

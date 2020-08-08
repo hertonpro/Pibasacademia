@@ -47,14 +47,8 @@
                                         <label class="custom-control-label font-14" for="same-address">Keep me logged in</label>
                                     </div>
                                     <button class="btn btn-primary btn-block" type="submit">Login</button>
-                                    <p class="font-14 text-center mt-15">Having trouble logging in?</p>
-                                    <div class="option-sep">or</div>
-                                    <div class="form-row">
-                                        <div class="col-sm-12 mb-20">
-                                            <a  class="btn btn-info btn-block btn-wth-icon" href="{{ route('register') }}"> <span class="icon-label"><i class="ti-hand-point-left"></i> </span><span class="btn-text">Mot de passe oublie </span></a>
-                                        </div>
-                                    </div>
-                                    <p class="text-center">Retour à la page d acceuil <a href="{{ route('home') }}">Sign Up</a></p>
+                                    
+                                    <p class="text-center">Retour à la page d acceuil <a href="{{ route('home') }}">d'acceuil</a></p>
                                 </form>
                             </div>
                         </div>

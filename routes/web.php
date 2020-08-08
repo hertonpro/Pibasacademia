@@ -30,6 +30,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/newUser', 'AdminController@create')->name('newUser');
 Route::get('/newUser', 'AdminController@newUser');
 
+Route::resource('/board', 'Admin\BoardController');
+
 
 
 Route::get('/apropos', 'HomeController@apropos');
@@ -80,12 +82,19 @@ Route::resource('clients', 'ClientController');
 Route::resource('blogs', 'Blogcontroller');
 // blog
 //faq
-Route::resource('faqs', 'faqController');
+Route::resource('faqs', 'FaqController');
 //apropos
 Route::resource('aproposs', 'AproposController');
 // Route::get('aproposs/{aproposs}','AproposController@update' );
 //description faq  c'est a dire les grandes ligne de faq le menu de faq
-Route::resource('descfaqs', 'DescfaqController');
+//Route::resource('descfaqs', 'DescFaqController');
 
-Route::resource('/admin/users', 'Admin\UsersController');
+Route::resource('users', 'Admin\UsersController');
 Route::resource('/admin/clients', 'Admin\ClientsController');
+
+
+//Route admin
+Route::resource('transaction', 'Admin\TransactionController');
+Route::resource('cours', 'Admin\CoursController');
+
+
