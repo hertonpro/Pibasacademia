@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\formationModel;
+use App\formationM;
 use Illuminate\Http\Request;
 
 class FormationController extends Controller
 {
     public function index()
     {
-        $formations = formationModel::all();
+        $formations = formationM::all();
         return view('admin/formation/index', compact('formations'));
     }
 
@@ -32,12 +32,11 @@ class FormationController extends Controller
     public function store(Request $request)
     {
         $storeData = $request->validate([
-            'name' => 'required|max:255',
-            'email' => 'required|max:255',
-            'phone' => 'required|numeric',
-            'password' => 'required|max:255',
+            'titre' => 'required|max:255',
+            'resume' => 'required|max:1255',
+
         ]);
-        $student = formationModel::create($storeData);
+        $student = formationM::create($storeData);
 
         return redirect('/formations')->with('completed', 'Student has been saved!');
     }
@@ -45,10 +44,10 @@ class FormationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $formation_id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($formation_id)
     {
         //
     }
@@ -56,12 +55,12 @@ class FormationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $formation_id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($formation_id)
     {
-        $formation = formationModel::findOrFail($id);
+        $formation = formationM::findOrFail($formation_id);
         return view('admin/formation/update', compact('formation'));
     }
 
@@ -69,36 +68,34 @@ class FormationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  int  $formation_id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $formation_id)
     {
         $updateData = $request->validate([
-            'name' => 'required|max:255',
-            'email' => 'required|max:255',
-            'phone' => 'required|numeric',
-            'password' => 'required|max:255',
+            'titre' => 'required|max:1255',
+            'resume' => 'required|max:12055',
         ]);
-        formationModel::whereId($id)->update($updateData);
+        formationM::whereId($formation_id)->update($updateData);
         return redirect('/formations')->with('completed', 'Student has been updated');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $formation_id
      * @return \Illuminate\Http\Response
      */
-    public function update2( $id)
+    public function update2( $formation_id)
     {
         // $updateData = $request('mame','deleted');
-        // formationModel::whereId($id)->update($updateData);
+        // formationM::whereId($id)->update($updateData);
         return redirect('/formations')->with('completed', 'Student has been updated');
     }
-    public function destroy($id)
+    public function destroy($formation_id)
     {
-        
+
 
         return redirect('/formations')->with('completed', 'formation has been deleted');
     }

@@ -85,6 +85,11 @@ Route::resource('blogs', 'Blogcontroller');
 Route::resource('faqs', 'FaqController');
 //apropos
 Route::resource('aproposs', 'AproposController');
+Route::resource('courss', 'CoursController');
+//lienc du cours
+Route::resource('liencours', 'LienscoursController');
+Route::resource('suivres', 'SuivreController');
+
 // Route::get('aproposs/{aproposs}','AproposController@update' );
 //description faq  c'est a dire les grandes ligne de faq le menu de faq
 //Route::resource('descfaqs', 'DescFaqController');
