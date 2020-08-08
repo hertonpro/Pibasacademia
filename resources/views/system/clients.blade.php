@@ -39,8 +39,8 @@
                                     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                                         <div class="btn-group" role="group" aria-label="Third group">
                                             <a class="text-danger" href=""><i data-feather="trash-2"></i></a>
-                                            <a class="text-warning" href=""><i data-feather="edit"></i></a>
-                                            <a class="text-success" href=""><i data-feather="eye"></i></a>
+                                            <a class="text-warning" href="users/{{$client->id}}/edit"><i data-feather="edit"></i></a>
+                                            <a class="text-success" href="users/{{$client->id}}"><i data-feather="eye"></i></a>
                                         </div>
                                     </div>
                                 </td>
@@ -57,6 +57,8 @@
                             </tr>
                         </tfoot>
                     </table>
+                   
+                    
                 </div>
             </div>
         </div>

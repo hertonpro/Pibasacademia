@@ -1,94 +1,62 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-  {{-- entete de page  --}}
-  @include('head')
-{{-- fin entete de page  --}}
+@extends('layoutadmin')
 
+@section('content')
 
-<head>
-
-
-<body>
-    <!-- Preloader
-    <div class="preloader-it">
-        <div class="loader-pendulums"></div>
-    </div>
-    <!-- /Preloader -->
-
-	<!-- HK Wrapper -->
-	<div class="hk-wrapper hk-vertical-nav">
-        {{-- menu horizontal  --}}
-        @include('menu')
-        {{-- fin menu horizontal --}}
-        {{-- menu verital  --}}
-        @include('menulateral')
-         {{-- fin menu verital  --}}
-
-         <!-- Setting Panel -->
-         <!-- Main Content -->
-         <div class="hk-pg-wrapper">
-             <!-- Breadcrumb -->
-             <nav class="hk-breadcrumb" aria-label="breadcrumb">
-                 <ol class="breadcrumb breadcrumb-light bg-transparent">
-                     <li class="breadcrumb-item"><a href="#">Forms</a></li>
-                     <li class="breadcrumb-item active" aria-current="page">Form Validation</li>
-                 </ol>
-             </nav>
-             <!-- /Breadcrumb -->
-
-             <!-- Container -->
-             <div class="container">
-                 <!-- Title -->
-                 <div class="hk-pg-header">
-                     <h4 class="hk-pg-title"><span class="pg-title-icon">
-                         <span class="feather-icon">
-                            <i data-feather="external-link"></i>
-                        </span>
-                    </span>{{ $contact->adresse }}</h4>
-                 </div>
-                 <!-- /Title -->
-
-                 <!-- Row -->
-                 <div class="row">
-                     <div class="col-xl-12">
-                    <section class="hk-sec-wrapper">
-                        <h5 class="hk-sec-title">Tooltips</h5>
-                        {{-- <p class="mb-40">Swap the <code>.{valid|invalid}-feedback</code> classes for <code>.{valid|invalid}-tooltip</code> classes to display validation feedback in a styled tooltip.</p> --}}
-                        <div class="row">
-                            <div class="col-sm">
-                                <div class="card card-profile-feed">
-                                    <div class="card-header card-header-action">
-                                        <div class="d-flex align-items-center card-action-wrap">
-                                            <div class="inline-block dropdown">
-                                                {{-- retour a la liste de contact --}}
-                                                <a class="dropdown-toggle no-caret" data-toggle="dropdown" href="./admin/contact/elie'}}" aria-expanded="false" role="button">
-                                                    <i class="ion ion-md-arrow-round-back"></i>Retour à la liste</a>
-                                              
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {{-- liste des contacts  --}}
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item"><span><i class="fa fa-bank font-18 text-light-20 mr-10"></i><span>Nous sommes à (au) :</span></span><span class="ml-5 text-dark">{{ $contact->adresse }}</span></li>
-                                        <li class="list-group-item"><span><i class="glyphicon glyphicon-envelope font-18 text-light-20 mr-10"></i><span>E-mail:</span></span><span class="ml-5 text-dark">{{ $contact->mail }}</span></li>
-                                        <li class="list-group-item"><span><i class="ion ion-md-home font-18 text-light-20 mr-10"></i><span>Lives in:</span></span><span class="ml-5 text-dark">{{ $contact->telephone }}</span></li>
-                                        <li class="list-group-item"><span><i class="ion ion-md-pin font-18 text-light-20 mr-10"></i><span>Créé à la date du:</span></span><span class="ml-5 text-dark">{{ $contact->created_at }}</span></li>
-                                        <li class="list-group-item"><span><i class="ion ion-md-pin font-18 text-light-20 mr-10"></i><span>Modifié à la date du:</span></span><span class="ml-5 text-dark">{{ $contact->updated_at }}</span></li>
-                                    </ul>
-                                 </div>
-
-                            </div>
+<!-- contents -->
+<div class="profile-cover-wrap overlay-wrap">
+    <div class="profile-cover-img" style="background-image:url({{url('dist/img/trans-bg.jpg')}})"></div>
+    <div class="bg-overlay bg-trans-dark-60"></div>
+    <div class="container profile-cover-content py-50">
+        <div class="hk-row">
+            <div class="col-lg-6">
+                <div class="media align-items-center">
+                    <div class="media-img-wrap  d-flex">
+                        <div class="avatar">
+                            <img src="{{asset('dist/img/avatar12.jpg') }}" alt="user" class="avatar-img rounded-circle">
                         </div>
-                    </section>
+                    </div>
+                    <div class="media-body">
+                        <div class="text-white text-capitalize display-6 mb-5 font-weight-400">{{$user->name1 .' '.$user->name2}} </div>
+                        <div class="font-14 text-white"><span class="mr-5"><span
+                                    class="font-weight-500 pr-5">Matricule: </span><span
+                                    class="mr-5">{{$user->pin}}</span></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="button-list">
+                    <a href="#" class="btn btn-dark btn-wth-icon icon-wthot-bg btn-rounded"><span
+                            class="btn-text">Message {{Auth::user()->role}}</span><span class="icon-label"><i
+                                class="icon ion-md-mail"></i>
+                        </span></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div class="bg-white shadow-bottom">
+    <div class="container">
+        <ul class="nav nav-light nav-tabs" id="resume" role="tablist">
+            <li class="nav-item">
+                <a href="#resume" class="d-flex h-60p align-items-center nav-link">Résumé</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="d-flex h-60p align-items-center nav-link">Formation</a>
+            </li>
+            <li class="nav-item">
+                <a href="#upline" class="d-flex h-60p align-items-center nav-link">Upline</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="tab-content mt-sm-60 mt-30">
+    <div class="tab-pane fade show active" role="tabpanel">
+        <div class="container">
+           
 
+        </div>
+    </div>
+</div>
 
-        @include('footer')
-
-
-
-                                
+<!-- contents -->
+@endsection

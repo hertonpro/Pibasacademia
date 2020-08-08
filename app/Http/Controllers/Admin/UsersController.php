@@ -95,7 +95,8 @@ class UsersController extends Controller
     protected function store(request $data){
 
        $password1 = substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCEFGHIJKLMNOPQRSTUVWXYZ0123456789'),1, 10);
-       $pin = 'PBHR-'.date("Y-m-d H:i").'-DT';
+       $code=rand(1000000000,9999999999);
+       $pin = dechex($code);
 
        if(request('parrain') == 'PBHR-001-DT' || User::where('pin', request('parrain'))->exists()){
             $parrain = request('parrain');
@@ -151,8 +152,8 @@ class UsersController extends Controller
     public function show(user $user)
     {
         //
-        $users = User::all();
-        return view('system/users/Liste', compact('users'));
+        $users = User::where('id',$user);
+        return view('system/users/single', compact('user'));
     }
 
     /**

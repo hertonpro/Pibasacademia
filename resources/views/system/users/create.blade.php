@@ -14,7 +14,7 @@
 </div>
 
 <div class="push-top">
-    <a href="{{ url('/users/show') }}" class="btn btn-gradient-info">Liste</a>
+    <a href="{{ url('clients') }}" class="btn btn-gradient-info">Liste</a>
 </div>
 <!-- /Title -->
 <div class="row">
