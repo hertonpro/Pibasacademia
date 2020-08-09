@@ -27,7 +27,7 @@
                         </li>
                     </ul>
                 </li>
-                
+
                 <li class="nav-item">
                     <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#auth_drp">
                         <span class="feather-icon"><i data-feather="zap"></i></span>
@@ -37,26 +37,29 @@
                         <li class="nav-item">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#signup_drp">
-                                            Utilisateurs
-                                        </a>
+                                    <a class="nav-link" href="javascript:void(0);" data-toggle="collapse"
+                                        data-target="#signup_drp">
+                                        Utilisateurs
+                                    </a>
                                     <ul id="signup_drp" class="nav flex-column collapse collapse-level-2">
                                         <li class="nav-item">
                                             <ul class="nav flex-column">
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="signup.html">Membres</a>
+                                                    <a class="nav-link" href="{{url('users/create')}}"">Nouveau</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="signup-simple.html">Formateurs</a>
+                                                    <a class="nav-link" href="{{url('clients')}}">Membres</a>
                                                 </li>
+
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#signin_drp">
-                                            Formations
-                                        </a>
+                                    <a class="nav-link" href="javascript:void(0);" data-toggle="collapse"
+                                        data-target="#signin_drp">
+                                        Formations
+                                    </a>
                                     <ul id="signin_drp" class="nav flex-column collapse collapse-level-2">
                                         <li class="nav-item">
                                             <ul class="nav flex-column">
@@ -71,9 +74,10 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#recover_drp">
-                                            Articles
-                                        </a>
+                                    <a class="nav-link" href="javascript:void(0);" data-toggle="collapse"
+                                        data-target="#recover_drp">
+                                        Articles
+                                    </a>
                                     <ul id="recover_drp" class="nav flex-column collapse collapse-level-2">
                                         <li class="nav-item">
                                             <ul class="nav flex-column">
@@ -87,7 +91,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                
+
                             </ul>
                         </li>
                     </ul>
@@ -98,7 +102,7 @@
                 <span>tech</span>
             </div>
             <ul class="navbar-nav flex-column">
-                
+
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <span class="feather-icon"><i data-feather="headphones"></i></span>

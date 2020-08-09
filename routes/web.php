@@ -32,7 +32,7 @@ Route::get('/newUser', 'AdminController@newUser');
 
 Route::resource('/board', 'Admin\BoardController');
 
-
+Route::post('/retrait', 'Admin\RetraitController@retrait');
 
 Route::get('/apropos', 'HomeController@apropos');
 Route::get('/blog', 'HomeController@blog');

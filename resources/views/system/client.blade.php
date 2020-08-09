@@ -1,4 +1,3 @@
-
 <div class="hk-row">
     <div class="col-lg-8">
         <div class="hk-row">
@@ -59,7 +58,7 @@
                             </div>
                         </div>
 
-                       
+
                         <div>
                             <span class="d-block display-5 text-dark mb-5">{{intval($pc)}} Pc</span>
                             <small class="d-block">80 Downline</small>
@@ -269,49 +268,29 @@
         <div class="card card-profile-feed">
             <div class="card-header card-header-action">
                 <div class="media align-items-center">
-                    <div class="media-img-wrap d-flex mr-10">
-                        <div class="avatar avatar-sm">
-                            <img src="dist/img/avatar7.jpg" alt="user" class="avatar-img rounded-circle">
-                        </div>
-                    </div>
                     <div class="media-body">
-                        <div class="text-capitalize font-weight-500 text-dark">Angelic Lauver</div>
-                        <div class="font-13">Business Manager</div>
+                        <div class="text-capitalize font-weight-500 text-dark">Transation</div>
+                        <div class="font-13 text-success">Faire un retrait sur votre compte</div>
+                        <form action="{{ url('/retrait') }}" method="post">
+                            <input class="form-control hideen" placeholder="First name"
+                                    name="user" value="{{Auth::user()->pin}}" type="hidden" required>
+                            <div class="visible">
+                                <select class="form-control custom-select  mt-15">
+                                    <option selected>Select</option>
+                                    <option value="1">10$</option>
+                                    <option value="2">20$</option>
+                                    <option value="3">30$</option>
+                                </select></div>
+                            <div class="visible"><button class="btn btn-success btn-block " type="submit">Commander</button></div>
+
+                        </form>
                     </div>
                 </div>
-                <div class="d-flex align-items-center card-action-wrap">
-                    <div class="inline-block dropdown">
-                        <a class="dropdown-toggle no-caret" data-toggle="dropdown" href="#" aria-expanded="false"
-                            role="button"><i class="ion ion-ios-settings"></i></a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <div class="row text-center">
-                <div class="col-4 border-right pr-0">
-                    <div class="pa-15">
-                        <span class="d-block display-6 text-dark mb-5">154</span>
-                        <span class="d-block text-capitalize font-14">photos</span>
-                    </div>
-                </div>
-                <div class="col-4 border-right px-0">
-                    <div class="pa-15">
-                        <span class="d-block display-6 text-dark mb-5">65</span>
-                        <span class="d-block text-capitalize font-14">followers</span>
-                    </div>
-                </div>
-                <div class="col-4 pl-0">
-                    <div class="pa-15">
-                        <span class="d-block display-6 text-dark mb-5">433</span>
-                        <span class="d-block text-capitalize font-14">views</span>
-                    </div>
-                </div>
+
+
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><span><i

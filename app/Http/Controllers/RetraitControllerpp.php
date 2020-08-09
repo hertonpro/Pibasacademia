@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\SuivreModel;
 use Illuminate\Http\Request;
 
-class SuivreModelController extends Controller
+class RetraitController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +40,10 @@ class SuivreModelController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\SuivreModel  $suivreModel
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(SuivreModel $suivreModel)
+    public function show($id)
     {
         //
     }
@@ -52,10 +51,10 @@ class SuivreModelController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\SuivreModel  $suivreModel
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(SuivreModel $suivreModel)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +63,10 @@ class SuivreModelController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\SuivreModel  $suivreModel
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SuivreModel $suivreModel)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +74,10 @@ class SuivreModelController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\SuivreModel  $suivreModel
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SuivreModel $suivreModel)
+    public function destroy($id)
     {
         //
     }

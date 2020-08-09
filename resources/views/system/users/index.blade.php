@@ -16,11 +16,11 @@
 						</div>
 					</div>
 					<div class="media-body">
-						<div class="text-white text-capitalize display-6 mb-5 font-weight-400">Cecilia Rios</div>
+						<div class="text-white text-capitalize display-6 mb-5 font-weight-400">
+							{{Auth::user()->name1.' '.Auth::user()->name2}}</div>
 						<div class="font-14 text-white"><span class="mr-5"><span
-									class="font-weight-500 pr-5">124</span><span
-									class="mr-5">Followers</span></span><span><span
-									class="font-weight-500 pr-5">45</span><span>Following</span></span></div>
+									class="font-weight-500 pr-5">Matricule</span><span
+									class="mr-5">{{Auth::user()->pin}}</span></span></div>
 					</div>
 				</div>
 			</div>
