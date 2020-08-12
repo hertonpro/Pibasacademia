@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>PiBas MLM SYSTEM</title>
     <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
-
+<!-- Inbox CSS -->
+<link href="{{ asset('outils/frontOffice/dist/css/inbox.css')}}" rel="stylesheet" type="text/css">
     <!-- Favicon -->
 
     <!-- Favicon -->
@@ -21,8 +22,7 @@
     <!-- Custom CSS -->
     <link href="{{ asset('outils/frontOffice/dist/css/style.css')}}" rel="stylesheet" type="text/css">
     <!-- Toggles CSS -->
-
-</head>
+ </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="60">
     <main class="py-4">

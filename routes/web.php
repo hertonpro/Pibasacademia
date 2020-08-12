@@ -101,5 +101,7 @@ Route::resource('/admin/clients', 'Admin\ClientsController');
 //Route admin
 Route::resource('transaction', 'Admin\TransactionController');
 Route::resource('cours', 'Admin\CoursController');
+//route inbox
+Route::resource('inbox', 'inboxController');
 
 

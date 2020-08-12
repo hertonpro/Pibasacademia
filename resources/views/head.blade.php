@@ -46,6 +46,8 @@
 
 <!-- Custom CSS -->
 <link href="{{ asset('dist/css/style.css" rel="stylesheet')}}" type="text/css">
+<!-- Inbox CSS -->
+<link href="{{ asset('outils/frontOffice/dist/css/inbox.css')}}" rel="stylesheet" type="text/css">
 </head>
 
 

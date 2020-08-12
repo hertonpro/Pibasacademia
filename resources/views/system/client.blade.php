@@ -271,7 +271,7 @@
                     <div class="media-body">
                         <div class="text-capitalize font-weight-500 text-dark">Transation</div>
                         <div class="font-13 text-success">Faire un retrait sur votre compte</div>
-                        <form action="{{ url('/retrait') }}" method="post">
+                        <form action="{{ url('/users') }}" >
                             <input class="form-control hideen" placeholder="First name"
                                     name="user" value="{{Auth::user()->pin}}" type="hidden" required>
                             <div class="visible">
@@ -292,19 +292,12 @@
 
 
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><span><i
-                            class="ion ion-md-calendar font-18 text-light-20 mr-10"></i><span>Went
-                            to:</span></span><span class="ml-5 text-dark">Oh, Canada</span></li>
-                <li class="list-group-item"><span><i
-                            class="ion ion-md-briefcase font-18 text-light-20 mr-10"></i><span>Worked
-                            at:</span></span><span class="ml-5 text-dark">Companey</span></li>
-                <li class="list-group-item"><span><i class="ion ion-md-home font-18 text-light-20 mr-10"></i><span>Lives
-                            in:</span></span><span class="ml-5 text-dark">San Francisco, CA</span></li>
-                <li class="list-group-item"><span><i
-                            class="ion ion-md-pin font-18 text-light-20 mr-10"></i><span>From:</span></span><span
-                        class="ml-5 text-dark">Settle, WA</span></li>
-            </ul>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Felisitation</strong> Votre demande a été envoyer!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
         </div>
         <div class="card bg-primary text-center border-0">
             <div class="twitter-slider-wrap card-body">
