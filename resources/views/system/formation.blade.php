@@ -263,7 +263,7 @@
                 <div class="col-4 pl-0">
                     <div class="pa-15">
                         <span class="d-block display-6 text-dark mb-5">{{$articles->count()}}</span>
-                        <span class="d-block text-capitalize font-14">Articles</span>
+                        <span class="d-block text-capitalize font-14">Articles uesv</span>
                     </div>
                 </div>
             </div>
