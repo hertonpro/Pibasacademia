@@ -1,39 +1,6 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-  {{-- entete de page  --}}
-  @include('head')
-{{-- fin entete de page  --}}
+@extends('layoutadmin')
 
-
-<head>
-
-
-<style>
-  .push-top {
-    margin-top: 50px;
-  }
-</style>
-<body>
-    <!-- Preloader
-    <div class="preloader-it">
-        <div class="loader-pendulums"></div>
-    </div>
-    <!-- /Preloader -->
-
-	<!-- HK Wrapper -->
-	<div class="hk-wrapper hk-vertical-nav">
-        {{-- menu horizontal  --}}
-        @include('menu')
-        {{-- fin menu horizontal --}}
-        {{-- menu verital  --}}
-        @include('menulateral')
-         {{-- fin menu verital  --}}
-
-         <!-- Setting Panel -->
-         <!-- Main Content -->
-         <div class="hk-pg-wrapper">
-            <!-- Container -->
-             <div class="container">
+@section('content')
                  <!-- Title -->
                  <div class="hk-pg-header">
                      <h4 class="hk-pg-title"><span class="pg-title-icon">
@@ -92,4 +59,4 @@
                     </div>
                 </div>
             </div>
-            @include('footer')
+            @endsection

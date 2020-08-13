@@ -34,13 +34,13 @@
                                         <div class="form-group">
                                             <label for="name">Formateur</label>
 
-                                            <select name="formation" class="form-control">
+                                            <select name="formateur" class="form-control">
 
                                                 @foreach ($users as $itemuser)
                                                 @if ($itemuser->id==$courss->formateur)
-                                                    <option value="{{ $itemuser->id}}" selected>{{ $item->name}}</option>
+                                                    <option value="{{ $itemuser->id}}" selected>{{ $itemuser->name1.' - '.$itemuser->name2}}</option>
                                                 @else
-                                                    <option value="{{ $itemuser->id}}">{{ $item->name}}</option>
+                                                <option value="{{ $itemuser->id}}" selected>{{ $itemuser->name1.' - '.$itemuser->name2}}</option>
                                                 @endif
                                                 @endforeach
                                             </select>

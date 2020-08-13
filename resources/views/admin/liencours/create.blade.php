@@ -27,14 +27,14 @@
                                         </div><br />
                                         @endif
                                     </div>
-                                        <form method="post" action="/liencours">
+                                <form method="post" action="{{url('/liencours')}}">
                                             <div class="form-group">
                                                 @csrf
                                                 <label for="name">Cours</label>
                                                 <select class="form-control" name="cours" id="">
                                                 <option selected> choisir le cours</option>
                                                 @foreach ($lien as $item)
-                                                <option value="{{$items->cours_id}}">{{$items->titre}}</option>
+                                                <option value="{{$item->cours_id}}">{{$item->titre}}</option>
                                                 @endforeach
                                             </select>
                                             </div>

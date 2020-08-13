@@ -49,8 +49,8 @@
                            <td>{{$liencours->cours}}</td>
                             <td>{{$liencours->link}}</td>
                             <td class="text-center">
-                                <a href="{{ route('liencours.edit', $liencours->liencours_id)}}" class="btn btn-primary btn-sm">Edit</a>
-                                <form action="{{ route('liencours.destroy',  $liencours->liencours_id )}}" method="post" style="display: inline-block">
+                                <a href="{{ URL('liencours/edit/'. $liencours->liencours_id)}}" class="btn btn-primary btn-sm">Edit</a>
+                                <form action="{{ URL('liencours/destroy/'.  $liencours->liencours_id )}}" method="post" style="display: inline-block">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger btn-sm" type="submit">Delete</button>
