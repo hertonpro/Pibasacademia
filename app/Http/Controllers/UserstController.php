@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\aproposmodel;
+use App\Coursmodel;
+use App\formationM;
+use App\user;
 use Illuminate\Http\Request;
 
 class AproposController extends Controller
@@ -18,7 +21,11 @@ class AproposController extends Controller
     public function index()
     {
             $aproposs = aproposmodel::all();
-        return view('system/apropos/index', compact('aproposs'));
+            $countclients=user::all();
+            $courss = Coursmodel::all();
+            $formations  = formationM::all();
+            $clie =User::all();
+        return view('system/apropos/index', compact('aproposs','countclients','clie'));
     }
 
     /**

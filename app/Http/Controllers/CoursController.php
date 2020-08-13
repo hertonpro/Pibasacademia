@@ -23,7 +23,8 @@ class CoursController extends Controller
     public function index()
     {
         $courss = Coursmodel::all();
-        return view('admin/cours/index', compact('courss'));
+        $formations  = formationM::all();
+        return view('admin/cours/index', compact('courss','formations'));
     }
 
     /**
@@ -92,8 +93,8 @@ class CoursController extends Controller
     public function update(Request $request, $cours_id)
     {
         $updateData =  $request->validate([
-            'formateur' => 'required|numeric',
-            'datecours' => 'required|numeric',
+            'formateur' => 'required|max:4',
+            'datecours' => 'required|max:255',
             'formation' => 'required|max:255',
         ]);
         Coursmodel::where('cours_id', $cours_id)->update($updateData);

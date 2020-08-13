@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\admin;
+use App\formationM;
 use App\User;
 use App\Mcart;
 use App\Mbrev;
@@ -13,6 +14,7 @@ use App\Mass1;
 use App\Mass2;
 use App\Mass3;
 use App\Http\Controllers\Controller;
+use App\Lienscoursmodel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -24,7 +26,7 @@ class UsersController extends Controller
 
     public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.
@@ -33,8 +35,11 @@ class UsersController extends Controller
      */
     public function index()
     {
+        $countclients = User::all();
+        $formations=formationM::all();
         $countclients = User::where('role',0);
-        return view('system/users/index',compact('countclients'));
+        $countclien=Lienscoursmodel::all();
+        return view('system/users/index',compact('countclients','formations','countclien'));
     }
 
     /**
@@ -53,7 +58,7 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-  
+
 
    /**
      * Get a validator for an incoming registration request.
@@ -85,13 +90,12 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
 
-     /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
      * @return \App\User
      */
-     
+
     protected function store(request $data){
 
        $password1 = substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCEFGHIJKLMNOPQRSTUVWXYZ0123456789'),1, 10);
@@ -133,7 +137,7 @@ class UsersController extends Controller
 
             return view('system/users/confirm', compact('pp','password1'));
        }else{
-            return redirect('/users/create')->with('Erreur', 'article has not been saved!'); 
+            return redirect('/users/create')->with('Erreur', 'article has not been saved!');
        }
     }
 
@@ -189,6 +193,6 @@ class UsersController extends Controller
     public function destroy(user $user)
     {
         //
-        
+
     }
 }

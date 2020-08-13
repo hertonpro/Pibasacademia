@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Coursmodel;
+use App\formationM;
 use App\Lienscoursmodel;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class LienscoursController extends Controller
      */
     public function index()
     {
-        $liencours = Coursmodel::all();
+        $liencours = formationM::all();
         return view('admin/liencours/index', compact('liencours'));
     }
 
@@ -26,7 +27,7 @@ class LienscoursController extends Controller
      */
     public function create()
     {
-        $lien = Coursmodel::all();
+        $lien = formationM::all();
         return view('admin/liencours/create', compact('lien'));
     }
 
@@ -67,8 +68,9 @@ class LienscoursController extends Controller
      */
     public function edit($liencours_id)
     {
+        $lien = formationM::all();
         $formation = Lienscoursmodel::findOrFail($liencours_id);
-        return view('admin/liencours/update', compact('formation'));
+        return view('admin/liencours/update', compact('formation','lien'));
     }
 
     /**

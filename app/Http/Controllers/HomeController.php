@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers;
 
-
+use App\articles;
+use App\Coursmodel;
+use App\descfaqmodel;
+use App\faqmodel;
+use App\formationM;
+use App\formationModel;
+use App\Lienscoursmodel;
+use App\SuivreModel;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -20,7 +27,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-         // $this->middleware('auth');
+         $this->middleware('auth');
     }
 
     /**
@@ -42,7 +49,7 @@ class HomeController extends Controller
         return view('faq',compact('faqe','categorie'));
 
     }
-    
+
     public function blog(){
         return view('blog');
 
@@ -53,6 +60,24 @@ class HomeController extends Controller
    /* public function login(){
         return view('auth/login');
     }*/
-   
+    public function formation($formation_id){
+        $countclients = User::all();
+        // $cours=Coursmodel::all();
+        $suivre=SuivreModel::all();
+        $coursid=Coursmodel::all();
+        $articles=articles::all();
+        $liens=Lienscoursmodel::all();
+        $formations=formationM::where('formation_id', $formation_id)->firstOrfail();
+        return view('system\formation',compact('countclients','formations','coursid','suivre','articles','liens'));
+    }
+    public function formatio()
+    {
+        $countclients = User::all();
+        $cours=Coursmodel::all();
+        $formations=formationM::all();
+        $suivre=SuivreModel::all();
+        return view('system\formations',compact('countclients','formations','cours','suivre'));
+    }
+
 }
 

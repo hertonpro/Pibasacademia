@@ -3,14 +3,10 @@
 @section('content')
 
 
-         
-    <div class="container">
 
-                 <!-- Row -->
-        <div class="row">
-            <div class="col-xl-12">
+
                 <section class="hk-sec-wrapper">
-                                   
+
                     <div class="push-top">
                         <a href="{{ url('/articles/create') }}" class="btn btn-gradient-info">Ajouter</a>
                         <a href="{{ url('/articles') }}" class="btn btn-gradient-info">Liste</a>
@@ -20,13 +16,13 @@
                         {{ session()->get('success') }}
                         </div><br />
                     @endif
-            
 
 
-                
+
+
                     <div class="table-wrap">
                     <table id="datable_3" class="table table-hover w-100 display dataTable no-footer dtr-inline" role="grid" style="width: 1040px;">
-                    
+
                         <thead>
                             <tr class="table-warning">
                                 <td>ID</td>
@@ -40,7 +36,7 @@
                             @foreach($articles as $articles)
                             <tr>
                                 <td>{{$articles->id}}</td>
-                                <td><img src="{{ asset('storage').'/'.$articles->img }}" style="width: 75px; height: 41.25px"></td>
+                                <td><img src="{{ asset('storage/'.$articles->img) }}" style="width: 75px; height: 41.25px"></td>
                                 <td>{{$articles->titre}}</td>
                                 <td>{{$articles->content}}</td>
                                 <td class="text-center">
@@ -66,7 +62,5 @@
                     </table>
 
                 </section>
-            </div>
-        </div>
-    </div>
-$endsection
+
+@endsection

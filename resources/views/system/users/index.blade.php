@@ -13,7 +13,9 @@
 					<div class="media-img-wrap  d-flex">
 						<div class="avatar">
 							<img src="{{asset('dist/img/avatar12.jpg') }}" alt="user" class="avatar-img rounded-circle">
-						</div>
+                                {{-- <img class="card-img-top d-block" src="dist/img/gallery/mock12.jpg" alt="Card image cap"> --}}
+                                <a href="#exampleModalForms" data-toggle="modal" data-target="#exampleModalForms" class="btn btn-dark btn-wth-icon icon-wthot-bg btn-rounded btn-pg-link"><span class="icon-label"><i class="ion ion-md-link"></i></span><span class="btn-text">website</span></a>
+                        </div>
 					</div>
 					<div class="media-body">
 						<div class="text-white text-capitalize display-6 mb-5 font-weight-400">
@@ -74,3 +76,27 @@
 
 <!-- contents -->
 @endsection
+ <!-- Modal forms-->
+ <div class="modal fade" id="exampleModalForms" tabindex="-1" role="dialog" aria-labelledby="exampleModalForms" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modiere image profil</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <section class="hk-sec-wrapper">
+                    <h5 class="hk-sec-title">Dropify</h5>
+                    <p class="mb-40">Override your input files with style. Find more options <a href="http://jeremyfagis.github.io/dropify/" target="_blank">here</a>.</p>
+                    <div  class="row">
+                        <div class="col-sm">
+                            <input type="file" id="input-file-now" class="dropify" />
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
