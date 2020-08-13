@@ -29,7 +29,7 @@
 			<div class="col-lg-6">
 				<div class="button-list">
 					<a href="#" class="btn btn-dark btn-wth-icon icon-wthot-bg btn-rounded"><span
-							class="btn-text">Message {{Auth::user()->role}}</span><span class="icon-label"><i
+							class="btn-text">Messages {{Auth::user()->role}}</span><span class="icon-label"><i
 								class="icon ion-md-mail"></i>
 						</span></a>
 				</div>
