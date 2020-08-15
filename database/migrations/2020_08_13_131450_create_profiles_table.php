@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRetraitTable extends Migration
+class CreateProfilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateRetraitTable extends Migration
      */
     public function up()
     {
-        Schema::create('retrait', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('pinCl');
-            $table->string('montant');
-            $table->string('statu')->default('0');
-            $table->string('agent')->default('SYST')->index();
-            $table->stringpinCl('conf')->unique();
+            $table->unsignedBigInteger('user_id')->index();
+            $table->string('img');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateRetraitTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('retrait');
+        Schema::dropIfExists('profiles');
     }
 }

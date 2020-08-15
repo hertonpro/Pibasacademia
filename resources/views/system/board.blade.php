@@ -128,97 +128,105 @@
 
         </div>
         <div class="card p-3" id="upline">
-            <h3 class="p-4">Liste Downline</h3>
+            <h3 class="p-4">Liste de demande de retrait</h3>
             <div class="d-flex align-items-center card-action-wrap table-wrap">
                 <table id="datable_1" class="table table-hover w-100 display pb-30">
                     <thead>
                         <tr>
-                            <th>Name</th>
+                            <th>Nom</th>
+                            <th>montant</th>
+                            <th class="text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                        </tr>
-                        <tr>
-                            <td>Garrett Winters</td>
-                        </tr>
-                        <tr>
-                            <td>Ashton Cox</td>
-                        </tr>
-                        <tr>
-                            <td>Cedric Kelly</td>
-                        </tr>
-                        <tr>
-                            <td>Airi Satou</td>
-                        </tr>
-                        <tr>
-                            <td>Brielle Williamson</td>
-                        </tr>
-                        <tr>
-                            <td>Herrod Chandler</td>
-                        </tr>
-                        <tr>
-                            <td>Rhona Davidson</td>
-                        </tr>
-                        <tr>
-                            <td>Colleen Hurst</td>
-                        </tr>
-                        <tr>
-                            <td>Sonya Frost</td>
-                        </tr>
-                        <tr>
-                            <td>Jena Gaines</td>
-                        </tr>
-                        <tr>
-                            <td>Quinn Flynn</td>
-                        </tr>
-                        <tr>
-                            <td>Charde Marshall</td>
-                        </tr>
-                        <tr>
-                            <td>Haley Kennedy</td>
-                        </tr>
-                        <tr>
-                            <td>Tatyana Fitzpatrick</td>
-                        </tr>
-                        <tr>
-                            <td>Michael Silva</td>
-                        </tr>
-                        <tr>
-                            <td>Paul Byrd</td>
-                        </tr>
-                        <tr>
-                            <td>Gloria Little</td>
-                        </tr>
-                        <tr>
-                            <td>Bradley Greer</td>
-                        </tr>
-                        <tr>
-                            <td>Dai Rios</td>
-                        </tr>
-                        <tr>
-                            <td>Jenette Caldwell</td>
-                        </tr>
-                        <tr>
-                            <td>Jenette Caldwell</td>
-                        </tr>
-                        <tr>
-                            <td>Jenette Caldwell</td>
-                        </tr>
-                        <tr>
-                            <td>Jenette Caldwell</td>
-                        </tr>
-                        <tr>
-                            <td>Jenette Caldwell</td>
-                        </tr>
-                        <tr>
-                            <td>Jenette Caldwell</td>
-                        </tr>
+                        @foreach($retraits as $r)
+
+                            @if(App\User::where('id', $r->pinCl)->firstOrfail()->montant > $r->montant )
+                                <tr>
+                                    <td>
+                                        {{App\User::where('id', $r->pinCl)->firstOrfail()->name1.' '.App\User::where('id', $r->pinCl)->firstOrfail()->name2}}
+                                    </td>
+                                    <td>
+                                        ${{$r->montant}}
+                                    </td>
+                                    <td class="text-center">
+                                        <form action="{{ route('retraitV')}}" method="post" style="display: inline-block">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{$r->id}}">
+                                            <button class="btn btn-success btn-sm" type="submit">Valider</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                             @else
+
+                                <tr>
+                                    <td>
+                                        {{App\User::where('id', $r->pinCl)->firstOrfail()->name1.' '.App\User::where('id', $r->pinCl)->firstOrfail()->name2}}
+                                    </td>
+                                    <td>
+                                        ${{$r->montant}}
+                                    </td>
+                                    <td class="text-center">
+                                        <form action="{{ route('retraitV')}}" method="post" style="display: inline-block">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{$r->id}}">
+                                            <button class="btn btn-danger btn-sm" type="submit">Impossible</button>
+                                        </form>
+                                    </td>
+                                </tr>
+
+                        @endif
+                        @endforeach
+                        
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th>Name</th>
+                            <th>Nom</th>
+                            <th>montant</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="card p-3" id="upline">
+            <h3 class="p-4">Liste de confirmation de retrait</h3>
+            <div class="d-flex align-items-center card-action-wrap table-wrap">
+                <table id="datable_1" class="table table-hover w-100 display pb-30">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>montant</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($retraits1 as $r1)
+                        <tr>
+                            <td>
+                                {{App\User::where('id', $r1->pinCl)->firstOrfail()->name1.' '.App\User::where('id', $r1->pinCl)->firstOrfail()->name2}}
+                            </td>
+                            <td>
+                                ${{$r1->montant}}
+                            </td>
+                            <td class="text-center">
+                                <form action="{{ route('retraitC')}}" method="post" style="display: inline-block">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{$r1->id}}">
+                                    <input type="hidden" name="pinCl" value="{{$r1->pinCl}}">
+                                    <input type="hidden" name="montant" value="{{$r1->montant}}">
+                                    <button class="btn btn-primary btn-sm" type="submit">Confirmer</button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                        
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Nom</th>
+                            <th>montant</th>
+                            <th class="text-center">Action</th>
                         </tr>
                     </tfoot>
                 </table>

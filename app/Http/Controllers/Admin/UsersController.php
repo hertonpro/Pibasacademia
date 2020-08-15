@@ -21,11 +21,16 @@ use Illuminate\Support\Facades\Validator;
 class UsersController extends Controller
 {
 
-
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
+    
     /**
      * Display a listing of the resource.
      *
@@ -117,6 +122,7 @@ class UsersController extends Controller
 
             if(User::where('pin', request('parrain'))->exists()){
 
+        $retraits = retraits::where('statu', 0);
                 $dd = User::where('pin', request('parrain'))->firstOrfail();
 
                 $montant = $dd->montant + 10;

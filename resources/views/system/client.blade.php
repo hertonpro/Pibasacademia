@@ -271,15 +271,16 @@
                     <div class="media-body">
                         <div class="text-capitalize font-weight-500 text-dark">Transation</div>
                         <div class="font-13 text-success">Faire un retrait sur votre compte</div>
-                        <form action="{{ url('/retrait') }}" method="post">
+                        <form action="{{ route('retrait') }}" method="post">
+                            @csrf
                             <input class="form-control hideen" placeholder="First name"
-                                    name="user" value="{{Auth::user()->pin}}" type="hidden" required>
+                                    name="user" value="{{Auth::user()->id}}" type="hidden" required>
                             <div class="visible">
-                                <select class="form-control custom-select  mt-15">
+                                <select class="form-control custom-select  mt-15" name="montant" >
                                     <option selected>Select</option>
-                                    <option value="1">10$</option>
-                                    <option value="2">20$</option>
-                                    <option value="3">30$</option>
+                                    <option value="10">10$</option>
+                                    <option value="20">20$</option>
+                                    <option value="30">30$</option>
                                 </select></div>
                             <div class="visible"><button class="btn btn-success btn-block " type="submit">Commander</button></div>
 

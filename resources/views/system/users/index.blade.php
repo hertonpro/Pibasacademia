@@ -12,7 +12,34 @@
 				<div class="media align-items-center">
 					<div class="media-img-wrap  d-flex">
 						<div class="avatar">
-							<img src="{{asset('dist/img/avatar12.jpg') }}" alt="user" class="avatar-img rounded-circle">
+							@if(Auth::user()->profile)
+								<img src="{{asset('dist/img/avatar12.jpg') }}" alt="user" class="avatar-img rounded-circle">
+							@elese
+								<img src="{{asset('dist/img/avatar12.jpg') }}" alt="user" class="avatar-img rounded-circle">
+							@endif
+							<button class="btn btn-info avatar-img rounded-circle" style="text-align: center;" alt="user"><span class="fa fa-upload"></span><input name="img" id="upload_image" type="file" class="inputFile" value="" /></button>
+
+
+							<style type="text/css">
+								.inputFile{
+								    margin-top: 0px;
+								    left: 0px;
+								    right: 0px;
+								    top: 0px;
+								    width: 200px;
+								    height: 200px;
+								    background-color: #FFFFFF;
+								    overflow: hidden;
+								    opacity: 0;
+								    position: absolute;
+								    cursor: pointer;
+								  }
+							</style>
+
+
+
+
+
 						</div>
 					</div>
 					<div class="media-body">
@@ -72,5 +99,105 @@
 	</div>
 </div>
 
+
+
+<script type="text/javascript" src="{{  asset('jquery.js')}}"></script>
+<script src="{{  asset('croppie/croppie.js')}}"></script>
+<link rel="Stylesheet" type="text/css" href="{{  asset('croppie/croppie.css')}}" />
+<script>
+    
+     var url = "{{ url('/profile') }}";
+
+    jQuery(document).ready(function(){
+
+
+      var basic = $('#image_demo').croppie({
+          viewport: {
+              width: 150,
+              height: 150,
+              type: 'square'
+          },
+          //boundary: { width: 200, height: 200 }
+      });
+
+     
+
+      $('#upload_image').on('change', function(){
+        var reader = new FileReader();
+        reader.onload = function (event){
+          basic.croppie('bind', {
+          url: event.target.result 
+          }).then(function(){
+            console.log('jQuery bind complete');
+          })
+        }
+        saveP();
+        reader.readAsDataURL(this.files[0]);
+        $('#uploadModal').modal('show');
+
+      })
+
+          function saveP(){
+/*
+            $('#saveP').on('click', function(e){
+              basic.croppie('result',{
+                size: 'original'
+              }).then(function(response){
+                
+                $.ajax({
+	                type: 'POST',
+	                url: url,
+	                dataType: 'json',
+	                
+	                data: JSON.stringify({'id_p' : $('#id_p').val(),'img':response}),
+	                success: function(data, textStatus, jqXHR){
+	                },
+	                error: function(jqXHR, textStatus, errorThrown){
+	                    alert('Erreur du systeme: ' + textStatus);
+	                    alert('Erreur du systeme: ' + textStatus);
+	                }
+	            });
+                
+              })
+            })*/
+          }
+
+    })
+         
+  </script>
+
+
+
+
+
 <!-- contents -->
 @endsection
+
+
+
+
+<div class="modal fade"  role="dialog" id="uploadModal" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Rogner Photo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div id="image_demo" style="width: 200px;height: 200px;text-align: center;margin: 0 auto;" >
+          </div>
+          <input type="hidden" name="id" id="id_p" value="{{Auth::user()->id}}">
+          <br>
+          
+      </div>
+      <div class="modal-footer">
+      	<div style="text-align: center;" >
+            <button class="btn btn-success crop_image"  id="saveP"><a href="/profile">Enregistrer</a></button>
+          </div>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

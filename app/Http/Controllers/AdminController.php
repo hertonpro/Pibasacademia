@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\admin;
 use App\User;
+use App\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -22,6 +23,7 @@ class AdminController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('ajax', ['only' => 'profile']);
     }
     
     /**
@@ -105,8 +107,26 @@ class AdminController extends Controller
     }
 
 
-    public function algo(){
-        //return view('admin/admin/newUser');
+    public function profile(Request $request){
+        /*$data = request()->validate([
+            'id_p' => 'required',
+            'img' => ['required','image']
+        ]);
+
+         //dd($request('img'));
+        $img = request('img')->store('profilesImg','public');
+
+        //$image = Image::make(public_path("storage/{$img}"))->fit(1200,700);
+        //$img->save();
+       
+        profile::create([
+
+            'user_id' => $data['id_p'],
+            'img' => $img
+
+        ]);*/
+
+        return redirect('/users')->with('completed', 'article has been saved!');
     }
 
     /**

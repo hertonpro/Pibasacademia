@@ -102,4 +102,10 @@ Route::resource('/admin/clients', 'Admin\ClientsController');
 Route::resource('transaction', 'Admin\TransactionController');
 Route::resource('cours', 'Admin\CoursController');
 
+Route::post('/retrait', 'Admin\RetraitController@retrait')->name('retrait');
+Route::post('/retraitV', 'Admin\RetraitController@valide')->name('retraitV');
+Route::post('/retraitC', 'Admin\RetraitController@confirm')->name('retraitC');
+
+Route::post('/profile', 'AdminController@profile')->name('profile');
+
 
