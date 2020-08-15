@@ -45,7 +45,7 @@ class CoursController extends Controller
     public function create()
     {
         $formations = formationM::all();
-        $users = User::where('role',4);
+        $users = User::all();
 
         return view('admin/cours/create', compact('formations','users'));
     }

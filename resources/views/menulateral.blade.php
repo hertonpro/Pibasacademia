@@ -4,6 +4,11 @@
         <span class="feather-icon"><i data-feather="x"></i></span></a>
     <div class="nicescroll-bar">
         <div class="navbar-nav-wrap">
+            <ul class="nav flex-column">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="{{url('board')}}">Administration</a>
+                </li>
+            </ul>
             <ul class="navbar-nav flex-column">
                 <li class="nav-item active">
                     <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#dash_drp">

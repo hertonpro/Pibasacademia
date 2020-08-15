@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\retraits;
 use App\admin;
 use App\formationM;
 use App\User;

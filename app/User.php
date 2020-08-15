@@ -37,12 +37,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-<<<<<<< HEAD
 
     public function profile(){
 
         return $this->hasOne('App\Profile');
-=======
     public function profil(){
         return $this->hasOne('App\profilModel2');
 
@@ -50,6 +48,5 @@ class User extends Authenticatable
     public function profilphoto(){
         return $this->hasMany('App\profilModel');
 
->>>>>>> a7fd0c67e77fe7e14b0a836a1ee61541629488cf
     }
 }

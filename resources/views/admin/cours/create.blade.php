@@ -2,7 +2,6 @@
 @section('content')
 <p class="text-center hk-title">
     <br>
-    <a href="{{ url('/courss/create') }}" class="btn btn-gradient-info">Ajouter</a>
     <a href="{{ url('/courss') }}" class="btn btn-gradient-info">Liste</a>
 </p>
 @if(session()->get('success'))
@@ -37,8 +36,8 @@
             <option value="00" selected>
                 choisir le Formateur
             </option>
-            @foreach ($users as $itemuser)
-            <option value="{{ $itemuser->id}}">{{ $itemuser->name}}</option>
+            @foreach ($users->where('role','4') as $formateur)
+            <option value="{{ $formateur->id}}">{{ $formateur->name1}}</option>
             @endforeach
         </select>
     </div>
@@ -59,11 +58,6 @@
 
     <button type="submit" class="btn btn-block btn-danger">Enregister</button>
 </form>
-</div>
-</div>
-</section>
-</div>
-</div>
-</div>
-</div>
+
+
 @endsection

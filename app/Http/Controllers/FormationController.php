@@ -105,8 +105,6 @@ class FormationController extends Controller
     }
     public function destroy($formation_id)
     {
-
-
         return redirect('/formations')->with('completed', 'formation has been deleted');
     }
 }

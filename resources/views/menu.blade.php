@@ -1,11 +1,11 @@
 <!-- Top Navbar -->
 <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar">
-    
-    <a class="navbar-brand font-weight-700" href="users">
+
+    <a class="navbar-brand font-weight-700" href="{{url('users')}}">
         Pibasacademia
     </a>
     <ul class="navbar-nav hk-navbar-content">
-        
+
         <li class="nav-item">
             <a id="settings_toggle_btn" class="nav-link nav-link-hover" href="javascript:void(0);"><span
                     class="feather-icon"><i data-feather="settings"></i></span></a>
@@ -135,11 +135,12 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
                 {{-- <a class="dropdown-item" href="{{ url('/users/'.Auth::user()->id.'/edit') }}">
-                    <i class="dropdown-icon zmdi zmdi-account"></i><span>{{ __('Profil') }}</span></a> --}}
+                <i class="dropdown-icon zmdi zmdi-account"></i><span>{{ __('Profil') }}</span></a> --}}
                 <a class="dropdown-item" href="{{ url('users') }}"><i class="dropdown-icon zmdi zmdi-card"></i><span>
                         Balance</span></a>
-                        <a class="dropdown-item" href="{{ url('users/1/edit') }}"><i class="dropdown-icon zmdi zmdi-card"></i><span>
-                                Profil</span></a>
+                <a class="dropdown-item" href="{{ url('users/1/edit') }}"><i
+                        class="dropdown-icon zmdi zmdi-card"></i><span>
+                        Profil</span></a>
                 <a class="dropdown-item" href="{{ url('inbox') }}"><i
                         class="dropdown-icon zmdi zmdi-email"></i><span>Inbox</span></a>
                 {{-- <a class="dropdown-item" href="setting"><i
