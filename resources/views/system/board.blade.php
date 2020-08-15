@@ -66,16 +66,25 @@
                         <div class="col-6 border-right pr-0">
                             <div class="pa-15">
                                 <span class="d-block text-capitalize font-14">Utilisateur</span>
-                                <a href=""><span class="d-block text-capitalize font-14">Ajouter</span></a>
-                                <a href=""><span class="d-block text-capitalize font-14">Gérer</span></a>
+                                <a href="{{route('users.create')}}"><span class="d-block text-capitalize font-14">Ajouter</span></a>
+                                <a href="{{url('clients')}}"><span class="d-block text-capitalize font-14">Gérer</span></a>
                                 <a href=""><span class="d-block text-capitalize font-14">Status</span></a>
                             </div>
                         </div>
                         <div class="col-6 px-0">
                             <div class="pa-15">
                                 <span class="d-block text-capitalize font-14">Acces</span>
-                                <a href=""><span class="d-block text-capitalize font-14">Rôles</span></a>
+                                @php
+                                  $role=Auth::user()->role  
+                                @endphp
+                                @if ($role== '1')
+                                    <a href=""><span class="d-block text-capitalize font-14">Rôles</span></a>
                                 <a href=""><span class="d-block text-capitalize font-14">Droits</span></a>
+                                @else
+                                    <span class="d-block text-capitalize font-14">Rôles</span>
+                                    <span class="d-block text-capitalize font-14">Droits</span>
+                                @endif
+                                
                             </div>
                         </div>
                     </div>
@@ -97,16 +106,16 @@
                         <div class="col-4 border-right pr-0">
                             <div class="pa-15">
                                 <span class="d-block text-capitalize font-14">Formations</span>
-                                <a href=""><span class="d-block text-capitalize font-14">Ajouter</span></a>
-                                <a href=""><span class="d-block text-capitalize font-14">Gérer</span></a>
-                                <a href=""><span class="d-block text-capitalize font-14">formateurs</span></a>
+                                <a href="{{url('formations/create')}}"><span class="d-block text-capitalize font-14">Ajouter</span></a>
+                                <a href="{{url('formations')}}"><span class="d-block text-capitalize font-14">Gérer</span></a>
+                                <a href="{{url('formateurs')}}"><span class="d-block text-capitalize font-14">formateurs</span></a>
                             </div>
                         </div>
                         <div class="col-4 border-right px-0">
                             <div class="pa-15">
                                 <span class="d-block text-capitalize font-14">Classes</span>
-                                <a href=""><span class="d-block text-capitalize font-14">Ajouter</span></a>
-                                <a href=""><span class="d-block text-capitalize font-14">Gérer</span></a>
+                                <a href="{{url('courss/create')}}"><span class="d-block text-capitalize font-14">Ajouter</span></a>
+                                <a href="{{url('courss')}}"><span class="d-block text-capitalize font-14">Gérer</span></a>
                                 <a href=""><span class="d-block text-capitalize font-14">calendrier</span></a>
                             </div>
                         </div>
@@ -344,6 +353,114 @@
                 <ul>jdsfkjdf</ul>
             </li>
         </div>
+    </div>
+    <div class="card p-2">
+        </div>
+                <div class="card p-3" id="upline">
+                    <h3 class="p-4">Liste de demande de retrait</h3>
+                    <div class="d-flex align-items-center card-action-wrap table-wrap">
+                        <table id="datable_1" class="table table-hover w-100 display pb-30">
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>montant</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($retraits as $r)
+                
+                                @if(App\User::where('id', $r->pinCl)->firstOrfail()->montant > $r->montant )
+                                <tr>
+                                    <td>
+                                        {{App\User::where('id', $r->pinCl)->firstOrfail()->name1.' '.App\User::where('id', $r->pinCl)->firstOrfail()->name2}}
+                                    </td>
+                                    <td>
+                                        ${{$r->montant}}
+                                    </td>
+                                    <td class="text-center">
+                                        <form action="{{ route('retraitV')}}" method="post" style="display: inline-block">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{$r->id}}">
+                                            <button class="btn btn-success btn-sm" type="submit">Valider</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @else
+                
+                                <tr>
+                                    <td>
+                                        {{App\User::where('id', $r->pinCl)->firstOrfail()->name1.' '.App\User::where('id', $r->pinCl)->firstOrfail()->name2}}
+                                    </td>
+                                    <td>
+                                        ${{$r->montant}}
+                                    </td>
+                                    <td class="text-center">
+                                        <form action="{{ route('retraitV')}}" method="post" style="display: inline-block">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{$r->id}}">
+                                            <button class="btn btn-danger btn-sm" type="submit">Impossible</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                
+                                @endif
+                                @endforeach
+                
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>montant</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="card p-3" id="upline">
+                    <h3 class="p-4">Liste de confirmation de retrait</h3>
+                    <div class="d-flex align-items-center card-action-wrap table-wrap">
+                        <table id="datable_1" class="table table-hover w-100 display pb-30">
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>montant</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($retraits1 as $r1)
+                                <tr>
+                                    <td>
+                                        {{App\User::where('id', $r1->pinCl)->firstOrfail()->name1.' '.App\User::where('id', $r1->pinCl)->firstOrfail()->name2}}
+                                    </td>
+                                    <td>
+                                        ${{$r1->montant}}
+                                    </td>
+                                    <td class="text-center">
+                                        <form action="{{ route('retraitC')}}" method="post" style="display: inline-block">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{$r1->id}}">
+                                            <input type="hidden" name="pinCl" value="{{$r1->pinCl}}">
+                                            <input type="hidden" name="montant" value="{{$r1->montant}}">
+                                            <button class="btn btn-primary btn-sm" type="submit">Confirmer</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endforeach
+                
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>montant</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
     </div>
 </section>
 

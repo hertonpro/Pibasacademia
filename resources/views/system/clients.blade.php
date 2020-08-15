@@ -24,6 +24,7 @@
                                 <th>Matricule</th>
                                 <th>Téle</th>
                                 <th>Bonus</th>
+                                <th>Rôle</th>
                                 <th>Options</th>
                             </tr>
                         </thead>
@@ -35,6 +36,7 @@
                                 <td>{{$client->pin}}</td>
                                 <td>{{$client->numTel}}</td>
                                 <td>{{$client->montant}}</td>
+                                <td>{{$client->role}}</td>
                                 <td>
                                     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                                         <div class="btn-group" role="group" aria-label="Third group">
@@ -55,6 +57,7 @@
                                 <th>Matricule</th>
                                 <th>Téle</th>
                                 <th>Bonus</th>
+                                <th>Rôle</th>
                                 <th>Options</th>
                             </tr>
                         </tfoot>

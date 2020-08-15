@@ -3,9 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\aproposmodel;
-use App\Coursmodel;
-use App\formationM;
-use App\user;
 use Illuminate\Http\Request;
 
 class AproposController extends Controller
@@ -20,12 +17,17 @@ class AproposController extends Controller
      */
     public function index()
     {
+        $aproposs = aproposmodel::all();
+        if (aproposmodel::all()->count()==0) {
+
+            return view('admin/apropos/create');
+        }
+        else
+        {
             $aproposs = aproposmodel::all();
-            $countclients=user::all();
-            $courss = Coursmodel::all();
-            $formations  = formationM::all();
-            $clie =User::all();
-        return view('system/apropos/index', compact('aproposs','countclients','clie'));
+        return view('admin/apropos/index', compact('aproposs'));
+
+        }
     }
 
     /**
@@ -39,7 +41,7 @@ class AproposController extends Controller
         if ($aproposs->count()>0) {
             return redirect('/aproposs')->with('Non', 'l\'aujouse fait une fois!<br>Supprimer ou Modier ');
         }else{
-        return view('system/apropos/create');
+        return view('admin/apropos/create');
         }
     }
 
@@ -82,7 +84,7 @@ class AproposController extends Controller
     {
         // $aproposs = aproposmodel::findOrFail($apropos_id);
         $aproposs = aproposmodel::where('apropos_id', $apropos_id)->firstOrfail();
-        return view('system/apropos/update', compact('aproposs'));
+        return view('admin/apropos/update', compact('aproposs'));
     }
 
     /**

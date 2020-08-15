@@ -17,7 +17,7 @@
                                     <a class="nav-link" href="transaction">transaction</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="dashboard2.html">cours</a>
+                                    <a class="nav-link" href="{{url('')}}">cours</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="dashboard3.html">Statistics</a>
