@@ -1,0 +1,122 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Coursmodel;
+use App\formationM;
+use App\Http\Controllers\Controller;
+use App\User;
+use Illuminate\Http\Request;
+
+class CoursController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+   /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $courss = Coursmodel::all();
+        $formations  = formationM::all();
+        return view('admin/cours/index', compact('courss','formations'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $formations = formationM::all();
+        $users = User::where('role',4);
+
+        return view('admin/cours/create', compact('formations','users'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $storeData = $request->validate([
+            'formateur' => 'required|numeric',
+            'datecours' => 'required|max:255',
+            'formation' => 'required|numeric',
+        ]);
+        $student = Coursmodel::create($storeData);
+
+        return redirect('/courss')->with('message', 'Student has been saved!');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $cours_id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($cours_id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $cours_id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($cours_id)
+    {
+        $formations = formationM::all();
+        $users = User::all();
+        $courss = Coursmodel::where('cours_id', $cours_id)->firstOrfail();
+        return view('admin/cours/update', compact('courss','users','formations'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $cours_id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $cours_id)
+    {
+        $updateData =  $request->validate([
+            'formateur' => 'required|max:4',
+            'datecours' => 'required|max:255',
+            'formation' => 'required|max:255',
+        ]);
+        Coursmodel::where('cours_id', $cours_id)->update($updateData);
+        return redirect('/courss')->with('message', 'Student has been updated');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $cours_id
+     * @return \Illuminate\Http\Response
+     */
+    public function update2( $cours_id)
+    {
+        // $updateData = $request('mame','deleted');
+        // Coursmodel::whereId($cours_id)->update($updateData);
+        return redirect('/courss')->with('message', 'Student has been updated');
+    }
+    public function destroy($cours_id)
+    {
+
+
+        return redirect('/courss')->with('message', 'cours has been deleted');
+    }
+}

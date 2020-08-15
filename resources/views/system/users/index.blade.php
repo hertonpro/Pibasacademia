@@ -12,34 +12,12 @@
 				<div class="media align-items-center">
 					<div class="media-img-wrap  d-flex">
 						<div class="avatar">
-							@if(Auth::user()->profile)
-								<img src="{{asset('dist/img/avatar12.jpg') }}" alt="user" class="avatar-img rounded-circle">
-							@elese
-								<img src="{{asset('dist/img/avatar12.jpg') }}" alt="user" class="avatar-img rounded-circle">
-							@endif
-							<button class="btn btn-info avatar-img rounded-circle" style="text-align: center;" alt="user"><span class="fa fa-upload"></span><input name="img" id="upload_image" type="file" class="inputFile" value="" /></button>
 
-
-							<style type="text/css">
-								.inputFile{
-								    margin-top: 0px;
-								    left: 0px;
-								    right: 0px;
-								    top: 0px;
-								    width: 200px;
-								    height: 200px;
-								    background-color: #FFFFFF;
-								    overflow: hidden;
-								    opacity: 0;
-								    position: absolute;
-								    cursor: pointer;
-								  }
-							</style>
-
-
-
-
-
+							{{-- <img class="card-img-top d-block" src="dist/img/gallery/mock12.jpg" alt="Card image cap"> --}}
+							<a href="#exampleModalForms" data-toggle="modal" data-target="#exampleModalForms">
+								<img src="{{asset('dist/img/avatar12.jpg') }}" alt="user"
+									class="avatar-img rounded-circle">
+							</a>
 						</div>
 					</div>
 					<div class="media-body">
@@ -54,8 +32,7 @@
 			<div class="col-lg-6">
 				<div class="button-list">
 					<a href="#" class="btn btn-dark btn-wth-icon icon-wthot-bg btn-rounded"><span
-							class="btn-text">Message {{Auth::user()->role}}</span><span class="icon-label"><i
-								class="icon ion-md-mail"></i>
+							class="btn-text">Message 3</span><span class="icon-label"><i class="icon ion-md-mail"></i>
 						</span></a>
 				</div>
 			</div>
@@ -172,32 +149,29 @@
 
 <!-- contents -->
 @endsection
-
-
-
-
-<div class="modal fade"  role="dialog" id="uploadModal" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Rogner Photo</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <div id="image_demo" style="width: 200px;height: 200px;text-align: center;margin: 0 auto;" >
-          </div>
-          <input type="hidden" name="id" id="id_p" value="{{Auth::user()->id}}">
-          <br>
-          
-      </div>
-      <div class="modal-footer">
-      	<div style="text-align: center;" >
-            <button class="btn btn-success crop_image"  id="saveP"><a href="/profile">Enregistrer</a></button>
-          </div>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
+<!-- Modal forms-->
+<div class="modal fade" id="exampleModalForms" tabindex="-1" role="dialog" aria-labelledby="exampleModalForms"
+	aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Modiere image profil</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<section class="hk-sec-wrapper">
+					<h5 class="hk-sec-title">Dropify</h5>
+					<p class="mb-40">Override your input files with style. Find more options <a
+							href="http://jeremyfagis.github.io/dropify/" target="_blank">here</a>.</p>
+					<div class="row">
+						<div class="col-sm">
+							<input type="file" id="input-file-now" class="dropify" />
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
 </div>

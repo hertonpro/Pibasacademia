@@ -5,7 +5,7 @@
 <!-- contents -->
 <section class="hk-sec-wrapper">
     <div class="container d-flex justify-content-center align-items-center">
-        <img src="dist/img/formation.jpg" alt="formation" width="150%"></i>
+        <img src="dist/img/formation.jpg" alt="formation" width="150%">
         <h1> <strong>Pibas ACADEMIA</strong> Plateforme de préparation au <strong>monde professionnel</strong> </h1>
     </div>
 </section>

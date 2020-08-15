@@ -45,6 +45,7 @@
 
 
         <div class="card p-2">
+            
             <h3 class="tiles text-center ">Les formations disponibles</h3>
             <div class="hk-row">
                 <div class="col-sm-5 card m-2">

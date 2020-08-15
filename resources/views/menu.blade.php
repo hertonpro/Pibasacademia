@@ -136,9 +136,11 @@
             <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
                 {{-- <a class="dropdown-item" href="{{ url('/users/'.Auth::user()->id.'/edit') }}">
                     <i class="dropdown-icon zmdi zmdi-account"></i><span>{{ __('Profil') }}</span></a> --}}
-                <a class="dropdown-item" href="{{ url('users') }}/{{ Auth::user()->role }}"><i class="dropdown-icon zmdi zmdi-card"></i><span>
+                <a class="dropdown-item" href="{{ url('users') }}"><i class="dropdown-icon zmdi zmdi-card"></i><span>
                         Balance</span></a>
-                <a class="dropdown-item" href="{{ url('users') }}"><i
+                        <a class="dropdown-item" href="{{ url('users/1/edit') }}"><i class="dropdown-icon zmdi zmdi-card"></i><span>
+                                Profil</span></a>
+                <a class="dropdown-item" href="{{ url('inbox') }}"><i
                         class="dropdown-icon zmdi zmdi-email"></i><span>Inbox</span></a>
                 {{-- <a class="dropdown-item" href="setting"><i
                         class="dropdown-icon zmdi zmdi-settings"></i><span>Settings</span></a> --}}

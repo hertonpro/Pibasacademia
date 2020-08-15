@@ -1,21 +1,6 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-  {{-- entete de page  --}}
-  @include('head')
-{{-- fin entete de page  --}}
+@extends('layoutadmin')
 
-	<!-- HK Wrapper -->
-	<div class="hk-wrapper hk-vertical-nav">
-        {{-- menu horizontal  --}}
-        @include('menu')
-        {{-- fin menu horizontal --}}
-        {{-- menu verital  --}}
-        @include('menulateral')
-         {{-- fin menu verital  --}}
-
-         <!-- Setting Panel -->
-         <!-- Main Content -->
-         <div class="hk-pg-wrapper">
+@section('content')
             <!-- Container -->
              <div class="container">
                  <!-- Title -->
@@ -56,4 +41,4 @@
                         </section>
                     </div>
                 </div>
-    @include('footer')
+    @endsection

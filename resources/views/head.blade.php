@@ -12,6 +12,10 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+	<link href="{{  asset('vendors/dropzone/dist/dropzone.css') }}" rel="stylesheet" type="text/css"/>
+
+	<!-- Bootstrap Dropzone CSS -->
+	<link href="{{  asset('vendors/dropify/dist/css/dropify.min.css') }}" rel="stylesheet" type="text/css"/>
 
     <!-- Toggles CSS -->
     <link href="{{  asset('vendors/jquery-toggles/css/toggles.css') }}" rel="stylesheet" type="text/css">
@@ -46,6 +50,8 @@
 
 <!-- Custom CSS -->
 <link href="{{ asset('dist/css/style.css" rel="stylesheet')}}" type="text/css">
+<!-- Inbox CSS -->
+<link href="{{ asset('outils/frontOffice/dist/css/inbox.css')}}" rel="stylesheet" type="text/css">
 </head>
 
 
