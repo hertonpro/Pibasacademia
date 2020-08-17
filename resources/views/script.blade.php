@@ -5,17 +5,11 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="{{  asset('vendors/popper.js/dist/umd/popper.min.js')}}"></script>
     <script src="{{  asset('vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-
-    <!-- Slimscroll JavaScript -->
-    <script src="{{  asset('dist/js/jquery.slimscroll.js')}}"></script>
   <!-- Tinymce JavaScript -->
   <script src="{{  asset('vendors/tinymce/tinymce.min.js')}}"></script>
 
   <!-- Tinymce Wysuhtml5 Init JavaScript -->
   <script src="{{  asset('dist/js/tinymce-data.js')}}"></script>
-
-    <!-- Fancy Dropdown JS -->
-    <script src="{{  asset('dist/js/dropdown-bootstrap-extended.js')}}"></script>
 
     <!-- FeatherIcons JavaScript -->
     <script src="{{  asset('dist/js/feather.min.js')}}"></script>
@@ -80,3 +74,13 @@
 
 <!-- Form Flie Upload Data JavaScript -->
 <script src="{{  asset('dist/js/form-file-upload-data.js')}}"></script>
+ <!-- Slimscroll JavaScript -->
+ <script src="{{  asset('dist/js/jquery.slimscroll.js')}}"></script>
+
+ <!-- Fancy Dropdown JS -->
+ <script src="{{  asset('dist/js/dropdown-bootstrap-extended.js')}}"></script>
+
+ <!-- Gallery JavaScript -->
+ <script src="{{  asset('vendors/lightgallery/dist/js/lightgallery-all.min.js')}}"></script>
+ <script src="{{  asset('dist/js/froogaloop2.min.js')}}"></script>
+ <script src="{{  asset('dist/js/gallery-data.js')}}"></script>

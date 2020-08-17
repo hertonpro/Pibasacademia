@@ -46,13 +46,8 @@ Route::get('/contact/{contact}', 'ContactController@show');
 Route::get('/contact/{contact}/edit', 'ContactController@edit');
 Route::patch('/contact/{contact}', 'ContactController@update');
 
- // route Articles
-//  Route::post('/', 'ArticlesController@store');
-//  Route::get('/articles', 'ArticlesController@index');
-//  Route::get('/articles/create', 'ArticlesController@create');
-//  Route::post('/articles/update{article}', 'ArticlesController@update');
-//  Route::get('/articles/delete/{article}', 'ArticlesController@destroy');
-// route faq
+ Route::get('article/{article}', 'HomeController@article');
+
 Route::resource('articles', 'ArticlesController');
 
 

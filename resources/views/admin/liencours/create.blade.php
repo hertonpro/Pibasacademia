@@ -34,7 +34,7 @@
                                                 <select class="form-control" name="cours" id="">
                                                 <option selected> choisir le cours</option>
                                                 @foreach ($lien as $item)
-                                                <option value="{{$item->cours_id}}">{{$item->titre}}</option>
+                                                <option value="{{$item->formation_id}}">{{$item->titre}}</option>
                                                 @endforeach
                                             </select>
                                             </div>

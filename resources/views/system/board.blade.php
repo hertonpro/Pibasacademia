@@ -33,9 +33,9 @@
                                 <span class="d-block font-15 text-dark font-weight-500">revenue mensuel</span>
                             </div>
                             <div>
-                                {{-- <span class="badge badge-primary   badge-sm">Info</span>
+                                <span class="badge badge-primary   badge-sm">Info</span>
                                 <span class="badge badge-danger   badge-sm">En</span>
-                                <span class="badge badge-success   badge-sm">Bus</span> --}}
+                                <span class="badge badge-success   badge-sm">Bus</span>
                             </div>
                         </div>
                         <div>
@@ -52,35 +52,15 @@
         <div class="card p-2">
             <h3 class="tiles text-center ">Les formations disponibles</h3>
             <div class="hk-row">
-                <div class="col-sm-5 card m-2">
+
+                    @foreach ($formations as $item)
+                    <div class="col-sm-5 card m-2">
+
                     <div class="card-body">
-                        <h5 class="card-title">Anglais</h5>
-                        <p class="card-text">Of course, we'd be remiss not to include the veritable cadre of
-                            lorem ipsum knock offs
-                            featuring: Bacon Ipsum, Hipster Ipsum, Corporate Ipsum, Legal Ipsum.</p>
-                    </div>
-                    <a href="formation" class="btn btn-success btn-wth-icon icon-wthot-bg btn-rounded btn-pg-link"><span
-                            class="btn-text">Suivre la formation</span></a>
-                    <div class="card-footer justify-content-between">
-                        <div>
-                            <a href="#"><i class="ion ion-md-heart text-primary"></i> 30 Personnes</a>
-                        </div>
-                        <div>
-                            <div>
-                                <span class="badge badge-primary  badge-sm">Debut le 24.02.2020</span>
-                            </div>
-                            <div>
-                                <span class="badge badge-danger  badge-sm">Fin le 25.03.2020</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-5 card m-2">
-                    <div class="card-body ">
-                        <h5 class="card-title">Anglais</h5>
-                        <p class="card-text">Of course, we'd be remiss not to include the veritable cadre of
-                            lorem ipsum knock offs
-                            featuring: Bacon Ipsum, Hipster Ipsum, Corporate Ipsum, Legal Ipsum.</p>
+                        <h5 class="card-title">{{ $item->titre}}</h5>
+                        <p class="card-text text-justify">
+                            {{ $item->resume}}
+                        </p>
                     </div>
                     <a href="#" class="btn btn-success btn-wth-icon icon-wthot-bg btn-rounded btn-pg-link"><span
                             class="btn-text">Suivre
@@ -99,30 +79,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-5 card m-2">
-                    <div class="card-body">
-                        <h5 class="card-title">Anglais</h5>
-                        <p class="card-text">Of course, we'd be remiss not to include the veritable cadre of
-                            lorem ipsum knock offs
-                            featuring: Bacon Ipsum, Hipster Ipsum, Corporate Ipsum, Legal Ipsum.</p>
-                    </div>
-                    <a href="#" class="btn btn-success btn-wth-icon icon-wthot-bg btn-rounded btn-pg-link"><span
-                            class="btn-text">Suivre
-                            la formation</span></a>
-                    <div class="card-footer justify-content-between">
-                        <div>
-                            <a href="#"><i class="ion ion-md-heart text-primary"></i> 30 Personnes</a>
-                        </div>
-                        <div>
-                            <div>
-                                <span class="badge badge-primary  badge-sm">Debut le 24.02.2020</span>
-                            </div>
-                            <div>
-                                <span class="badge badge-danger  badge-sm">Fin le 25.03.2020</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                    @endforeach
             </div>
 
 
@@ -232,12 +190,12 @@
         <div class="card card-profile-feed">
             <div class="card-header card-header-action">
                 <div class="media align-items-center">
-    
+
                     <div class="media-body">
                         <div class="text-capitalize font-weight-500 text-dark">Opérration</div>
                     </div>
                 </div>
-    
+
             </div>
             <div class="row text-center">
                 <div class="col-4 border-right pr-0">
@@ -259,18 +217,18 @@
                     </div>
                 </div>
             </div>
-    
+
         </div>
-    
+
         <div class="card card-profile-feed">
             <div class="card-header card-header-action">
                 <div class="media align-items-center">
-    
+
                     <div class="media-body">
                         <div class="text-capitalize font-weight-500 text-dark">Formation</div>
                     </div>
                 </div>
-    
+
             </div>
             <div class="row text-center">
                 <div class="col-6 border-right pr-0">
@@ -286,9 +244,9 @@
                     </div>
                 </div>
             </div>
-    
+
         </div>
-    
+
     </div>
 </div><!-- contents -->
 @endsection
