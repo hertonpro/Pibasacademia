@@ -26,6 +26,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/formation/{formation}', 'HomeController@formation')->name('newUser');
 Route::get('forma/{formation}', 'HomeController@formation');
+Route::get('/suivrecours','SuivreController@create');
 Route::get('formatio', 'HomeController@formatio');
 Route::post('/newUser', 'AdminController@create')->name('newUser');
 Route::get('/newUser', 'AdminController@newUser');
@@ -81,8 +82,6 @@ Route::resource('courss', 'CoursController');
 Route::resource('liencours', 'LienscoursController');
 Route::resource('suivres', 'SuivreController');
 
-// Route::get('aproposs/{aproposs}','AproposController@update' );
-//description faq  c'est a dire les grandes ligne de faq le menu de faq
 Route::resource('descfaqs', 'DescFaqController');
 
 Route::resource('users', 'Admin\UsersController');

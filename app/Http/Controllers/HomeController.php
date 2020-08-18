@@ -69,7 +69,6 @@ class HomeController extends Controller
         $articles=articles::findOrFail($id);
         $liens=Lienscoursmodel::all();
         $articlesRECENT=articles::orderBy('created_at', 'desc')->limit(6)->get();
-
         return view('article',compact('coursid','suivre','articles','liens','articlesRECENT'));
 
     }
@@ -82,12 +81,13 @@ class HomeController extends Controller
     public function formation($formation_id){
         $countclients = User::all();
         $suivre=SuivreModel::all();
+        $suivref=SuivreModel::where('cours_id', $formation_id)->get();
         $coursid=Coursmodel::where('formation', $formation_id)->get();
         $articles=articles::all();
         $articlesRECENT=articles::orderBy('created_at', 'desc')->limit(6)->get();
         $liens=Lienscoursmodel::where('cours', $formation_id)->get();
         $formations=formationM::where('formation_id', $formation_id)->firstOrfail();
-        return view('system\formation',compact('countclients','formations','coursid','articlesRECENT','suivre','articles','liens'));
+        return view('system\formation',compact('countclients','formations','coursid','articlesRECENT','suivre','articles','liens','suivref'));
     }
     public function formatio()
     {
