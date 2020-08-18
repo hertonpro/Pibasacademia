@@ -39,9 +39,9 @@
                                 <span class="d-block font-15 text-dark font-weight-500">revenue mensuel</span>
                             </div>
                             <div>
-                                {{-- <span class="badge badge-primary   badge-sm">Info</span>
+                                <span class="badge badge-primary   badge-sm">Info</span>
                                 <span class="badge badge-danger   badge-sm">En</span>
-                                <span class="badge badge-success   badge-sm">Bus</span> --}}
+                                <span class="badge badge-success   badge-sm">Bus</span>
                             </div>
                         </div>
                         <div>
@@ -115,6 +115,7 @@
                                 <a href="{{url('formateurs')}}"><span
                                         class="d-block text-capitalize font-14">formateurs</span></a>
                             </div>
+
                         </div>
                         <div class="col-4 border-right px-0">
                             <div class="pa-15">
@@ -135,6 +136,7 @@
                             </div>
                         </div>
                     </div>
+
 
                 </div>
             </div>
@@ -469,3 +471,4 @@
 
 <!-- contents -->
 @endsection
+
