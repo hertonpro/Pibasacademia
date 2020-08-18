@@ -15,7 +15,6 @@
                         <div>
                             <span class="d-block display-5 text-dark mb-5">{{$countclients->count()}}</span>
                             <a href="{{url('clients')}}"><small class="d-block">Liste de membres</small></a>
-
                         </div>
                     </div>
                 </div>
@@ -47,18 +46,29 @@
         <div class="card p-2">
             <h3 class="tiles text-center ">Les formations disponibles</h3>
             <div class="hk-row">
-                <div class="col-sm-5 card m-2">
-                    <div class="card-body">
-                        <h5 class="card-title">Anglais</h5>
-                        <p class="card-text">Of course, we'd be remiss not to include the veritable cadre of
-                            lorem ipsum knock offs
-                            featuring: Bacon Ipsum, Hipster Ipsum, Corporate Ipsum, Legal Ipsum.</p>
+                @foreach ($formations as $itemform)
+                <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 card ">
+                    <div id="cad-tittle">
+                        <h4>
+                            <a href="{{ url('forma', $itemform->formation_id)}}">
+                            {{-- <a href="{{ route('formation', $formati->formation_id)}}"> --}}
+                                <span class="badge badge-success badge-outline mt-15 mr-10">
+                                {{' '.$itemform->titre}}
+                            </span>
+                            </a>
+                        </h4>
                     </div>
-                    <a href="formation" class="btn btn-success btn-wth-icon icon-wthot-bg btn-rounded btn-pg-link"><span
-                            class="btn-text">Suivre la formation</span></a>
+                    <div class="card-body c">
+                        <p class="card-text">
+                            {{$itemform->resume}}
+                        .</p>
+                    </div>
+
+                    <a href="{{ url('forma', $itemform->formation_id)}}" class="btn btn-success btn-wth-icon icon-wthot-bg btn-rounded btn-pg-link"><span
+                            class="btn-text">Voir la formation</span></a>
                     <div class="card-footer justify-content-between">
                         <div>
-                            <a href="#"><i class="ion ion-md-heart text-primary"></i> 30 Personnes</a>
+                            <a href="#"><i class="ion ion-md-heart text-primary"></i> 30 Inscrits</a>
                         </div>
                         <div>
                             <div>
@@ -70,153 +80,44 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-5 card m-2">
-                    <div class="card-body ">
-                        <h5 class="card-title">Anglais</h5>
-                        <p class="card-text">Of course, we'd be remiss not to include the veritable cadre of
-                            lorem ipsum knock offs
-                            featuring: Bacon Ipsum, Hipster Ipsum, Corporate Ipsum, Legal Ipsum.</p>
-                    </div>
-                    <a href="#" class="btn btn-success btn-wth-icon icon-wthot-bg btn-rounded btn-pg-link"><span
-                            class="btn-text">Suivre
-                            la formation</span></a>
-                    <div class="card-footer justify-content-between">
-                        <div>
-                            <a href="#"><i class="ion ion-md-heart text-primary"></i> 30 Personnes</a>
-                        </div>
-                        <div>
-                            <div>
-                                <span class="badge badge-primary  badge-sm">Debut le 24.02.2020</span>
-                            </div>
-                            <div>
-                                <span class="badge badge-danger  badge-sm">Fin le 25.03.2020</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-5 card m-2">
-                    <div class="card-body">
-                        <h5 class="card-title">Anglais</h5>
-                        <p class="card-text">Of course, we'd be remiss not to include the veritable cadre of
-                            lorem ipsum knock offs
-                            featuring: Bacon Ipsum, Hipster Ipsum, Corporate Ipsum, Legal Ipsum.</p>
-                    </div>
-                    <a href="#" class="btn btn-success btn-wth-icon icon-wthot-bg btn-rounded btn-pg-link"><span
-                            class="btn-text">Suivre
-                            la formation</span></a>
-                    <div class="card-footer justify-content-between">
-                        <div>
-                            <a href="#"><i class="ion ion-md-heart text-primary"></i> 30 Personnes</a>
-                        </div>
-                        <div>
-                            <div>
-                                <span class="badge badge-primary  badge-sm">Debut le 24.02.2020</span>
-                            </div>
-                            <div>
-                                <span class="badge badge-danger  badge-sm">Fin le 25.03.2020</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
 
         </div>
-        <div class="card p-3" id="upline">
-            <h3 class="p-4">Liste Downline</h3>
-            <div class="d-flex align-items-center card-action-wrap table-wrap">
-                <table id="datable_1" class="table table-hover w-100 display pb-30">
+        <div class="card col-md-12 col-lg-12 col-sm-12 col-xs-12" id="upline">
+            <h3 class="p-4">Liste  de membres parainés</h3>
+            <div class="">
+                <table id="datable_1" class="table table-hover  display">
                     <thead>
                         <tr>
-                            <th>Name</th>
+                            <th>Nom complet</th>
+                            <th>Type</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($countclients as $itemurses)
                         <tr>
-                            <td>Tiger Nixon</td>
+                            <td>{{$itemurses->name1.' - '.$itemurses->name2 }}</td>
+                                @if ($itemurses->role=='0')
+                                    <td><span class="badge badge-danger">Client</span> </td>
+                                @elseif($itemurses->role=='1')
+                                    <td><span class="badge badge-info">Super adminimistrateur</span> </td>
+                                @elseif($itemurses->role=='2')
+                                    <td><span class="badge badge-success">Administrateur</span> </td>
+                                @elseif($itemurses->role=='3')
+                                    <td><span class="badge badge-danger">Associé</span> </td>
+                                @endif
                         </tr>
-                        <tr>
-                            <td>Garrett Winters</td>
-                        </tr>
-                        <tr>
-                            <td>Ashton Cox</td>
-                        </tr>
-                        <tr>
-                            <td>Cedric Kelly</td>
-                        </tr>
-                        <tr>
-                            <td>Airi Satou</td>
-                        </tr>
-                        <tr>
-                            <td>Brielle Williamson</td>
-                        </tr>
-                        <tr>
-                            <td>Herrod Chandler</td>
-                        </tr>
-                        <tr>
-                            <td>Rhona Davidson</td>
-                        </tr>
-                        <tr>
-                            <td>Colleen Hurst</td>
-                        </tr>
-                        <tr>
-                            <td>Sonya Frost</td>
-                        </tr>
-                        <tr>
-                            <td>Jena Gaines</td>
-                        </tr>
-                        <tr>
-                            <td>Quinn Flynn</td>
-                        </tr>
-                        <tr>
-                            <td>Charde Marshall</td>
-                        </tr>
-                        <tr>
-                            <td>Haley Kennedy</td>
-                        </tr>
-                        <tr>
-                            <td>Tatyana Fitzpatrick</td>
-                        </tr>
-                        <tr>
-                            <td>Michael Silva</td>
-                        </tr>
-                        <tr>
-                            <td>Paul Byrd</td>
-                        </tr>
-                        <tr>
-                            <td>Gloria Little</td>
-                        </tr>
-                        <tr>
-                            <td>Bradley Greer</td>
-                        </tr>
-                        <tr>
-                            <td>Dai Rios</td>
-                        </tr>
-                        <tr>
-                            <td>Jenette Caldwell</td>
-                        </tr>
-                        <tr>
-                            <td>Jenette Caldwell</td>
-                        </tr>
-                        <tr>
-                            <td>Jenette Caldwell</td>
-                        </tr>
-                        <tr>
-                            <td>Jenette Caldwell</td>
-                        </tr>
-                        <tr>
-                            <td>Jenette Caldwell</td>
-                        </tr>
-                        <tr>
-                            <td>Jenette Caldwell</td>
-                        </tr>
+                        @endforeach
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th>Name</th>
+                            <th>Nom complet</th>
+                            <th>Type</th>
                         </tr>
                     </tfoot>
-                </table>
+                </table><br>
             </div>
         </div>
 
@@ -228,12 +129,12 @@
 <div class="card card-profile-feed">
             <div class="card-header card-header-action">
                 <div class="media align-items-center">
-        
+
                     <div class="media-body">
                         <div class="text-capitalize font-weight-500 text-dark">Opérration</div>
                     </div>
                 </div>
-        
+
             </div>
             <div class="row text-center">
                 <div class="col-4 border-right pr-0">
@@ -255,18 +156,18 @@
                     </div>
                 </div>
             </div>
-        
+
         </div>
-        
+
         <div class="card card-profile-feed">
             <div class="card-header card-header-action">
                 <div class="media align-items-center">
-        
+
                     <div class="media-body">
                         <div class="text-capitalize font-weight-500 text-dark">Formation</div>
                     </div>
                 </div>
-        
+
             </div>
             <div class="row text-center">
                 <div class="col-6 border-right pr-0">
@@ -282,7 +183,7 @@
                     </div>
                 </div>
             </div>
-        
+
         </div>
     </div>
 </div>

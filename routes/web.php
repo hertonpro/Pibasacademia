@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use phpDocumentor\Reflection\Types\Resource_;
 use RealRashid\SweetAlert\Facades\Alert;
 
 /*
@@ -21,16 +22,15 @@ Route::get('/', function () {
      return view('home');
 
 });
-
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-
-
-
+Route::get('/formation/{formation}', 'HomeController@formation')->name('newUser');
+Route::get('forma/{formation}', 'HomeController@formation');
+Route::get('formatio', 'HomeController@formatio');
 Route::post('/newUser', 'AdminController@create')->name('newUser');
 Route::get('/newUser', 'AdminController@newUser');
-
 Route::resource('/board', 'Admin\BoardController');
+Route::resource('profiles', 'ProfilController');
 
 
 
@@ -46,18 +46,9 @@ Route::get('/contact/{contact}', 'ContactController@show');
 Route::get('/contact/{contact}/edit', 'ContactController@edit');
 Route::patch('/contact/{contact}', 'ContactController@update');
 
+ Route::get('article/{article}', 'HomeController@article');
 
-
-
-
- // route Articles
- Route::post('/articles', 'ArticlesController@store');
- Route::get('/articles', 'ArticlesController@index');
- Route::get('/articles/create', 'ArticlesController@create');
- Route::post('/articles/update{article}', 'ArticlesController@update');
- Route::get('/articles/delete/{article}', 'ArticlesController@destroy');
-// route faq
-
+Route::resource('articles', 'ArticlesController');
 
 
 
@@ -92,7 +83,7 @@ Route::resource('suivres', 'SuivreController');
 
 // Route::get('aproposs/{aproposs}','AproposController@update' );
 //description faq  c'est a dire les grandes ligne de faq le menu de faq
-//Route::resource('descfaqs', 'DescFaqController');
+Route::resource('descfaqs', 'DescFaqController');
 
 Route::resource('users', 'Admin\UsersController');
 Route::resource('/admin/clients', 'Admin\ClientsController');

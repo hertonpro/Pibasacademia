@@ -9,9 +9,14 @@
     <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
     <!--bootstrap -->
     <link   href="{{  asset('outils\frontOffice\css\bootstrap.min.css') }}">
+    <link href="{{  asset('vendors/lightgallery/dist/css/lightgallery.min.css" rel="stylesheet" type="text/css') }}">
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+	<link href="{{  asset('vendors/dropzone/dist/dropzone.css') }}" rel="stylesheet" type="text/css"/>
+
+	<!-- Bootstrap Dropzone CSS -->
+	<link href="{{  asset('vendors/dropify/dist/css/dropify.min.css') }}" rel="stylesheet" type="text/css"/>
 
     <!-- Toggles CSS -->
     <link href="{{  asset('vendors/jquery-toggles/css/toggles.css') }}" rel="stylesheet" type="text/css">
@@ -45,7 +50,7 @@
 <link href="{{ asset('vendors/jquery-toast-plugin/dist/jquery.toast.min.css')}}" rel="stylesheet" type="text/css">
 
 <!-- Custom CSS -->
-<link href="{{ asset('dist/css/style.css" rel="stylesheet')}}" type="text/css">
+<link href="{{ asset('dist/css/style.css')}}" rel="stylesheet" type="text/css">
 </head>
 
 

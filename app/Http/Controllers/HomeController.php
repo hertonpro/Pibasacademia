@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers;
 
-
+use App\articles;
+use App\Coursmodel;
+use App\descfaqmodel;
+use App\faqmodel;
+use App\formationM;
+use App\formationModel;
+use App\Lienscoursmodel;
+use App\SuivreModel;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -20,7 +27,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-         // $this->middleware('auth');
+         $this->middleware('auth');
     }
 
     /**
@@ -42,9 +49,28 @@ class HomeController extends Controller
         return view('faq',compact('faqe','categorie'));
 
     }
-    
+
     public function blog(){
-        return view('blog');
+        $articlesRECENT=articles::orderBy('created_at', 'desc')->limit(5)-> get();
+        $formations=formationM::orderBy('created_at', 'desc')->limit(5)-> get();
+        $suivre=SuivreModel::all();
+        $coursid=Coursmodel::all();
+        $images=articles::all();
+        $articles=articles::orderBy('created_at', 'desc')->get();
+        $liens=Lienscoursmodel::all();
+
+        return view('blog',compact('coursid','suivre','articles','liens','articlesRECENT','images','formations'));
+
+    }
+    public function article ($id){
+
+        $suivre=articles::all();
+        $coursid=Coursmodel::all();
+        $articles=articles::findOrFail($id);
+        $liens=Lienscoursmodel::all();
+        $articlesRECENT=articles::orderBy('created_at', 'desc')->limit(6)->get();
+
+        return view('article',compact('coursid','suivre','articles','liens','articlesRECENT'));
 
     }
     public function contact(){
@@ -53,6 +79,25 @@ class HomeController extends Controller
    /* public function login(){
         return view('auth/login');
     }*/
-   
+    public function formation($formation_id){
+        $countclients = User::all();
+        $suivre=SuivreModel::all();
+        $coursid=Coursmodel::where('formation', $formation_id)->get();
+        $articles=articles::all();
+        $articlesRECENT=articles::orderBy('created_at', 'desc')->limit(6)->get();
+        $liens=Lienscoursmodel::where('cours', $formation_id)->get();
+        $formations=formationM::where('formation_id', $formation_id)->firstOrfail();
+        return view('system\formation',compact('countclients','formations','coursid','articlesRECENT','suivre','articles','liens'));
+    }
+    public function formatio()
+    {
+        $countclients = User::all();
+        $cours=Coursmodel::all();
+        $formations=formationM::all();
+        $suivre=SuivreModel::all();
+        $articlesRECENT=articles::orderBy('created_at', 'desc')->limit(6)->get();
+        return view('system\formations',compact('countclients','formations','articlesRECENT','cours','suivre'));
+    }
+
 }
 

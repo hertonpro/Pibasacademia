@@ -46,9 +46,19 @@
 
                         @foreach($courss as $courss)
                         <tr>
+                            @php
+                                $courss->formation_id;
+
+                            @endphp
+
                             <td>{{$i++}}</td>
-                           <td>{{$courss->titre}}</td>
-                            <td>{{$courss->resume}}</td>
+                           <td>{{$courss->datecours}}</td>
+                            <td>@foreach ($formations as $itemfon)
+                                @if ($itemfon->formation_id==$courss->formation)
+                                {{$itemfon->titre}}
+                                @endif
+                            @endforeach
+                                {{$courss->resume}}</td>
                             <td class="text-center">
                                 <a href="{{ route('courss.edit', $courss->cours_id)}}" class="btn btn-primary btn-sm">Edit</a>
                                 <form action="{{ route('courss.destroy',  $courss->cours_id )}}" method="post" style="display: inline-block">

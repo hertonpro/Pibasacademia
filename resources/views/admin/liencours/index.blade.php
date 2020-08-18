@@ -28,9 +28,8 @@
                                         </div><br />
                                         @endif
                                     </div>
-                            <div class="table-wrap">
-                    <table id="datable_3" class="table table-hover w-100 display dataTable no-footer dtr-inline" role="grid" style="width: 1040px;">
-                {{--  <table id="datable_1" class="table table-striped  w-100 display pb-30">  --}}
+                            <div class="table">
+                    <table id="" class="tabl    e table-hover" >
                     <thead>
                         <tr class="table-warning">
                         <td>N°</td>
@@ -39,18 +38,22 @@
                         <td class="text-center">Action</td>
                         </tr>
                     </thead>
-                    <tbody>                        @php
+                    <tbody>               @php
                         $i=1;
                     @endphp
 
                         @foreach($liencours as $liencours)
                         <tr>
                             <td>{{$i++}}</td>
-                           <td>{{$liencours->cours}}</td>
+                               @foreach ($formation as $item)
+                                @if ($item->formation_id==$liencours->cours)
+                                <td>{{$item->titre}}</td>
+                                @endif
+                             @endforeach
                             <td>{{$liencours->link}}</td>
                             <td class="text-center">
                                 <a href="{{ route('liencours.edit', $liencours->liencours_id)}}" class="btn btn-primary btn-sm">Edit</a>
-                                <form action="{{ route('liencours.destroy',  $liencours->liencours_id )}}" method="post" style="display: inline-block">
+                                <form action="{{ URL('liencours/destroy/'.  $liencours->liencours_id )}}" method="post" style="display: inline-block">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger btn-sm" type="submit">Delete</button>

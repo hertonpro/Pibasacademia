@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Coursmodel;
+use App\formationM;
 use App\Lienscoursmodel;
 use Illuminate\Http\Request;
 
@@ -15,8 +16,9 @@ class LienscoursController extends Controller
      */
     public function index()
     {
-        $liencours = Coursmodel::all();
-        return view('admin/liencours/index', compact('liencours'));
+        $liencours =Lienscoursmodel::all();
+        $formation=formationM::all();
+        return view('admin/liencours/index', compact('liencours','formation'));
     }
 
     /**
@@ -26,7 +28,7 @@ class LienscoursController extends Controller
      */
     public function create()
     {
-        $lien = Coursmodel::all();
+        $lien = formationM::all();
         return view('admin/liencours/create', compact('lien'));
     }
 
@@ -39,8 +41,8 @@ class LienscoursController extends Controller
     public function store(Request $request)
     {
         $storeData = $request->validate([
-            'cours' => 'required|max:255',
-            'link' => 'required|max:3',
+            'cours' => 'required|max:3',
+            'link' => 'required|max:10000',
 
         ]);
         $student = Lienscoursmodel::create($storeData);
@@ -67,8 +69,9 @@ class LienscoursController extends Controller
      */
     public function edit($liencours_id)
     {
-        $formation = Lienscoursmodel::findOrFail($liencours_id);
-        return view('admin/liencours/update', compact('formation'));
+        $formation = formationM::all();
+        $lien = Lienscoursmodel::where('liencours_id',$liencours_id)->firstOrfail();;
+        return view('admin/liencours/update', compact('formation','lien'));
     }
 
     /**
@@ -81,10 +84,10 @@ class LienscoursController extends Controller
     public function update(Request $request, $liencours_id)
     {
         $updateData = $request->validate([
-            'cours' => 'required|max:255',
-            'link' => 'required|max:3',
+            'cours' => 'required|max:3',
+            'link' => 'required|max:1255',
         ]);
-        Lienscoursmodel::whereId($liencours_id)->update($updateData);
+        Lienscoursmodel::where('liencours_id',$liencours_id)->update($updateData);
         return redirect('/liencours')->with('completed', 'Student has been updated');
     }
 
@@ -94,12 +97,7 @@ class LienscoursController extends Controller
      * @param  int  $liencours_id
      * @return \Illuminate\Http\Response
      */
-    public function update2( $liencours_id)
-    {
-        // $updateData = $request('mame','deleted');
-        // Lienscoursmodel::whereId($liencours_id)->update($updateData);
-        return redirect('/liencours')->with('completed', 'Student has been updated');
-    }
+
     public function destroy($liencours_id)
     {
 

@@ -55,13 +55,9 @@ class ArticlesController extends Controller
             'img' => ['required','image'],
             'content' => 'required'
         ]);
-
-         //dd($request('img'));
         $img = request('img')->store('articlesImg','public');
 
-        //$image = Image::make(public_path("storage/{$img}"))->fit(1200,700);
-        //$img->save();
-       
+
         $student = articles::create([
 
             'titre' => $data['titre'],
@@ -92,7 +88,9 @@ class ArticlesController extends Controller
      */
     public function edit($id)
     {
-        //
+        // $blogs = aproposmodel::findOrFail($apropos_id);
+        $articles = articles::where('id', $id)->firstOrfail();
+        return view('admin/articles/update', compact('articles'));
     }
 
     /**
@@ -104,7 +102,24 @@ class ArticlesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = request()->validate([
+            'titre' => ['required','max:255'],
+            'img' => ['required','image'],
+            'content' => 'required'
+        ]);
+        $img = request('img')->store('articlesImg','public');
+
+
+        $student = articles::
+        create([
+
+            'titre' => $data['titre'],
+            'img' => $img,
+            'content' => $data['content']
+
+        ]);
+
+        return redirect('/articles')->with('completed', 'article has been saved!');
     }
 
     /**
@@ -117,7 +132,7 @@ class ArticlesController extends Controller
     {
          $articles = articles::findOrFail($id);
          $articles->delete();
-        
+
 
         return redirect('/articles')->with('completed', 'article has been deleted');
     }

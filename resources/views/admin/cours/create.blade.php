@@ -38,7 +38,7 @@
                                                          choisir le Formateur
                                                      </option>
                                                     @foreach ($users as $itemuser)
-                                                      <option value="{{ $itemuser->id}}">{{ $item->name}}</option>
+                                                      <option value="{{ $itemuser->id}}">{{ $itemuser->name}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
