@@ -65,6 +65,42 @@
                 <p class="card-text">{{$formations->resume}}</p>
             </div>
         </div>
+        <div class="card justify-content-between">
+            <div class=" card">
+                <div class="card-title">
+                    <h3 class="text-center">Liste de cours prevues</h3>
+                </div>
+                    <div class="card-body">
+                        <div class="hk-row">
+                        @foreach ($coursid as $cours)
+                           @php
+                                $datetime1 = date_create(substr($cours->datecours, 1,8));
+                            $datetime2 = date_create(substr($cours->datecours, 12, 20));
+                            $datetime3 = date_create(substr(now(),1,8));
+                            $interval = date_diff($datetime1, $datetime2);
+                            $interval2=date_diff($datetime1,$datetime3);
+                            $interval3=date_diff($datetime2,$datetime3);
+                           @endphp
+
+                            <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4  ">
+                                <a href=""><i class="ion ion-md-heart text-primary"></i> {{$suivre->count()}} Personnes</a>
+                            </div>
+                            <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4  ">
+                                <span class="badge badge-primary  badge-sm">Debut le {{substr($cours->datecours, 1,8)}}</span>
+                                <span class="badge badge-danger  badge-sm">Fin le 7878 {{substr($cours->datecours, 12, 20)}}</span>
+
+                            </div>
+                            <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4  ">
+                                <span class="badge badge-soft-info btn btn-sm btn btn-gradient-danger pull-right">suivre</span>
+                            </div><hr>
+                        @endforeach
+
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
         <div class="card">
 
 
@@ -90,22 +126,56 @@
                         @foreach ($coursid as $cours)
                         <tr>
                             <td>{{$i++}}</td>
-                        <td>{{ Str::substr($cours->datecours, 1, 10) }}</td>
-                        <td>{{ Str::substr($cours->datecours, 12, 22) }}</td>
+                            <td>{{ Str::substr($cours->datecours, 1, 10) }}</td>
+                            <td>{{ Str::substr($cours->datecours, 12, 22) }}</td>
                             <td>
                                 <div class="progress-wrap lb-side-left mnw-125p">
-                                    <div class="progress-lb-wrap">
-                                        <label class="progress-label mnw-25p">95%</label>
-                                        <div class="progress progress-bar-xs">
-                                            <div class="progress-bar bg-success w-95" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
+                                    <div class="progress-lb-wrap">@php
+                                        $datetime1 = date_create(substr($cours->datecours, 1,8));
+                                        $datetime2 = date_create(substr($cours->datecours, 12, 20));
+                                        $datetime3 = date_create(substr(now(),1,8));
+                                        $interval = date_diff($datetime1, $datetime2);
+                                        $interval2=date_diff($datetime1,$datetime3);
+                                        $interval3=date_diff($datetime2,$datetime3);
+                                        
+                                    @endphp
+                                        @if ($datetime1==date('Y/m/d'))
+                                            <label class="progress-label mnw-25p">95%</label>
+                                            <div class="progress progress-bar-xs">
+                                                <div class="progress-bar bg-success w-95" role="progressbar"
+                                                aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        @elseif($datetime2<=date('Y/m/d'))
+                                            <label class="progress-label mnw-25p">100%</label>
+                                            <div class="progress progress-bar-xs">
+                                                <div class="progress-bar bg-success w-100" role="progressbar"
+                                                aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        @elseif($datetime1==date('Y/m/d'))
+                                        @endif
                                     </div>
                                 </div>
                             </td>
-                            <td><span class="badge badge-soft-success">Completed</span></td>
-                            <td><span class="badge badge-soft-info btn btn-sm btn btn-gradient-danger">suivre</span></td>
+                            <td><span class="badge badge-soft-success">
+                               @if ($suivre->count()>=50)
+                                saturé
+                               @else
+                                non saturé
+                               @endif
+                            </span></td>
+                            <td>
+                                @if ($suivre->count()>=50)
+                                <span class="badge badge-soft-info btn btn-sm btn btn-gradient-info">suivre</span>
+                                @else
+                                    @foreach($suivre as $suivre)
+                                        @if ($suivre->user_id==Auth::user()->id)
+                                        <span class="badge badge-soft-info btn btn-sm btn btn-gradient-danger">suivre</span>
+                                        @endif
+                                    @endforeach
+                                @endif
+                            </td>
                         </tr>
-                        @endforeach
+                    @endforeach
                     </tbody>
                 </table>
             </div>
@@ -157,6 +227,28 @@
             </div>
         </div>
     </div>
+    <section class="hk-sec-wrapper">
+    <h5 class="hk-sec-title">Lecture     <svg xmlns="http://www.w3.org/2000/svg" width="34" class="pull-right" height="24" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right">
+        <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19">{{$liens->count()}}</polyline></svg></h5>
+        <p class="mb-25">
+            PiBas Academia vous propose ces {{$liens->count()}} liens pour lápproffondissement de vous capacités.<br> les voici :
+        </p>
+        <div class="row">
+            <div class="col-sm">
+                <div class="dd" id="nestable2">
+                    <ol class="dd-list">
+                        @foreach ($liens as $itemitem)
+                        <li class="dd-item dd3-item" data-id="13">
+                            <div class="dd-handle dd3-handle"><i class="pe-7s-helm"></i></div>
+                            <div class="dd3-content"> {{$itemitem->link}} </div>
+                        </li>
+                        @endforeach
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="hk-sec-wrapper hk-gallery-wrap" id="gallerie">
         <div class="hk-pg-header">
             <h4 class="hk-pg-title"><span class="pg-title-icon">
@@ -169,26 +261,12 @@
                             </polyline><polyline points="2 12 12 17 22 12"></polyline></svg></span></span>
                             Articles</h4>
         </div>
-        <ul class="nav nav-light nav-tabs" role="tablist">
-            <li class="nav-item">
-                <a href="#" class="nav-link active">Library</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Photos</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Video</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Album</a>
-            </li>
-        </ul>
+
         <div class="tab-content">
             <div class="tab-pane fade show active" role="tabpanel">
-                <h6 class="mt-30 mb-20">22 October</h6>
                 <div class="row hk-gallery">
                     @foreach ($articles as $item)
-                    <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10" data-src="dist/img/gallery/mock1.jpg">
+                    <div class="col-lg-2 col-md-4 col-sm-4 col-6 " data-src="{{ asset('storage/'.$item->img) }}">
                         <a href="#" class="">
                             <div class="gallery-img" style="background-image:url('{{ asset('storage/'.$item->img) }} ');"
                                  style="background-size:cover ">
@@ -198,39 +276,7 @@
                     @endforeach
 
                 </div>
-                <h6 class="mt-30 mb-20">Yesterday</h6>
-                <div class="row hk-gallery">
-                    <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10" data-src="dist/img/gallery/mock11.jpg">
-                        <a href="#" class="">
-                            <div class="gallery-img" style="background-image:url('dist/img/gallery/mock11.jpg');">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10" data-src="http://www.youtube.com/watch?v=Pq9yPrLWMyU" data-poster="dist/img/gallery/mock2.jpg">
-                        <a href="#" class="">
-                            <div class="gallery-img" style="background-image:url('dist/img/gallery/mock12.jpg');">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10" data-src="dist/img/gallery/mock13.jpg">
-                        <a href="#" class="">
-                            <div class="gallery-img" style="background-image:url('dist/img/gallery/mock13.jpg');">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10" data-src="http://vimeo.com/1084537" data-poster="dist/img/gallery/mock4.jpg">
-                        <a href="#" class="">
-                            <div class="gallery-img" style="background-image:url('dist/img/gallery/mock14.jpg');">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-10" data-src="dist/img/gallery/mock15.jpg">
-                        <a href="#" class="">
-                            <div class="gallery-img" style="background-image:url('dist/img/gallery/mock15.jpg');">
-                            </div>
-                        </a>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -263,7 +309,7 @@
                 <div class="col-4 pl-0">
                     <div class="pa-15">
                         <span class="d-block display-6 text-dark mb-5">{{$articles->count()}}</span>
-                        <span class="d-block text-capitalize font-14">Articles</span>
+                        <span class="d-block text-capitalize font-14">Articles uesv</span>
                     </div>
                 </div>
             </div>
@@ -296,7 +342,37 @@
             </div>
 
         </div>
+        <div class="card card-profile-feed">
+            <div class="card-header card-header-action">
+                <h6>Derniers articles</h6>
+                <div class="d-flex align-items-center card-action-wrap">
+                    <div class="inline-block dropdown">
+                        <a class="dropdown-toggle no-caret" data-toggle="dropdown" href="#" aria-expanded="false"
+                            role="button"><i class="ion ion-ios-more"></i></a>
+                    </div>
+                </div>
+            </div>
+            <ul class="list-group list-group-flush">
+                @foreach ($articlesRECENT as $itemrecent)
+                <li class="list-group-item border-0">
+                    <div class="media align-items-center">
+                        <div class="d-flex media-img-wrap mr-15">
+                            <div class="avatar avatar-sm">
+                                <img src="{{ asset('storage/'.$itemrecent->img) }}" alt="user" class="avatar-img rounded-circle">
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <a href="{{url('article', $itemrecent->id)}}">
+                                <span class="d-block text-dark text-capitalize">{{  substr($itemrecent->titre, 1,15).'...'  }}</span>
+                            </a>
+                            <span class="d-block font-13">{{  substr($itemrecent->titre, 1,20).'...'  }}</span>
+                        </div>
+                    </div>
+                </li>
+                @endforeach
+            </ul>
+        </div>
+        </div>
+        </div>
 
-    </div>
-</div><!-- contents -->
 @endsection

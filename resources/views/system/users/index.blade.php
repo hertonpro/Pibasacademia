@@ -19,6 +19,7 @@
 									class="avatar-img rounded-circle">
 							</a>
 						</div>
+
 					</div>
 					<div class="media-body">
 						<div class="text-white text-capitalize display-6 mb-5 font-weight-400">
@@ -149,29 +150,34 @@
 
 <!-- contents -->
 @endsection
-<!-- Modal forms-->
-<div class="modal fade" id="exampleModalForms" tabindex="-1" role="dialog" aria-labelledby="exampleModalForms"
-	aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title">Modiere image profil</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">×</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<section class="hk-sec-wrapper">
-					<h5 class="hk-sec-title">Dropify</h5>
-					<p class="mb-40">Override your input files with style. Find more options <a
-							href="http://jeremyfagis.github.io/dropify/" target="_blank">here</a>.</p>
-					<div class="row">
-						<div class="col-sm">
-							<input type="file" id="input-file-now" class="dropify" />
-						</div>
-					</div>
-				</section>
-			</div>
-		</div>
-	</div>
+
+ <!-- Modal forms-->
+ <div class="modal fade" id="exampleModalForms"
+    tabindex="-1" role="dialog" aria-labelledby="exampleModalForms" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modiere image profil</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <section class="hk-sec-wrapper">
+                    <form action="">
+                        <h5 class="hk-sec-title">{{Auth::user()->name1.' '.Auth::user()->name2}}</h5>
+                        <p class="mb-40">Modifier la photo du profil.</p>
+                        <div  class="row">
+                                <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                                    <input type="file" id="input-file-now" class="dropify" />
+                                </div>
+                                <div class="col-sm">
+                                <button type="submit" class="btn btn-btn-success pull-right">Modifier </button>
+                                </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\retraits;
+use App\formationM;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,8 @@ class BoardController extends Controller
     {
         $retraits = retraits::where('statu', 0)->get();
         $retraits1 = retraits::where('statu', 1)->get();
-        return view('system/board', compact('retraits','retraits1'));
+        $formations  = formationM::all();
+        return view('system/board',compact('formations','retraits','retraits1'));
     }
 }
 
