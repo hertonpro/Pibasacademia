@@ -124,9 +124,10 @@
                                         <option value="1">Super User</option>
                                         <option value="2">Admin</option>
                                         <option value="3">Associe</option>
+                                        <option value="4">Formateur</option>
 
-                                        @else if(Auth::user()->role == 2)
-                                        <option value="3">Associe</option>
+                                        @elseif(Auth::user()->role == 2)
+                                        <option value="4">Formateur</option>
 
                                         @endif
 

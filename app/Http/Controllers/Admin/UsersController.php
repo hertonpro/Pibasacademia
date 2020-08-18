@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\retraits;
 use App\admin;
 use App\formationM;
 use App\User;
@@ -23,11 +24,16 @@ use Illuminate\Support\Facades\Validator;
 class UsersController extends Controller
 {
 
-
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->middleware('auth');
     }
+    
     /**
      * Display a listing of the resource.
      *
@@ -39,7 +45,7 @@ class UsersController extends Controller
         $formations=formationM::all();
         $countclients = User::where('role',0);
         $countclien=Lienscoursmodel::all();
-        return view('system/users/index',compact('countclients','formations','countclien'));
+        return view('system/users/index',compact('countclients','formations','countclien'));    
     }
 
     /**
@@ -121,6 +127,7 @@ class UsersController extends Controller
 
             if(User::where('pin', request('parrain'))->exists()){
 
+        $retraits = retraits::where('statu', 0);
                 $dd = User::where('pin', request('parrain'))->firstOrfail();
 
                 $montant = $dd->montant + 10;

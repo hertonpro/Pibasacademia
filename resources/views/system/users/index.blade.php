@@ -12,11 +12,14 @@
 				<div class="media align-items-center">
 					<div class="media-img-wrap  d-flex">
 						<div class="avatar">
-							<img src="{{asset('dist/img/avatar12.jpg') }}" alt="user" class="avatar-img rounded-circle">
-                                {{-- <img class="card-img-top d-block" src="dist/img/gallery/mock12.jpg" alt="Card image cap"> --}}
-                                <a href="#exampleModalForms" data-toggle="modal" data-target="#exampleModalForms" class="btn btn-dark btn-wth-icon icon-wthot-bg btn-rounded btn-pg-link"><span class="icon-label">
-                                    <i class="ion ion-md-link"></i></span><span class="btn-text">profil</span></a>
-                        </div>
+
+							{{-- <img class="card-img-top d-block" src="dist/img/gallery/mock12.jpg" alt="Card image cap"> --}}
+							<a href="#exampleModalForms" data-toggle="modal" data-target="#exampleModalForms">
+								<img src="{{asset('dist/img/avatar12.jpg') }}" alt="user"
+									class="avatar-img rounded-circle">
+							</a>
+						</div>
+
 					</div>
 					<div class="media-body">
 						<div class="text-white text-capitalize display-6 mb-5 font-weight-400">
@@ -30,8 +33,7 @@
 			<div class="col-lg-6">
 				<div class="button-list">
 					<a href="#" class="btn btn-dark btn-wth-icon icon-wthot-bg btn-rounded"><span
-							class="btn-text">Message {{Auth::user()->role}}</span><span class="icon-label"><i
-								class="icon ion-md-mail"></i>
+							class="btn-text">Message 3</span><span class="icon-label"><i class="icon ion-md-mail"></i>
 						</span></a>
 				</div>
 			</div>
@@ -75,8 +77,80 @@
 	</div>
 </div>
 
+
+
+<script type="text/javascript" src="{{  asset('jquery.js')}}"></script>
+<script src="{{  asset('croppie/croppie.js')}}"></script>
+<link rel="Stylesheet" type="text/css" href="{{  asset('croppie/croppie.css')}}" />
+<script>
+    
+     var url = "{{ url('/profile') }}";
+
+    jQuery(document).ready(function(){
+
+
+      var basic = $('#image_demo').croppie({
+          viewport: {
+              width: 150,
+              height: 150,
+              type: 'square'
+          },
+          //boundary: { width: 200, height: 200 }
+      });
+
+     
+
+      $('#upload_image').on('change', function(){
+        var reader = new FileReader();
+        reader.onload = function (event){
+          basic.croppie('bind', {
+          url: event.target.result 
+          }).then(function(){
+            console.log('jQuery bind complete');
+          })
+        }
+        saveP();
+        reader.readAsDataURL(this.files[0]);
+        $('#uploadModal').modal('show');
+
+      })
+
+          function saveP(){
+/*
+            $('#saveP').on('click', function(e){
+              basic.croppie('result',{
+                size: 'original'
+              }).then(function(response){
+                
+                $.ajax({
+	                type: 'POST',
+	                url: url,
+	                dataType: 'json',
+	                
+	                data: JSON.stringify({'id_p' : $('#id_p').val(),'img':response}),
+	                success: function(data, textStatus, jqXHR){
+	                },
+	                error: function(jqXHR, textStatus, errorThrown){
+	                    alert('Erreur du systeme: ' + textStatus);
+	                    alert('Erreur du systeme: ' + textStatus);
+	                }
+	            });
+                
+              })
+            })*/
+          }
+
+    })
+         
+  </script>
+
+
+
+
+
 <!-- contents -->
 @endsection
+
  <!-- Modal forms-->
  <div class="modal fade" id="exampleModalForms"
     tabindex="-1" role="dialog" aria-labelledby="exampleModalForms" aria-hidden="true">

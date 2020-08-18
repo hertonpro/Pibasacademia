@@ -10,7 +10,7 @@
 
 <div class="row">
                     <div class="col-xl-5 pa-0">
-                        
+                        <img src="dist/img/formation.jpg" alt="formation" width="150%">
                     </div>
                     <div class="col-xl-7 pa-0">
                         <div class="auth-form-wrap py-xl-0 py-50">

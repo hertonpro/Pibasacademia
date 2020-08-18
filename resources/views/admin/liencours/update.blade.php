@@ -1,5 +1,6 @@
 @extends('layoutadmin')
 @section('content')
+
                             <p class="text-center hk-title">
                                     PiBas Marketing <br>
                                 <a href="{{ url('/liencourss/create') }}" class="btn btn-gradient-info">Ajouter</a>
@@ -11,11 +12,12 @@
                                     </div><br />
                                 @endif
 
-                                @if(session()->get('success'))
-                                    <div class="alert alert-success">
-                                    {{ session()->get('success') }}
-                                    </div><br />
-                                @endif
+@if(session()->get('success'))
+<div class="alert alert-success">
+    {{ session()->get('success') }}
+</div><br />
+@endif
+
 
                                     <div class="card-body">
                                         @if ($errors->any())

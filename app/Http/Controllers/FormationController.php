@@ -7,6 +7,16 @@ use Illuminate\Http\Request;
 
 class FormationController extends Controller
 {
+   
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $formations = formationM::all();
@@ -95,8 +105,6 @@ class FormationController extends Controller
     }
     public function destroy($formation_id)
     {
-
-
         return redirect('/formations')->with('completed', 'formation has been deleted');
     }
 }

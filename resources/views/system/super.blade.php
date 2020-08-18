@@ -44,19 +44,18 @@
 
 
         <div class="card p-2">
-            <h3 class="tiles text-center ">Les formations disponibles</h3>
+            <h3 class="tiles text-center p-3">Les formations disponibles</h3>
             <div class="hk-row">
                 @foreach ($formations as $itemform)
-                <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 card ">
+                <div class="col-md-2 col-lg-6 col-sm-6 col-xs-6 ">
                     <div id="cad-tittle">
-                        <h4>
+                        
                             <a href="{{ url('forma', $itemform->formation_id)}}">
-                            {{-- <a href="{{ route('formation', $formati->formation_id)}}"> --}}
-                                <span class="badge badge-success badge-outline mt-15 mr-10">
+                            <h4 class="text-success">
                                 {{' '.$itemform->titre}}
-                            </span>
+                            </h4>
                             </a>
-                        </h4>
+                        
                     </div>
                     <div class="card-body c">
                         <p class="card-text">
@@ -65,7 +64,7 @@
                     </div>
 
                     <a href="{{ url('forma', $itemform->formation_id)}}" class="btn btn-success btn-wth-icon icon-wthot-bg btn-rounded btn-pg-link"><span
-                            class="btn-text">Voir la formation</span></a>
+                            class="btn-text">Voir la formation</span></a><br><br>
                     <div class="card-footer justify-content-between">
                         <div>
                             <a href="#"><i class="ion ion-md-heart text-primary"></i> 30 Inscrits</a>

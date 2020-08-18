@@ -63,6 +63,7 @@
     <script src="{{  asset('vendors/datatables.net-buttons/js/buttons.print.min.js')}}"></script>
     <script src="{{  asset('vendors/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
     <script src="{{  asset('dist/js/dataTables-data.js')}}"></script>
+    <script src="{{  asset('croppie/croppie.js')}}"></script>
 <!-- Fancy Dropdown JS -->
 <script src="{{  asset('dist/js/dropdown-bootstrap-extended.js')}}"></script>
 

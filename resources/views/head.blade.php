@@ -50,6 +50,9 @@
 <link href="{{ asset('vendors/jquery-toast-plugin/dist/jquery.toast.min.css')}}" rel="stylesheet" type="text/css">
 
 <!-- Custom CSS -->
+<link href="{{ asset('dist/css/style.css" rel="stylesheet')}}" type="text/css">
+<!-- Inbox CSS -->
+<link href="{{ asset('outils/frontOffice/dist/css/inbox.css')}}" rel="stylesheet" type="text/css">
 <link href="{{ asset('dist/css/style.css')}}" rel="stylesheet" type="text/css">
 </head>
 

@@ -1,20 +1,21 @@
 @extends('layoutadmin')
 @section('content')
-                                    PiBas Marketing <br>
-                                <a href="{{ url('/liencours/create') }}" class="btn btn-gradient-info">Ajouter</a>
-                                <a href="{{ url('/liencours') }}" class="btn btn-gradient-info">Liste</a>
-                            </p>
-                                @if(session()->get('success'))
-                                    <div class="alert alert-success">
-                                    {{ session()->get('success') }}
-                                    </div><br />
-                                @endif
+<br>
+<a href="{{ url('/liencours/create') }}" class="btn btn-gradient-info">Ajouter</a>
+<a href="{{ url('/liencours') }}" class="btn btn-gradient-info">Liste</a>
+</p>
+@if(session()->get('success'))
+<div class="alert alert-success">
+    {{ session()->get('success') }}
+</div><br />
+@endif
 
-                                @if(session()->get('success'))
-                                    <div class="alert alert-success">
-                                    {{ session()->get('success') }}
-                                    </div><br />
-                                @endif
+@if(session()->get('success'))
+<div class="alert alert-success">
+    {{ session()->get('success') }}
+</div><br />
+@endif
+
 
                                     <div class="card-body">
                                         @if ($errors->any())
@@ -43,13 +44,13 @@
                                                 <input type="text" class="form-control" id="lien" name="link"/>
                                             </div>
 
-                                            <button type="submit" class="btn btn-block btn-danger">Enregister</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endsection
+    <button type="submit" class="btn btn-block btn-danger">Enregister</button>
+</form>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+@endsection

@@ -1,21 +1,21 @@
 @extends('layoutadmin')
 @section('content')
-                            <p class="text-center hk-title">
-                                    PiBas Marketing <br>
-                                <a href="{{ url('/liencours/create') }}" class="btn btn-gradient-info">Ajouter</a>
-                                <a href="{{ url('/liencours') }}" class="btn btn-gradient-info">Liste</a>
-                            </p>
-                                @if(session()->get('success'))
-                                    <div class="alert alert-success">
-                                    {{ session()->get('success') }}
-                                    </div><br />
-                                @endif
+<p class="text-center hk-title">
+    <br>
+    <a href="{{ url('/liencours/create') }}" class="btn btn-gradient-info">Ajouter</a>
+    <a href="{{ url('/liencours') }}" class="btn btn-gradient-info">Liste</a>
+</p>
+@if(session()->get('success'))
+<div class="alert alert-success">
+    {{ session()->get('success') }}
+</div><br />
+@endif
 
-                                @if(session()->get('success'))
-                                    <div class="alert alert-success">
-                                    {{ session()->get('success') }}
-                                    </div><br />
-                                @endif
+@if(session()->get('success'))
+<div class="alert alert-success">
+    {{ session()->get('success') }}
+</div><br />
+@endif
 
                                     <div class="card-body">
                                         @if ($errors->any())
@@ -59,21 +59,21 @@
                                     <button class="btn btn-danger btn-sm" type="submit">Delete</button>
                                 </form>
 
-                        </tr>
-                        @endforeach
-                    </tbody>
-                    <tfoot>
-                        <tr class="table-warning">
-                            <td>N°</td>
-                        <td>cours</td>
-                        <td>Liens</td>
-                        <td class="text-center">Action</td>
-                        </tr>
-                    </tfoot>
-                </table>
+            </tr>
+            @endforeach
+        </tbody>
+        <tfoot>
+            <tr class="table-warning">
+                <td>N°</td>
+                <td>cours</td>
+                <td>Liens</td>
+                <td class="text-center">Action</td>
+            </tr>
+        </tfoot>
+    </table>
 
-            </section>
-        </div>
-    </div>
+    </section>
 </div>
-    @endsection
+</div>
+</div>
+@endsection
