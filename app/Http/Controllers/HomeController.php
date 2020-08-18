@@ -87,11 +87,7 @@ class HomeController extends Controller
         $articlesRECENT=articles::orderBy('created_at', 'desc')->limit(6)->get();
         $liens=Lienscoursmodel::where('cours', $formation_id)->get();
         $formations=formationM::where('formation_id', $formation_id)->firstOrfail();
-<<<<<<< HEAD
-        return view('system/formation',compact('countclients','formations','coursid','articlesRECENT','suivre','articles','liens'));
-=======
-        return view('system\formation',compact('countclients','formations','coursid','articlesRECENT','suivre','articles','liens','suivref'));
->>>>>>> 9a52a21295ee34c81a59255643d1fd84ce190384
+        return view('system/formation',compact('countclients','formations','coursid','articlesRECENT','suivre','articles','liens','suivref'));
     }
     public function formatio()
     {
