@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar">
 
     <a class="navbar-brand font-weight-700" href="{{url('users')}}">
-        Pibasacademia
+        Pibasacademia <span class="text-warning">(Beta)</span>
     </a>
     <ul class="navbar-nav hk-navbar-content">
 
