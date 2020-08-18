@@ -25,10 +25,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-         $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //      $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -87,7 +87,7 @@ class HomeController extends Controller
         $articlesRECENT=articles::orderBy('created_at', 'desc')->limit(6)->get();
         $liens=Lienscoursmodel::where('cours', $formation_id)->get();
         $formations=formationM::where('formation_id', $formation_id)->firstOrfail();
-        return view('system\formation',compact('countclients','formations','coursid','articlesRECENT','suivre','articles','liens'));
+        return view('system/formation',compact('countclients','formations','coursid','articlesRECENT','suivre','articles','liens'));
     }
     public function formatio()
     {
@@ -96,7 +96,7 @@ class HomeController extends Controller
         $formations=formationM::all();
         $suivre=SuivreModel::all();
         $articlesRECENT=articles::orderBy('created_at', 'desc')->limit(6)->get();
-        return view('system\formations',compact('countclients','formations','articlesRECENT','cours','suivre'));
+        return view('system/formations',compact('countclients','formations','articlesRECENT','cours','suivre'));
     }
 
 }
