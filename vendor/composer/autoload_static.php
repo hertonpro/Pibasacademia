@@ -554,7 +554,11 @@ class ComposerStaticInitabd46ba2f5a2dd59b2721e93762f32c5
         'App\\Mherton' => __DIR__ . '/../..' . '/app/Mherton.php',
         'App\\Mord' => __DIR__ . '/../..' . '/app/Mord.php',
         'App\\Mpibas' => __DIR__ . '/../..' . '/app/Mpibas.php',
+<<<<<<< HEAD
         'App\\Pibasmodel' => __DIR__ . '/../..' . '/app/Pibasmodel.php',
+=======
+        'App\\Pibasmodel' => __DIR__ . '/../..' . '/app/Http/Middleware/Pibasmodel.php',
+>>>>>>> 9a52a21295ee34c81a59255643d1fd84ce190384
         'App\\Profile' => __DIR__ . '/../..' . '/app/Profile.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

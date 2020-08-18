@@ -40,6 +40,11 @@
                                             </select>
                                             </div>
                                             <div class="form-group">
+                                                <textarea class="form-control" name="description" id="">
+
+                                                </textarea>
+                                            </div>
+                                            <div class="form-group">
                                                 <label for="lien">Lien</label>
                                                 <input type="text" class="form-control" id="lien" name="link"/>
                                             </div>

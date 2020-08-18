@@ -85,3 +85,30 @@
  <script src="{{  asset('vendors/lightgallery/dist/js/lightgallery-all.min.js')}}"></script>
  <script src="{{  asset('dist/js/froogaloop2.min.js')}}"></script>
  <script src="{{  asset('dist/js/gallery-data.js')}}"></script>
+ <!-- Ion JavaScript -->
+ <script src="{{  asset('vendors/ion-rangeslider/js/ion.rangeSlider.min.js')}}"></script>
+ <script src="{{  asset('dist/js/rangeslider-data.js')}}"></script>
+
+ <!-- Toggles JavaScript -->
+ <script src="{{  asset('vendors/jquery-toggles/toggles.min.js')}}"></script>
+ <script src="{{  asset('dist/js/toggle-data.js')}}"></script>
+
+ <!-- Select2 JavaScript -->
+ <script src="{{  asset('vendors/select2/dist/js/select2.full.min.js')}}"></script>
+ <script src="{{  asset('dist/js/select2-data.js')}}"></script>
+
+ <!-- Bootstrap Tagsinput JavaScript -->
+ <script src="{{  asset('vendors/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js')}}"></script>
+
+ <!-- Bootstrap Input spinner JavaScript -->
+ <script src="{{  asset('vendors/bootstrap-input-spinner/src/bootstrap-input-spinner.js')}}"></script>
+ <script src="{{  asset('dist/js/inputspinner-data.js')}}"></script>
+
+ <!-- Pickr JavaScript -->
+ <script src="{{  asset('vendors/pickr-widget/dist/pickr.min.js')}}"></script>
+ <script src="{{  asset('dist/js/pickr-data.js')}}"></script>
+
+ <!-- Daterangepicker JavaScript -->
+ <script src="{{  asset('vendors/moment/min/moment.min.js')}}"></script>
+ <script src="{{  asset('vendors/daterangepicker/daterangepicker.js')}}"></script>
+ <script src="{{  asset('dist/js/daterangepicker-data.js')}}"></script>

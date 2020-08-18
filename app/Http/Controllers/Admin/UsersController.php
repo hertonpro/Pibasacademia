@@ -33,7 +33,7 @@ class UsersController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -45,7 +45,7 @@ class UsersController extends Controller
         $formations=formationM::all();
         $countclients = User::where('role',0);
         $countclien=Lienscoursmodel::all();
-        return view('system/users/index',compact('countclients','formations','countclien'));    
+        return view('system/users/index',compact('countclients','formations','countclien'));
     }
 
     /**

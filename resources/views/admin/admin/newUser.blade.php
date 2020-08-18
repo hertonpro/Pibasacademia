@@ -1,4 +1,4 @@
-@extends('layoutst')
+@extends('layzoutst')
 
 @section('content')
 
@@ -99,7 +99,7 @@
                                             </div>
                                             <select name="role" class="form-control @error('role') is-invalid @enderror" required>
                                                 <option value="">choisir role</option>
-                                                
+
                                                 @if(Auth::user()->role == 1)
                                                     <option value="1">Super User</option>
                                                     <option value="2">Admin</option>
@@ -107,11 +107,11 @@
 
                                                 @else if(Auth::user()->role == 2)
                                                     <option value="3">Associe</option>
-                                                
+
                                                 @endif
-                                                
+
                                                 <option value="0">Client</option>
-                                                
+
                                             </select>
                                             @error('role')
                                                 <span class="invalid-feedback" role="alert">

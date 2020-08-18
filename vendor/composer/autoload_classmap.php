@@ -69,7 +69,11 @@ return array(
     'App\\Mherton' => $baseDir . '/app/Mherton.php',
     'App\\Mord' => $baseDir . '/app/Mord.php',
     'App\\Mpibas' => $baseDir . '/app/Mpibas.php',
+<<<<<<< HEAD
     'App\\Pibasmodel' => $baseDir . '/app/Pibasmodel.php',
+=======
+    'App\\Pibasmodel' => $baseDir . '/app/Http/Middleware/Pibasmodel.php',
+>>>>>>> 9a52a21295ee34c81a59255643d1fd84ce190384
     'App\\Profile' => $baseDir . '/app/Profile.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

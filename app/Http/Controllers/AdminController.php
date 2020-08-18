@@ -22,10 +22,10 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
         $this->middleware('ajax', ['only' => 'profile']);
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -41,7 +41,7 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-  
+
 
    /**
      * Get a validator for an incoming registration request.
@@ -82,7 +82,7 @@ class AdminController extends Controller
        if(request('parrain') == 'PBHR-001-DT' || User::where('pin', request('parrain'))->exists()){
             $parrain = request('parrain');
        }else{
-            return redirect('/newUser')->with('Erreur', 'article has not been saved!'); 
+            return redirect('/newUser')->with('Erreur', 'article has not been saved!');
        }
         $hh = User::create([
             'name1' => $data['name1'],
@@ -118,7 +118,7 @@ class AdminController extends Controller
 
         //$image = Image::make(public_path("storage/{$img}"))->fit(1200,700);
         //$img->save();
-       
+
         profile::create([
 
             'user_id' => $data['id_p'],
