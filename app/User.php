@@ -40,7 +40,12 @@ class User extends Authenticatable
 
     public function profile(){
 
+<<<<<<< HEAD
         return $this->hasOne('App\Profile');}
+=======
+        return $this->hasOne('App\Profile');
+    }
+>>>>>>> 203a77e0e5be32169dcea8cbb633fc69c9493b5d
     public function profil(){
         return $this->hasOne('App\profilModel2');
 
