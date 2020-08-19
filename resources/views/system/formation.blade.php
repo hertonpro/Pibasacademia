@@ -82,47 +82,6 @@
                                     $interval3=date_diff($datetime2,$datetime3);
                                     @endphp
 
-                                    <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4  ">
-                                        <a href=""><i class="ion ion-md-heart text-primary"></i> {{$suivre->count()}}
-                                            Personnes</a>
-                                    </div>
-                                    <div class="media-body">
-                                        <div class="text-white text-capitalize display-6 mb-5 font-weight-400">
-                                            {{Auth::user()->name1.' '.Auth::user()->name2}}</div>
-                                        <div class="font-14 text-white"><span class="mr-5"><span
-                                                    class="font-weight-500 pr-5">Matricule</span><span
-                                                    class="mr-5">{{Auth::user()->pin}}</span></span></div>
-                                    </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="button-list">
-                                    <a href="#" class="btn btn-dark btn-wth-icon icon-wthot-bg btn-rounded"><span
-                                            class="btn-text">Message {{Auth::user()->role}}</span><span
-                                            class="icon-label"><i class="icon ion-md-mail"></i>
-                                        </span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white shadow-bottom">
-                    <div class="container">
-                        <ul class="nav nav-light nav-tabs" id="resume" role="tablist">
-                            <li class="nav-item">
-                                <a href="#resume" class="d-flex h-60p align-items-center nav-link">Résumé</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="d-flex h-60p align-items-center nav-link">Formation</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#upline" class="d-flex h-60p align-items-center nav-link">Upline</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
                 <div class="tab-content mt-sm-60 mt-30">
                     <div class="tab-pane fade show active" role="tabpanel">
                         <div class="container">
