@@ -25,10 +25,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-         $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //      $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -51,7 +51,25 @@ class HomeController extends Controller
     }
 
     public function blog(){
-        return view('blog');
+        $articlesRECENT=articles::orderBy('created_at', 'desc')->limit(5)-> get();
+        $formations=formationM::orderBy('created_at', 'desc')->limit(5)-> get();
+        $suivre=SuivreModel::all();
+        $coursid=Coursmodel::all();
+        $images=articles::all();
+        $articles=articles::orderBy('created_at', 'desc')->get();
+        $liens=Lienscoursmodel::all();
+
+        return view('blog',compact('coursid','suivre','articles','liens','articlesRECENT','images','formations'));
+
+    }
+    public function article ($id){
+
+        $suivre=articles::all();
+        $coursid=Coursmodel::all();
+        $articles=articles::findOrFail($id);
+        $liens=Lienscoursmodel::all();
+        $articlesRECENT=articles::orderBy('created_at', 'desc')->limit(6)->get();
+        return view('article',compact('coursid','suivre','articles','liens','articlesRECENT'));
 
     }
     public function contact(){
@@ -62,13 +80,14 @@ class HomeController extends Controller
     }*/
     public function formation($formation_id){
         $countclients = User::all();
-        // $cours=Coursmodel::all();
         $suivre=SuivreModel::all();
-        $coursid=Coursmodel::all();
+        $suivref=SuivreModel::where('cours_id', $formation_id)->get();
+        $coursid=Coursmodel::where('formation', $formation_id)->get();
         $articles=articles::all();
-        $liens=Lienscoursmodel::all();
+        $articlesRECENT=articles::orderBy('created_at', 'desc')->limit(6)->get();
+        $liens=Lienscoursmodel::where('cours', $formation_id)->get();
         $formations=formationM::where('formation_id', $formation_id)->firstOrfail();
-        return view('system/formation',compact('countclients','formations','coursid','suivre','articles','liens'));
+        return view('system/formation',compact('countclients','formations','coursid','articlesRECENT','suivre','articles','liens','suivref'));
     }
     public function formatio()
     {
@@ -76,7 +95,8 @@ class HomeController extends Controller
         $cours=Coursmodel::all();
         $formations=formationM::all();
         $suivre=SuivreModel::all();
-        return view('system/formations',compact('countclients','formations','cours','suivre'));
+        $articlesRECENT=articles::orderBy('created_at', 'desc')->limit(6)->get();
+        return view('system/formations',compact('countclients','formations','articlesRECENT','cours','suivre'));
     }
 
 }

@@ -40,7 +40,7 @@ class FormationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    { 
         $storeData = $request->validate([
             'titre' => 'required|max:255',
             'resume' => 'required|max:1255',

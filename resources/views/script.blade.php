@@ -5,17 +5,11 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="{{  asset('vendors/popper.js/dist/umd/popper.min.js')}}"></script>
     <script src="{{  asset('vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-
-    <!-- Slimscroll JavaScript -->
-    <script src="{{  asset('dist/js/jquery.slimscroll.js')}}"></script>
   <!-- Tinymce JavaScript -->
   <script src="{{  asset('vendors/tinymce/tinymce.min.js')}}"></script>
 
   <!-- Tinymce Wysuhtml5 Init JavaScript -->
   <script src="{{  asset('dist/js/tinymce-data.js')}}"></script>
-
-    <!-- Fancy Dropdown JS -->
-    <script src="{{  asset('dist/js/dropdown-bootstrap-extended.js')}}"></script>
 
     <!-- FeatherIcons JavaScript -->
     <script src="{{  asset('dist/js/feather.min.js')}}"></script>
@@ -70,3 +64,51 @@
     <script src="{{  asset('vendors/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
     <script src="{{  asset('dist/js/dataTables-data.js')}}"></script>
     <script src="{{  asset('croppie/croppie.js')}}"></script>
+<!-- Fancy Dropdown JS -->
+<script src="{{  asset('dist/js/dropdown-bootstrap-extended.js')}}"></script>
+
+<!-- Dropzone JavaScript -->
+<script src="{{  asset('vendors/dropzone/dist/dropzone.js')}}"></script>
+
+<!-- Dropify JavaScript -->
+<script src="{{  asset('vendors/dropify/dist/js/dropify.min.js')}}"></script>
+
+<!-- Form Flie Upload Data JavaScript -->
+<script src="{{  asset('dist/js/form-file-upload-data.js')}}"></script>
+ <!-- Slimscroll JavaScript -->
+ <script src="{{  asset('dist/js/jquery.slimscroll.js')}}"></script>
+
+ <!-- Fancy Dropdown JS -->
+ <script src="{{  asset('dist/js/dropdown-bootstrap-extended.js')}}"></script>
+
+ <!-- Gallery JavaScript -->
+ <script src="{{  asset('vendors/lightgallery/dist/js/lightgallery-all.min.js')}}"></script>
+ <script src="{{  asset('dist/js/froogaloop2.min.js')}}"></script>
+ <script src="{{  asset('dist/js/gallery-data.js')}}"></script>
+ <!-- Ion JavaScript -->
+ <script src="{{  asset('vendors/ion-rangeslider/js/ion.rangeSlider.min.js')}}"></script>
+ <script src="{{  asset('dist/js/rangeslider-data.js')}}"></script>
+
+ <!-- Toggles JavaScript -->
+ <script src="{{  asset('vendors/jquery-toggles/toggles.min.js')}}"></script>
+ <script src="{{  asset('dist/js/toggle-data.js')}}"></script>
+
+ <!-- Select2 JavaScript -->
+ <script src="{{  asset('vendors/select2/dist/js/select2.full.min.js')}}"></script>
+ <script src="{{  asset('dist/js/select2-data.js')}}"></script>
+
+ <!-- Bootstrap Tagsinput JavaScript -->
+ <script src="{{  asset('vendors/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js')}}"></script>
+
+ <!-- Bootstrap Input spinner JavaScript -->
+ <script src="{{  asset('vendors/bootstrap-input-spinner/src/bootstrap-input-spinner.js')}}"></script>
+ <script src="{{  asset('dist/js/inputspinner-data.js')}}"></script>
+
+ <!-- Pickr JavaScript -->
+ <script src="{{  asset('vendors/pickr-widget/dist/pickr.min.js')}}"></script>
+ <script src="{{  asset('dist/js/pickr-data.js')}}"></script>
+
+ <!-- Daterangepicker JavaScript -->
+ <script src="{{  asset('vendors/moment/min/moment.min.js')}}"></script>
+ <script src="{{  asset('vendors/daterangepicker/daterangepicker.js')}}"></script>
+ <script src="{{  asset('dist/js/daterangepicker-data.js')}}"></script>

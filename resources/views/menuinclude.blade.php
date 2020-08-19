@@ -16,7 +16,7 @@
                     <ul class="navbar-nav mr-auto">
 
                         <li class="nav-item active">
-                            <a href="{{ url('/home') }}" class="navbar-brand font-weight-700">Pibasacademia</a>
+                            <a href="{{ url('/home') }}" class="navbar-brand font-weight-700">Pibasacademia <span class="text-warning">(Beta)</span></a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('#apropos') }}" class="nav-link">Apropos</a>

@@ -56,9 +56,7 @@ class ArticlesController extends Controller
             'content' => 'required'
         ]);
         $img = request('img')->store('articlesImg','public');
-
-
-        $student = articles::create([
+          $student = articles::create([
 
             'titre' => $data['titre'],
             'img' => $img,

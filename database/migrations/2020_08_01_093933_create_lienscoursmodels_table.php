@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSuivreModelsTable extends Migration
+class CreateLienscoursmodelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateSuivreModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('suivre_models', function (Blueprint $table) {
-            $table->bigIncrements('suivre_id');
-            $table->string('user_id');
-            $table->string('cours_id');
+        Schema::create('lienscoursmodels', function (Blueprint $table) {
+            $table->bigIncrements('liencours_id');
+            $table->string('cours');
+            $table->string('description');
+            $table->string('link');
             $table->timestamps();
         });
     }
@@ -28,7 +29,7 @@ class CreateSuivreModelsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('suivre_models');
-        Schema::dropIfExists('suivre_models');
+        Schema::dropIfExists('lienscoursmodels');
     }
+
 }

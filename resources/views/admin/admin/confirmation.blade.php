@@ -8,7 +8,7 @@
                             <div class="auth-form w-xxl-55 w-xl-75 w-sm-90 w-100">
                                 <form action="{{ route('newUser') }}" method="post">
                                     @csrf
-                                    
+
 
                                     <div class="form-group">Nom: {{ $pp->name1.' '.$pp->name1 }}</div>
                                     <div class="form-group">Matricule: {{ $pp->pin }}</div>
