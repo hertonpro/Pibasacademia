@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>PiBas MLM SYSTEM</title>
     <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!--bootstrap -->
+    <meta name="csrr-token" content="{{csrf_token()}}"/>
     <link   href="{{  asset('outils\frontOffice\css\bootstrap.min.css') }}">
     <link href="{{  asset('vendors/lightgallery/dist/css/lightgallery.min.css" rel="stylesheet" type="text/css') }}">
     <!-- Favicon -->
@@ -17,7 +19,6 @@
 
 	<!-- Bootstrap Dropzone CSS -->
 	<link href="{{  asset('vendors/dropify/dist/css/dropify.min.css') }}" rel="stylesheet" type="text/css"/>
-
     <!-- Toggles CSS -->
     <link href="{{  asset('vendors/jquery-toggles/css/toggles.css') }}" rel="stylesheet" type="text/css">
     <link href="{{  asset('vendors/jquery-toggles/css/themes/toggles-light.css') }}" rel="stylesheet" type="text/css">

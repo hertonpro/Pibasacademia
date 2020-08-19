@@ -17,6 +17,7 @@ class CreateSuivreModelsTable extends Migration
             $table->bigIncrements('suivre_id');
             $table->string('user_id');
             $table->string('cours_id');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -28,7 +29,6 @@ class CreateSuivreModelsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('suivre_models');
         Schema::dropIfExists('suivre_models');
     }
 }

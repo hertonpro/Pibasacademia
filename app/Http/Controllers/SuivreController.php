@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class SuivreController extends Controller
 {
-   
+
     /**
      * Create a new controller instance.
      *
@@ -36,6 +36,27 @@ class SuivreController extends Controller
     public function create()
     {
         //
+        $data = request()->validate([
+            'user_id' => 'required',
+            'cours_id' => 'required',
+            'status'=>'required'
+        ]);
+                 //return redirect('forma/'.$data['user_id'])->with('completed', 'Student has been saved!');
+
+        $user=SuivreModel::where('user_id',$data['user_id'] and 'cours_id',$data['cours_id'] )->exists();
+            if($user){
+                return redirect('forma/'.$data['cours_id'])->with('completed', 'Student has been saved!');
+            }else{
+               $enr= SuivreModel::create([
+                    'user_id' => $data['user_id'],
+                    'cours_id' => $data['cours_id'],
+                    'status'=>$data['status']
+                    ]);
+                    if($enr){
+                return redirect('forma/'.$data['cours_id'])->with('completed', 'Student has been saved!');
+                    }
+            }
+
     }
 
     /**

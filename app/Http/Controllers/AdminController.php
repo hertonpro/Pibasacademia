@@ -22,10 +22,10 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
         $this->middleware('ajax', ['only' => 'profile']);
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -41,7 +41,7 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-  
+
 
    /**
      * Get a validator for an incoming registration request.
@@ -82,7 +82,7 @@ class AdminController extends Controller
        if(request('parrain') == 'PBHR-001-DT' || User::where('pin', request('parrain'))->exists()){
             $parrain = request('parrain');
        }else{
-            return redirect('/newUser')->with('Erreur', 'article has not been saved!'); 
+            return redirect('/newUser')->with('Erreur', 'article has not been saved!');
        }
         $hh = User::create([
             'name1' => $data['name1'],
@@ -108,25 +108,65 @@ class AdminController extends Controller
 
 
     public function profile(Request $request){
-        /*$data = request()->validate([
+        $data = request()->validate([
             'id_p' => 'required',
-            'img' => ['required','image']
+            'img' => 'required'
         ]);
 
          //dd($request('img'));
-        $img = request('img')->store('profilesImg','public');
+        //$img = request('img')->store('profilesImg','public');
+         $dat = request('img');
+         $image_array_1 = explode(";", $dat);
 
-        //$image = Image::make(public_path("storage/{$img}"))->fit(1200,700);
-        //$img->save();
+         $image_array_2 = explode(",", $image_array_1[1]);
+
+         $dat = base64_decode($image_array_2[1]);
+         if(!empty($dat)){
+         $imageName = time() . '.png';
+         }else{
+            $imageName ='';
+         }    
+         file_put_contents('profilesImg/'.$imageName,$dat);
+
+         $img = $imageName;
+
+        if(profile::where('user_id', request('id_p'))->exists()){
+
+            profile::where('user_id', request('id_p'))->update(['img' => $img]);
+
+        }else{
+
+            profile::create([
+
+                'user_id' => $data['id_p'],
+                'img' => $img
+
+            ]);
+
+        }
+
+             
        
-        profile::create([
-
-            'user_id' => $data['id_p'],
-            'img' => $img
-
-        ]);*/
+        
 
         return redirect('/users')->with('completed', 'article has been saved!');
+    }
+
+    public function passwordM(Request $request){
+      
+      $data = request()->validate([
+            'id' => 'required',
+            'pass1' => ['required'],
+            'password' => ['required'],
+        ]);
+      $pp = User::where('id', request('id'))->firstOrfail();
+      //$pass = Hash::make(request('pass1'));
+      if(Hash::check(request('pass1'), $pp->password)){
+        User::where('id', request('id'))->update(['password' =>Hash::make(request('password')) ]);
+         return response()->json(['success'=>'Mot de passe bien modifie.']);
+      }
+
+        return response()->json(['echeque d\'enregistrement']);
     }
 
     /**

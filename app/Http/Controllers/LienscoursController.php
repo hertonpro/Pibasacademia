@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class LienscoursController extends Controller
 {
-    
+
     /**
      * Create a new controller instance.
      *
@@ -53,6 +53,7 @@ class LienscoursController extends Controller
         $storeData = $request->validate([
             'cours' => 'required|max:3',
             'link' => 'required|max:10000',
+            'description' => 'required|max:10000',
 
         ]);
         $student = Lienscoursmodel::create($storeData);
@@ -96,6 +97,7 @@ class LienscoursController extends Controller
         $updateData = $request->validate([
             'cours' => 'required|max:3',
             'link' => 'required|max:1255',
+            'description' => 'required|max:1255',
         ]);
         Lienscoursmodel::where('liencours_id',$liencours_id)->update($updateData);
         return redirect('/liencours')->with('completed', 'Student has been updated');

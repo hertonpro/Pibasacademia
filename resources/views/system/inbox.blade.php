@@ -102,74 +102,13 @@
                                                                 aria-label="Toolbar with button groups">
                                                                 <div class="btn-group" role="group"
                                                                     aria-label="Third group">
-                                                                    <a class="text-danger" href=""><i
-                                                                            data-feather="lock"></i></a>
-                                                                    <a class="text-warning" href="inbox//edit"><i
-                                                                            data-feather="edit"></i></a>
-                                                                    <a class="text-success" href="inbox/1"><i
-                                                                            data-feather="eye"></i></a>
+                                                                    <a class="text-success" href="inbox//edit"><i data-feather="edit"></i>Repondre</a>
                                                                 </div>
                                                             </div>
                                                         </td>
                                                     </tr>
                                                     {{-- @endforeach --}}
 
-                                                    <tr>
-                                                        <td>SYST</td>
-                                                        <td>
-                                                            <div class="media-body">
-                                                                <div class="media-heading">
-                                                                    <a href="mail-single.html" class="m-r-10 text-warning">Simply dummy
-                                                                        text</a>
-                                                                    <span class="badge bg-amber">notification de
-                                                                        retrait</span>
-                                                                    <small class="float-right text-muted"><time class="hidden-sm-down" datetime="2017">12:35
-                                                                            AM</time><i class="zmdi zmdi-attachment-alt"></i>
-                                                                    </small>
-                                                                </div>
-                                                                <p class="msg">Lorem Ipsum is simply dummy text of the
-                                                                    printing and
-                                                                    typesetting industry.</p>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                                                                <div class="btn-group" role="group" aria-label="Third group">
-                                                                    <a class="text-danger" href=""><i data-feather="lock"></i></a>
-                                                                    <a class="text-warning" href="inbox//edit"><i data-feather="edit"></i></a>
-                                                                    <a class="text-success" href="inbox/1"><i data-feather="eye"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>SYST</td>
-                                                        <td>
-                                                            <div class="media-body">
-                                                                <div class="media-heading">
-                                                                    <a href="mail-single.html" class="m-r-10 text-warning">Simply dummy
-                                                                        text</a>
-                                                                    <span class="badge bg-amber">notification de
-                                                                        retrait</span>
-                                                                    <small class="float-right text-muted"><time class="hidden-sm-down" datetime="2017">12:35
-                                                                            AM</time><i class="zmdi zmdi-attachment-alt"></i>
-                                                                    </small>
-                                                                </div>
-                                                                <p class="msg">Lorem Ipsum is simply dummy text of the
-                                                                    printing and
-                                                                    typesetting industry.</p>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                                                                <div class="btn-group" role="group" aria-label="Third group">
-                                                                    <a class="text-danger" href=""><i data-feather="lock"></i></a>
-                                                                    <a class="text-warning" href="inbox//edit"><i data-feather="edit"></i></a>
-                                                                    <a class="text-success" href="inbox/1"><i data-feather="eye"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
                                                 </tbody>
                                                 <tfoot>
                                                     <tr>

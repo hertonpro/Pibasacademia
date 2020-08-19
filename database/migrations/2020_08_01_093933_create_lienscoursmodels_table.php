@@ -16,6 +16,7 @@ class CreateLienscoursmodelsTable extends Migration
         Schema::create('lienscoursmodels', function (Blueprint $table) {
             $table->bigIncrements('liencours_id');
             $table->string('cours');
+            $table->string('description');
             $table->string('link');
             $table->timestamps();
         });
@@ -30,4 +31,5 @@ class CreateLienscoursmodelsTable extends Migration
     {
         Schema::dropIfExists('lienscoursmodels');
     }
+
 }
