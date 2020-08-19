@@ -105,5 +105,6 @@ Route::post('/retraitV', 'Admin\RetraitController@valide')->name('retraitV');
 Route::post('/retraitC', 'Admin\RetraitController@confirm')->name('retraitC');
 
 Route::post('/profile', 'AdminController@profile')->name('profile');
+Route::post('/passwordM', 'AdminController@passwordM')->name('passwordM');
 
 

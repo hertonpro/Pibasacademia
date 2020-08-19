@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>PiBas MLM SYSTEM</title>
     <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!--bootstrap -->
     <link   href="{{  asset('outils\frontOffice\css\bootstrap.min.css') }}">
     <!-- Favicon -->
