@@ -29,7 +29,6 @@ class CreateSuivreModelsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('suivre_models');
         Schema::dropIfExists('suivre_models');
     }
 }
