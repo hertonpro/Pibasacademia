@@ -1,6 +1,6 @@
-@extends('layzoutst')
+{{-- @extends('layzoutst')
 
-@section('content')
+@section('content') --}}
 
 <!-- HK Wrapper -->
 <div class="hk-wrapper">
@@ -100,15 +100,15 @@
                                             <select name="role" class="form-control @error('role') is-invalid @enderror" required>
                                                 <option value="">choisir role</option>
 
-                                                @if(Auth::user()->role == 1)
+                                                {{-- @if(Auth::user()->role == 1) --}}
                                                     <option value="1">Super User</option>
                                                     <option value="2">Admin</option>
                                                     <option value="3">Associe</option>
 
-                                                @else if(Auth::user()->role == 2)
+                                                {{-- @else if(Auth::user()->role == 2) --}}
                                                     <option value="3">Associe</option>
 
-                                                @endif
+                                                {{-- @endif --}}
 
                                                 <option value="0">Client</option>
 
@@ -129,4 +129,4 @@
                 </div>
             </div>
 
-@endsection
+{{-- @endsection --}}

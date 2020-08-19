@@ -107,7 +107,6 @@ class UsersController extends Controller
        $password1 = substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCEFGHIJKLMNOPQRSTUVWXYZ0123456789'),1, 10);
        $code=rand(1000000000,9999999999);
        $pin = dechex($code);
-
        if(request('parrain') == 'PBHR-001-DT' || User::where('pin', request('parrain'))->exists()){
             $parrain = request('parrain');
             $hh = User::create([
@@ -151,15 +150,15 @@ class UsersController extends Controller
 
      public function algo(user $user)
     {
-       //$pp = User::where('pin', $pin)->firstOrfail();
+    //    $pp = User::where('pin', $pin)->firstOrfail();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\user  $user
-     * @return \Illuminate\Http\Response
-     */
+    // /**
+    //  * Display the specified resource.
+    //  *
+    //  * @param  \App\user  $user
+    //  * @return \Illuminate\Http\Response
+    //  */
     public function show(user $user)
     {
         //
@@ -167,39 +166,40 @@ class UsersController extends Controller
         return view('system/users/single', compact('user'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\user  $user
-     * @return \Illuminate\Http\Response
-     */
+    // /**
+    //  * Show the form for editing the specified resource.
+    //  *
+    //  * @param  \App\user  $user
+    //  * @return \Illuminate\Http\Response
+    //  */
     public function edit(user $user)
     {
         //
         return view('system/users/update');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\user  $user
-     * @return \Illuminate\Http\Response
-     */
+    // /**
+    //  * Update the specified resource in storage.
+    //  *
+    //  * @param  \Illuminate\Http\Request  $request
+    //  * @param  \App\user  $user
+    //  * @return \Illuminate\Http\Response
+    //  */
     public function update(Request $request, user $user)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\user  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(user $user)
-    {
-        //
+    // /**
+    //  * Remove the specified resource from storage.
+    //  *
+    //  * @param  \App\user  $user
+    //  * @return \Illuminate\Http\Response
+    //  */
+     public function destroy(user $user)
+     {
+         //
 
     }
 }
+
