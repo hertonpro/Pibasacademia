@@ -179,18 +179,18 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
 
         <div class="card card-profile-feed">
             <div class="card-header card-header-action">
                 <div class="media align-items-center">
-        
+
                     <div class="media-body">
                         <div class="text-capitalize font-weight-500 text-dark">Formation</div>
                     </div>
                 </div>
-        
+
             </div>
             <div class="row text-center">
                 <div class="col-6 border-right pr-0">
@@ -206,9 +206,9 @@
                     </div>
                 </div>
             </div>
-        
+
         </div>
-        
+
     </div>
 </div><!-- contents -->
 @endsection

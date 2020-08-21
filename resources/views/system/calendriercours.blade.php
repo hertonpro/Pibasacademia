@@ -124,7 +124,7 @@
                                         class="d-block text-capitalize font-14">Ajouter</span></a>
                                 <a href="{{url('courss')}}"><span
                                         class="d-block text-capitalize font-14">Gérer</span></a>
-                                <a href="{{url('/calendrier')}}"><span class="d-block text-capitalize font-14">calendrier</span></a>
+                                <a href=""><span class="d-block text-capitalize font-14">calendrier</span></a>
                             </div>
                         </div>
                         <div class="col-4  px-0">

@@ -127,20 +127,25 @@
                         </p>
                         <div class="row">
                             <div class="col-sm">
+
                                 <div class="dd" id="nestable2">
                                     <ol class="dd-list">
-                                        @foreach ($liens as $itemitem)
-                                        <li class="dd-item dd3-item" data-id="1">
-                                            <div class="dd-handle dd3-handle"></div>
-                                            <div class="dd3-content"> <a href="{{$itemitem->link}}"
-                                                    target="_blank">{{$itemitem->description}}</a>
-                                            </div>
-                                        </li>
-                                        @endforeach
-                                    </ol>
+                                        <ul class="dd-list">@php
+                                            $it=1
+                                        @endphp
+                                            @foreach ($liens as $itemitem)
+                                            <li class="dd-item dd3-item" data-id="{{ $it++}}">
+                                                <div class="dd-handle ">
+                                                </div>
+                                                <div class="dd3-content"> {{$it}}<a href="{{$itemitem->link}}"
+                                                        target="_blank">{{$itemitem->description}}</a>
+                                                </div>
+                                            </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                     </section>
                     <section class="hk-sec-wrapper hk-gallery-wrap" id="gallerie">
                         <div class="hk-pg-header">

@@ -16,7 +16,10 @@ use App\Mass2;
 use App\Mass3;
 use App\Http\Controllers\Controller;
 use App\Lienscoursmodel;
+use App\SuivreModel;
+use App\user as AppUser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Support\Facades\Validator;
@@ -45,7 +48,12 @@ class UsersController extends Controller
         $formations=formationM::all();
         $countclients = User::where('role',0);
         $countclien=Lienscoursmodel::all();
-        return view('system/users/index',compact('countclients','formations','countclien'));
+        $Suivre=SuivreModel::all();
+        $liens=Lienscoursmodel::orderBy('created_at', 'desc')->limit(5)->get();
+        $user = Auth::user();
+        $auth= Auth::user()->parrain;
+        $parains=User::where('parrain',$auth)->orderBy('created_at', 'desc')->get();
+        return view('system/users/index',compact('countclients','formations','countclien','Suivre','parains','liens'));
     }
 
     /**

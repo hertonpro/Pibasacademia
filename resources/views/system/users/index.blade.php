@@ -17,8 +17,6 @@
 								style="text-align: center;background-image: url('{{ asset('profilesImg/'.App\profile::where('user_id', Auth::user()->id)->firstOrfail()->img) }}');background-size: 100%;" alt="user">
 								{{-- <span class=" inputIcone display-1 rounded-circle "></span> --}}
 								<input name="img" id="upload_image"type="file" class="inputFile" value="" />
-								
-								
 							</div>
 							@else
 							<button class="btn btn-info avatar-img rounded-circle" style="text-align: center;"
@@ -47,12 +45,12 @@
 								width: 100%;
 								height: 100%;
 								opacity: 0.2;
-								
+
 								}
 								.ha:hover {
 									border-radius: 50%;background-color: aliceblue;
 								}
-								
+
 							</style>
 
 
@@ -88,10 +86,11 @@
 	<div class="container">
 		<ul class="nav nav-light nav-tabs" id="resume" role="tablist">
 			<li class="nav-item">
-				<a href="#resume" class="d-flex h-60p align-items-center nav-link">Résumé</a>
+				<a href="" class="d-flex h-60p align-items-center nav-link">board</a>
+				<a href="{{url('/board')}}" class="d-flex h-60p align-items-center nav-link">board</a>
 			</li>
 			<li class="nav-item">
-				<a href="#" class="d-flex h-60p align-items-center nav-link">Formation</a>
+				<a href="{{url('/formatio')}}" class="d-flex h-60p align-items-center nav-link">Formation</a>
 			</li>
 			<li class="nav-item">
 				<button class="btn btn-info" id="passM">Changer mot de passe</button>
@@ -149,13 +148,13 @@
           //boundary: { width: 200, height: 200 }
       });
 
-     
+
 
       $('#upload_image').on('change', function(){
         var reader = new FileReader();
         reader.onload = function (event){
           basic.croppie('bind', {
-          url: event.target.result 
+          url: event.target.result
           }).then(function(){
             console.log('jQuery bind complete');
           })
@@ -173,11 +172,11 @@
                 type: 'base64',
                 size: 'original'
               }).then(function(response){
-                
+
                 $.ajax({
 	                type: 'POST',
 	                url: url,
-	                
+
 	                data: {'id_p' : $('#id_p').val(),'img':response},
 	                success: function(data, textStatus, jqXHR){
 	                	$('#uploadModal').modal('hide');
@@ -187,14 +186,14 @@
 	                    alert('La photo n\'est pas bien charge');
 	                }
 	            });
-                
+
               })
             })
           }
           $('#passM').on('click', function(e){
 
           		$('#passWordModal').modal('show');
-            
+
             })
 
 
@@ -206,7 +205,7 @@
           			$.ajax({
 	                type: 'POST',
 	                url: url1,
-	                
+
 	                data: {'pass1' : $('#password-last').val(),'password':$('#password-confirm').val(),'id':id},
 	                success: function(data, textStatus, jqXHR){
 	                	alert(data.success);
@@ -217,16 +216,16 @@
 	                     $('.form-control').val('');
 	                }
 	            });
-          			
+
           		}else{
           			$('#password-confirm').css({'border-color':'red'});
           		}
-            
+
             })
 
 
     })
-         
+
 </script>
 
 <div class="modal fade" role="dialog" id="uploadModal" aria-labelledby="myModalLabel" aria-hidden="true">

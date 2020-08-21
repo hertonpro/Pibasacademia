@@ -31,6 +31,7 @@ Route::get('formatio', 'HomeController@formatio');
 Route::post('/newUser', 'AdminController@create')->name('newUser');
 Route::get('/newUser', 'AdminController@newUser');
 Route::resource('/board', 'Admin\BoardController');
+Route::get('/calendrier', 'Admin\BoardController@calendrier');
 Route::resource('profiles', 'ProfilController');
 
 
@@ -39,7 +40,6 @@ Route::get('/apropos', 'HomeController@apropos');
 Route::get('/blog', 'HomeController@blog');
 Route::get('/contact', 'HomeController@contact');
 Route::get('/faq', 'HomeController@faq');
-
 Route::post('/Contacts', 'ContactController@create');
 Route::post('/updatecontact', 'ContactController@updatecontact');
 Route::get('/contactliste', 'ContactController@contactliste');
