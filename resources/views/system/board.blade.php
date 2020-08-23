@@ -224,15 +224,12 @@
                     class="btn-text">Article</span></button>
         </div>
     </div>
-    <h3 class="title">Statisique</h3>
-    <div class="hk-row">
-
-        <div class="card">
-
-            <div class="card-body pa-0">
+    <div class="card">
+        <h3 class="card-head">Statisique</h3>
+            <div class="card-body ">
                 <div class="table-wrap">
                     <div class="table-responsive">
-                        <table class="table table-sm table-hover mb-0">
+                        <table class="table table-sm table-hover">
                             <thead>
                                 <tr>
                                     <th>Project</th>
@@ -357,7 +354,100 @@
                 </div>
             </div>
         </div>
+    <div class="card">
+        <h3 class="card-head" id="formations">Formations</h3>
+            <div class="card-body ">
+                <div class="table-wrap">
+                    <div class="table-responsive">
+                        <table class="table table-sm table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Titres</th>
+                                    <th ><strong class="text)center">Cours</strong>
+                                    </th><th></th>
+                                    <th>Suivis</th>
+                                    <th class="w-20">Status</th>
+                                    <th>Deadline</th>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th>date debut</th>
+                                    <th>date fin</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($cours as $item)
+                                @foreach ($formations as $itemformation)
+                                    @if ($item->formation==$itemformation->formation_id)
+
+                                    <tr><td>{{$itemformation->titre}}</td>
+                                        <td>{{date_create(substr($item->datecours, 1,9))->format('d/M/Y')}}</td>
+                                        <td>{{date_create(substr($item->datecours, 12,20))->format('d/M/Y')}}</td>
+                                        <td>
+                                            @foreach ($suivre as $item)
+                                                @if ($item->cours_id==$itemformation->formation_id)
+                                                    {{$item->count() ?? '0'}}
+                                                @endif
+                                            @endforeach
+                                        </td>
+                                        <td>
+                                            @if (date_create(substr($item->datecours, 12,20))>=now())
+                                                <span class="badge badge-soft-success">Completed</span></td>
+                                            @else
+
+                                            @endif
+                                        <td><span class="d-flex align-items-center"><i
+                                                    class="zmdi zmdi-time-restore font-25 mr-10 text-light-40"></i><span>0</span></span>
+                                        </td>
+                                        <td>
+                                            <div class="progress-wrap lb-side-left mnw-125p">
+                                                <div class="progress-lb-wrap">
+                                                    <label class="progress-label mnw-25p">95%</label>
+                                                    <div class="progress progress-bar-xs">
+                                                        <div class="progress-bar bg-success w-95" role="progressbar"
+                                                            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    @endif
+                                @endforeach
+
+                                @endforeach
+                                <tr>
+                                    <td>Web Application</td>
+                                    <td>Folkswagan</td>
+                                    <td>12 Nov 2018</td>
+                                    <td><span class="badge badge-soft-danger">Behind</span></td>
+                                    <td><span class="d-flex align-items-center"><i
+                                                class="zmdi zmdi-time-restore font-25 mr-10 text-light-40"></i><span>9</span></span>
+                                    </td>
+                                    <td>
+                                        <div class="progress-wrap lb-side-left">
+                                            <div class="progress-lb-wrap">
+                                                <label class="progress-label mnw-25p">30%</label>
+                                                <div class="progress progress-bar-xs">
+                                                    <div class="progress-bar bg-danger w-30" role="progressbar"
+                                                        aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>15 Oct 2018</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
     <div class="card p-2">
     </div>
     <div id="dem" class="card p-3" id="upline">

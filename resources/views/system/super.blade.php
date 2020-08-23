@@ -59,7 +59,7 @@
                     </div>
                     <div class="card-body c">
                         <p class="card-text">
-                            {{$itemform->resume}}
+                            {{substr($itemform->resume,1,200).'...' }}
                         .</p>
                     </div>
 
@@ -103,7 +103,7 @@
                         @foreach ($parains as $itemurses)
                         <tr>
                             <td>{{$itemurses->name1.' - '.$itemurses->name2 }}</td>
-                            <td><span class="badge badge-danger">{{$itemurses->pin}}</span> </td>
+                            <td><span class="badge badge-danger pull-right">{{$itemurses->pin}}</span> </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -152,7 +152,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="card card-profile-feed">
@@ -169,7 +168,7 @@
                 <div class="col-6 border-right pr-0">
                     <div class="pa-15">
                         <span class="d-block display-6 text-dark mb-5">{{$formations->count()}}</span>
-                    <a href="{{url('/formatio')}}"><span class="d-block text-capitalize font-14">Demande</span></a>
+                    <a href="{{url('/formatio')}}"><span class="d-block text-capitalize font-14">Formations</span></a>
                     </div>
                 </div>
                 <div class="col-6 border-right px-0">

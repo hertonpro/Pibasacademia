@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container bg-white mt-3 p-5">
-    
+
         <div class="row">
             <div class="col-8 ">
                 @php
@@ -10,11 +10,11 @@
                 @endphp
                 @foreach ($articles as $item)
                 @if ($i++==1)
-    
-    
+
+
                 <div class="card">
                     <div class="position-relative">
-                        <img class="card-img-top d-block" src="{{ asset('storage/'.$item->img) }}" alt="Card image cap">
+                        <img class="card-img-top d-block" src="{{ asset('storage'.'/'.$item->img) }}" alt="Card image cap">
                     </div>
                     <div class="card-body">
                         <h2 class="card-title">{{$item->titre}}</h2>
@@ -28,7 +28,6 @@
                     </div>
                 </div>
                 @endif
-    
                 @endforeach
                 <div class="hk-pg-header">
                     <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i
@@ -36,16 +35,16 @@
                 </div>
                 <div class="card-deck">
                     @foreach ($articles as $item)
-                    <div class="col-lg-6 col-md-4 col-sm-4 col-6 mb-10">
-                        <div class="card">
-                            <img class="card-img-top" src="{{ asset('storage/'.$item->img) }}" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">{{$item->titre}}
-                                </h5>
-                                <a class="card-text" href="#"><small class="text-muted">+ Plus</small></a>
+                        <div class="col-lg-6 col-md-4 col-sm-4 col-6 mb-10">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset('storage/'.$item->img) }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{$item->titre}}
+                                    </h5>
+                                    <a class="card-text" href="#"><small class="text-muted">+ Plus</small></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     @endforeach
                 </div>
             </div>
@@ -85,7 +84,7 @@
                 <div class="card card-profile-feed">
                     <div class="card-header card-header-action">
                         <h6>Dernieres formations</h6>
-    
+
                         <div class="d-flex align-items-center card-action-wrap">
                             <div class="inline-block dropdown">
                                 <a class="dropdown-toggle no-caret" data-toggle="dropdown" href="#" aria-expanded="false"
@@ -106,7 +105,7 @@
                                 <div class="media-body">
                                     <a href="{{url('forma', $itemrecent->formation_id)}}">
                                         <span
-                                            class="d-block text-dark text-capitalize">{{  substr($itemrecent->titre, 0,15).'...'  }}</span>
+                                            class="d-block text-dark text-capitalize">{{ substr($itemrecent->titre, 0,15).'...'  }}</span>
                                     </a>
                                     <span class="d-block font-13">{{  substr($itemrecent->titre, 1,20).'...'  }}</span>
                                 </div>
@@ -118,9 +117,9 @@
             </div>
             <!-- /Row -->
         </div>
-    
+
         <div class="col-xl-12">
-    
+
             <section id="gallerie" class="hk-sec-wrapper hk-gallery-wrap">
                 <div class="hk-pg-header">
                     <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i
@@ -136,7 +135,7 @@
                                 <a href="#" class="">
                                     <div class="gallery-img"
                                         style="background-image:url('{{ asset('storage/'.$itemart->img) }}');">
-    
+
                                     </div>
                                 </a>
                             </div>

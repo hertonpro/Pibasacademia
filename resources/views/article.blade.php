@@ -69,9 +69,9 @@
 
                 <div class="tab-content">
                     <div class="tab-pane fade show active" role="tabpanel">
-                        <h6 class="mt-30 mb-20">{{date('d/m/Y')}}</h6>
+                        {{-- <h6 class="mt-30 mb-20">{{date('d/m/Y')}}</h6> --}}
                         <div class="row">
-                            
+
                             @foreach ($articlesRECENT as $itemrecent)
                             <div class=" col-lg-2 col-md-4 col-sm-4 col-xs-6 col-lg-4 ">
                                 <div class="card">
@@ -79,7 +79,7 @@
                                         src="{{ asset('storage/'.$itemrecent->img) }}" alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title">{{substr($itemrecent->titre, 1,13)}}</h5>
-                                        <p class="card-content">{{substr($itemrecent->content, 1,300).'...'}}</p>
+                                        <p class="card-content text-justify">{{substr($itemrecent->content, 1,100).'...'}}</p>
                                         <a class="card-text" href="{{url('article', $itemrecent->id)}}"><small
                                                 class="text-muted">+ Plus</small></a>
                                     </div>

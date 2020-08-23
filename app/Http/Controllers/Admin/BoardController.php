@@ -36,8 +36,11 @@ class BoardController extends Controller
         $user=User::all();
         $retrait=retraits::all();
         $suivre=SuivreModel::all();
-        return view('system/board',compact('formations','retraits','retraits1','formations','liens','cours',
-        'retraits','suivre','user'));
+        return view('system/board',
+        compact(
+            'formations','retraits','retraits1','formations','liens','cours',
+            'retraits','suivre','user'
+        ));
     }
     public function calendrier(){
         $retraits = retraits::where('statu', 0)->get();
@@ -49,8 +52,11 @@ class BoardController extends Controller
         $user=User::all();
         $retrait=retraits::all();
         $suivre=SuivreModel::all();
-        return view('system/calendriercours',compact('formations','retraits','retraits1','formations','liens','cours',
-        'retraits','suivre','user'));
+        return view('system/calendriercours',
+        compact(
+            'formations','retraits','retraits1','formations','liens','cours',
+            'retraits','suivre','user'
+        ));
 
     }
 }
