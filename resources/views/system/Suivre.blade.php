@@ -389,7 +389,7 @@
                                         <td>
                                             @foreach ($suivre as $item)
                                                 @if ($item->cours_id==$itemformation->formation_id)
-                                                    {{$item->count() ?? }}
+                                                    {{$item->count() ?? '0'}}
                                                 @endif
                                             @endforeach
                                         </td>

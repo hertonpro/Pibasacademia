@@ -1,7 +1,5 @@
 @extends('layouts.app')
-
 @section('content')
-
 <!-- Container -->
 <div class="container-fluid">
     <!-- Row -->
@@ -10,6 +8,9 @@
             <div class="container mt-sm-60 mt-30">
                 <div class="hk-row">
                     <div class="col-xl-4">
+                        <div id="card">
+                            La synthèse des questions posées de manière récurrente sur <a href="/">Pibas Academia</a>
+                        </div>
                         <div class="card">
                             <h6 class="card-header">
                                 Category
@@ -20,7 +21,7 @@
                                         <a href="/"><i class="ion ion-md-sunny mr-15"></i>{{ $itemcat->description}}<span
                                             class="badge badge-light badge-pill ml-15">06</span></a>
                                     </li>
-                                @endforeach                                
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -36,25 +37,23 @@
                                 @endforeach
                                     <div class="accordion accordion-type-2 accordion-flush" id="accordion_2">
                                  @foreach($categorie as $itemcategorie )
-                                      @if($itemfaq->faq_id==$itemcategorie->descfaq_id)  
+                                      @if($itemfaq->faq_id==$itemcategorie->descfaq_id)
 
-                                                            <div class="card">
-                                                            <div class="card-header d-flex justify-content-between ">
-                                                                <a role="button" data-toggle="collapse" href="#collapse_1i{{$itemfaq->faq_id}}"
-                                                                    aria-expanded="true">{{$itemfaq->question}}</a>
-                                                            </div>
-                                                            <div id="collapse_1i{{$itemfaq->faq_id}}" class="collapse show" data-parent="#accordion_2"
-                                                                role="tabpanel">
-                                                                <div class="card-body pa-15">{{$itemfaq->reponse}}.</div>
-                                                            </div>
-                                                        </div>
-                                                    
-                                        @endif
-                                     @endforeach
-                                     </div>
+                                        <div class="card">
+                                        <div class="card-header d-flex justify-content-between ">
+                                            <a role="button" data-toggle="collapse" href="#collapse_1i{{$itemfaq->faq_id}}"
+                                                aria-expanded="true">{{$itemfaq->question}}</a>
+                                        </div>
+                                        <div id="collapse_1i{{$itemfaq->faq_id}}" class="collapse show" data-parent="#accordion_2"
+                                            role="tabpanel">
+                                            <div class="card-body pa-15">{{$itemfaq->reponse}}.</div>
+                                        </div>
+                                    </div>
 
+                                @endif
                                 @endforeach
-
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
