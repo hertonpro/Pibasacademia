@@ -1,7 +1,6 @@
 <!-- jQuery -->
 <script src="{{  asset('vendors/jquery/dist/jquery.min.js')}}"></script>
 <!-- jQuery -->
-
     <!-- Bootstrap Core JavaScript -->
     <script src="{{  asset('vendors/popper.js/dist/umd/popper.min.js')}}"></script>
     <script src="{{  asset('vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
@@ -67,6 +66,13 @@
 <!-- Fancy Dropdown JS -->
 <script src="{{  asset('dist/js/dropdown-bootstrap-extended.js')}}"></script>
 
+
+
+ <!-- Bootstrap Tagsinput JavaScript -->
+ <script src="{{  asset('vendors/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js')}}"></script>
+
+
+
 <!-- Dropzone JavaScript -->
 <script src="{{  asset('vendors/dropzone/dist/dropzone.js')}}"></script>
 
@@ -78,8 +84,6 @@
  <!-- Slimscroll JavaScript -->
  <script src="{{  asset('dist/js/jquery.slimscroll.js')}}"></script>
 
- <!-- Fancy Dropdown JS -->
- <script src="{{  asset('dist/js/dropdown-bootstrap-extended.js')}}"></script>
 
  <!-- Gallery JavaScript -->
  <script src="{{  asset('vendors/lightgallery/dist/js/lightgallery-all.min.js')}}"></script>
@@ -88,7 +92,7 @@
  <!-- Ion JavaScript -->
  <script src="{{  asset('vendors/ion-rangeslider/js/ion.rangeSlider.min.js')}}"></script>
  <script src="{{  asset('dist/js/rangeslider-data.js')}}"></script>
-
+ <script src="{{  asset('vendors/jasny-bootstrap/dist/js/jasny-bootstrap.min.js')}}"></script>
  <!-- Toggles JavaScript -->
  <script src="{{  asset('vendors/jquery-toggles/toggles.min.js')}}"></script>
  <script src="{{  asset('dist/js/toggle-data.js')}}"></script>

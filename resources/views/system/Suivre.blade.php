@@ -225,7 +225,7 @@
         </div>
     </div>
     <div class="card">
-        <h3 class="card-head">Statisique</h3>
+    <h3 class="card-head">Membre de la formation du {{$datecours->}}</h3>
             <div class="card-body ">
                 <div class="table-wrap">
                     <div class="table-responsive">

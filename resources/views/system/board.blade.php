@@ -379,25 +379,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($cours as $item)
-                                @foreach ($formations as $itemformation)
-                                    @if ($item->formation==$itemformation->formation_id)
-
+                                @foreach ($suivre as $item)
                                     <tr><td>{{$itemformation->titre}}</td>
                                         <td>{{date_create(substr($item->datecours, 1,9))->format('d/M/Y')}}</td>
                                         <td>{{date_create(substr($item->datecours, 12,20))->format('d/M/Y')}}</td>
                                         <td>
-                                            @foreach ($suivre as $item)
-                                                @if ($item->cours_id==$itemformation->formation_id)
-                                                    {{$item->count() ?? }}
-                                                @endif
-                                            @endforeach
+                                        <a href="{{url('suivre/'.$item->cours_id)}}">
+                                                @foreach ($suivre as $itemsuivre)
+                                                    @if ($item->cours_id==$itemformation->formation_id)
+                                                        {{$item->count()}}
+                                                    @endif
+                                                @endforeach
+                                            </a>
                                         </td>
                                         <td>
-                                            @if (date_create(substr($item->datecours, 12,20))>=now())
+                                            @if (date_create(substr($item->datecours, 12,20))<=now())
                                                 <span class="badge badge-soft-success">Completed</span></td>
                                             @else
-
+                                            <span class="badge badge-soft-danger">En cours</span></td>
                                             @endif
                                         <td><span class="d-flex align-items-center"><i
                                                     class="zmdi zmdi-time-restore font-25 mr-10 text-light-40"></i><span>0</span></span>
@@ -414,9 +413,6 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    @endif
-                                @endforeach
-
                                 @endforeach
                                 <tr>
                                     <td>Web Application</td>

@@ -90,9 +90,11 @@
                                     </div>
                                     <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4  ">
                                         <span class="badge badge-primary  badge-sm">Debut le
-                                            {{substr($cours->datecours, 1,8)}}</span>
+                                            {{date_create(substr($cours->datecours, 1,9))->format('d/M/Y')}}
+                                        </span>
                                         <span class="badge badge-info  badge-sm">Fin le
-                                            {{substr($cours->datecours, 12, 20)}}</span>
+                                            {{date_create(substr($cours->datecours, 12,20))->format('d/M/Y')}}
+                                        </span>
 
                                     </div>
                                     <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4  ">
