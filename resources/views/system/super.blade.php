@@ -103,7 +103,7 @@
                         @foreach ($parains as $itemurses)
                         <tr>
                             <td>{{$itemurses->name1.' - '.$itemurses->name2 }}</td>
-                            <td><span class="badge badge-danger pull-right">{{$itemurses->pin}}</span> </td>
+                            <td><span class="badge badge-danger pull">{{$itemurses->pin}}</span> </td>
                         </tr>
                         @endforeach
                     </tbody>

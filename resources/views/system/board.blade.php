@@ -378,10 +378,23 @@
                                     @foreach ($formations  as $itemformat)
                                         @if ($itemcours->formation==$itemformat->formation_id)
                                         <td>{{$itemformat->titre}}</td>
+                                        <td>{{date_create(substr($itemcours->datecours,1,9))->format('d/M/Y')
+                                            .'-'.
+                                            date_create(substr($itemcours->datecours, 12,20))->format('d/M/Y')}}
+                                        </td>
+                                        @foreach ($users as $itemclient)
+                                            @if ($itemclient->id==$itemcours->formateur)
+                                                @if($itemcours->formateur=='00' || $itemcours->formateur=='')
+                                                <td>Aucun</td>
+                                                @else
+                                                <td>{{$itemclient->name1.' - '.$itemclient->name2}}</td>
+                                                @endif
+                                            @endif
+                                        @endforeach
 
                                         @endif
+                                        
                                     @endforeach
-                                    <td>12 Nov 2018</td>
                                     <td><span class="badge badge-soft-danger">Behind</span></td>
                                     <td><span class="d-flex align-items-center"><i
                                                 class="zmdi zmdi-time-restore font-25 mr-10 text-light-40"></i><span>9</span></span>
