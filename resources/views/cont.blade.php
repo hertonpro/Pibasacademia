@@ -10,7 +10,7 @@
         </div>
         <div class="col-6 text-left">
             <strong>Tél:</strong>+243 992961082 | +243 859379268<br>
-            <strong>Mail:</strong> info@pibasacademia.com<br>
+            <strong>Mail:</strong> info@Academia.com<br>
             <p class="d-inline-block">Follow us</p>
             <a href="#" class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span
                     class="btn-icon-wrap"><i class="fa fa-facebook"></i></span></a>

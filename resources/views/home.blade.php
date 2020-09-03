@@ -5,8 +5,11 @@
 <!-- contents -->
 <section class="hk-sec-wrapper">
     <div class="container d-flex justify-content-center align-items-center">
-        <img src="dist/img/formation.jpg" alt="formation" width="150%">
-        <h1> <strong>Pibas ACADEMIA</strong> Plateforme de préparation au <strong>monde professionnel</strong> </h1>
+        <div class="row">
+            <img class="col-lg-6" src="dist/img/formation.jpg" alt="formation" width="150%">
+            <h1 class="col-lg-6"> <strong>ACADEMIA</strong> Plateforme de préparation au <strong>monde professionnel</strong></h1>
+        </div>
+
     </div>
 </section>
 <div class="row">
@@ -14,8 +17,8 @@
     <div class="col-10 mt-3">
         <div class="row mb-3">
 
-            <div class="col-6 text-right border-right border-secondary">
-                <h3 class="text-primary ">PiBas ACADEMIA</h3><br>
+            <div class="col-md-12 col-lg-6  text-right border-right border-secondary">
+                <h3 class="text-primary ">ACADEMIA</h3><br>
                 <p class="mb-40">PiBas ACADEMIA est un centre d’excellence qui permet aux diplômés d’avoir un bagage
                     exigé pour faire face aux
                     défis qui dominent le monde du travail. Ce bagage consiste pour l’instant d’abord en l’apprentissage
@@ -38,7 +41,7 @@
                     en entrepreneuriat
                     pouvant vous permettre d’émerger en évitant des risques à ne pas prendre.</p>
             </div>
-            <div class="col-6 text-left">
+            <div class="col-md-12 col-lg-6 text-left">
                 <h3 class="text-primary ">Qui est concerné par le programme</h3><br>
                 <p class="mb-40">Ce programme ne concerne pas exclusivement que les jeun es diplômés car il n’y a pas
                     qu’eux qui ont besoin de créer de
@@ -83,9 +86,9 @@
                                             d'infos</a></p>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-6 ">
                                 <div class="d-flex">
-                                    <h1>PiBas ACADEMIA</h1>
+                                    <h1>ACADEMIA</h1>
                                 </div>
                                 <p class="">Contrairement au fonctionnement d’autres académies, le programme qu’utilise
                                     PiBas
@@ -106,7 +109,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="d-flex p-5  ">
-                                    <h1>PiBas ACADEMIA</h1>
+                                    <h1>ACADEMIA</h1>
                                 </div>
                                 <p class="">Contrairement au fonctionnement d’autres académies, le programme qu’utilise
                                     PiBas
@@ -138,7 +141,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="d-flex p-5 justify-content-center ">
-                                    <h1>PiBas ACADEMIA</h1>
+                                    <h1>ACADEMIA</h1>
                                 </div>
                                 <p class="">Contrairement au fonctionnement d’autres académies, le programme qu’utilise
                                     PiBas

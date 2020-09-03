@@ -23,7 +23,7 @@
                         <h4 class="mb-35 font-weight-600">Confirmation / Recu</h4>
                         <span class="d-block">Date:<span class="pl-10 text-dark">{{ date("d/m/Y H:i") }}</span></span>
                         <span class="d-block">NN recu<span class="pl-10 text-dark">GT-5588</span></span>
-                        
+
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                                 <tr>
                                     <td class="w-70">Password :</td>
                                     <td class="text-right">{{ $password1 }}</td>
-                                    
+
                                 </tr>
                                 <tr>
                                     <td class="w-70">Pin parrain :</td>
@@ -75,7 +75,7 @@
             <hr>
             <ul class="invoice-terms-wrap font-14 list-ul">
                 <li>Herton.Pro</li>
-                <li>PiBas Academia</li>
+                <li>ACADEMIA</li>
             </ul>
         </section>
     </div>

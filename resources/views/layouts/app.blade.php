@@ -11,21 +11,21 @@
     <div id="app">
         <nav class="navbar navbar-expand-xl fixed-top hk-navbar bg-white navbar-scroll">
             <div class="container">
-                <a href="{{ url('/home') }}" class="navbar-brand d-flex align-items-center" href="#">
-                    <img class="brand-img d-inline-block align-top mr-10" src="dist/img/logo.png" alt="PiBas" />
-                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="feather-icon"><i data-feather="menu"></i></span>
                 </button>
+
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
                         <li class="nav-item active">
-                            <a href="{{ url('/home') }}" class="navbar-brand font-weight-700">Pibasacademia</a>
+                            <a href="{{ url('/home') }}" class="navbar-brand font-weight-700">
+                                <img class="brand-img d-inline-block align-top mr-10" src="dist/img/logo.png"
+                                    alt="PiBas" />Academia</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('#apropos') }}" class="nav-link">Apropos</a>
@@ -94,7 +94,7 @@
                 <div class="container-fluid">
                     <!-- Row -->
                     <div class="row">
-                        <div class="col-xl-12">
+                        <div class="col-xl-12 ">
                             @yield('content')
                         </div>
                     </div>

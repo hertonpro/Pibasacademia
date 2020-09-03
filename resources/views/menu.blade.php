@@ -1,8 +1,8 @@
 <!-- Top Navbar -->
-<nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top hk-navbar">
 
     <a class="navbar-brand font-weight-700" href="{{url('users')}}">
-        Pibasacademia <span class="text-warning">(Beta)</span>
+        Academia <span class="text-warning">(Beta)</span>
     </a>
     <ul class="navbar-nav hk-navbar-content">
 
@@ -22,8 +22,7 @@
                         <div class="media">
                             <div class="media-img-wrap">
                                 <div class="avatar avatar-sm">
-                                    <img src="{{asset('dist/img/avatar1.jpg')}}" alt=" user"
-                                        class="avatar-img rounded-circle">
+                                    <img src="" class="avatar-img rounded-circle">
                                 </div>
                             </div>
                             <div class="media-body">
