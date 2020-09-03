@@ -3,14 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Coursmodel;
+use App\formationM;
 use App\formationModel;
 use App\Http\Controllers\Controller;
+use App\SuivreModel;
 use App\User;
 use Illuminate\Http\Request;
 
 class CoursController extends Controller
 {
-   
+
 
     /**
      * Create a new controller instance.
@@ -28,8 +30,11 @@ class CoursController extends Controller
      */
     public function index()
     {
+        $users = User::all();
+        $formations  = formationM::all();
+        $suivres=SuivreModel::all();
         $courss = Coursmodel::all();
-        return view('system/formation/index', compact('courss'));
+        return view('system/formation/index', compact('courss','formations','suivres','users'));
     }
 
     /**
@@ -41,6 +46,9 @@ class CoursController extends Controller
     {
         $formations = formationModel::all();
         $users = User::all();
+        $courss = Coursmodel::all();
+        $formations  = formationM::all();
+        $suivres=SuivreModel::all();
 
         return view('admin/cours/create', compact('formations','users'));
     }

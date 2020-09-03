@@ -34,13 +34,13 @@ class BoardController extends Controller
         $formations=formationM::all();
         $liens=Lienscoursmodel::all();
         $cours=Coursmodel::all();
-        $user=User::all();
+        $users=User::all();
         $retrait=retraits::all();
-        $suivre=SuivreModel::all();
+        $suivres=SuivreModel::all();
         return view('system/board',
         compact(
             'formations','retraits','retraits1','formations','liens','cours',
-            'retraits','suivre','user'
+            'retraits','suivres','users',
         ));
     }
     public Function suivremembre($suivre){

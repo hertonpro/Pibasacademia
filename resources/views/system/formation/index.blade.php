@@ -53,91 +53,36 @@
                 <table id="datable_1" class="table table-hover w-100 display pb-30">
                     <thead>
                         <tr>
-                            <th>Catégirie</th>
-                            <th>Date</th>
+                            <th>Ccours</th>
+                            <th>Date </th>
                             <th>Formateur</th>
                             <th>Etudiants</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($courss as $itemcours)
                         <tr>
-                            <td>Anglais</td>
-                            <td>20.02.2022-05.06.2020</td>
-                            <td>Agasha Maregeko</td>
-                            <td>54</td>
+                            @foreach ($formations as $itemform)
+                                @foreach ($suivres as $item)
+                                    @foreach ($users as $itemclient)
+                                        @if ($itemcours->formation  ==$itemform->formation_id &&
+                                            $itemcours->formation ==$itemclient->id && $itemcours->cours_id ==$item->cours_id)
+                                                <td>{{$itemform->titre}}</td>
+                                                <td>{{date_create(substr($item->datecours, 1,9))->format('d/M/Y').'-'.date_create(substr($item->datecours, 10,20))->format('d/M/Y')}}</td>
+                                                <td>{{$itemclient->name1.' - '.$itemclient->name2}}</td>
+                                                <td>{{$item->count()}}</td>
+                                        @endif
+                                    @endforeach
+                                @endforeach
+                            @endforeach
                         </tr>
-                        <tr>
-                            <td>Francais</td>
-                            <td>20.02.2022-05.06.2020</td>
-                            <td>Agasha Maregeko</td>
-                            <td>54</td>
-                        </tr>
-                        <tr>
-                            <td>Ashton Cox</td>
-                            <td>20.02.2022-05.06.2020</td>
-                            <td>Agasha Maregeko</td>
-                            <td>54</td>
-                        </tr>
-                        <tr>
-                            <td>Cedric Kelly</td>
-                            <td>20.02.2022-05.06.2020</td>
-                            <td>Agasha Maregeko</td>
-                            <td>54</td>
-                        </tr>
-                        <tr>
-                            <td>Airi Satou</td>
-                            <td>20.02.2022-05.06.2020</td>
-                            <td>Agasha Maregeko</td>
-                            <td>54</td>
-                        </tr>
-                        <tr>
-                            <td>Brielle Williamson</td>
-                            <td>20.02.2022-05.06.2020</td>
-                            <td>Agasha Maregeko</td>
-                            <td>54</td>
-                        </tr>
-                        <tr>
-                            <td>Herrod Chandler</td>
-                            <td>20.02.2022-05.06.2020</td>
-                            <td>Agasha Maregeko</td>
-                            <td>54</td>
-                        </tr>
-                        <tr>
-                            <td>Rhona Davidson</td>
-                            <td>20.02.2022-05.06.2020</td>
-                            <td>Agasha Maregeko</td>
-                            <td>54</td>
-                        </tr>
-                        <tr>
-                            <td>Colleen Hurst</td>
-                            <td>20.02.2022-05.06.2020</td>
-                            <td>Agasha Maregeko</td>
-                            <td>54</td>
-                        </tr>
-                        <tr>
-                            <td>Sonya Frost</td>
-                            <td>20.02.2022-05.06.2020</td>
-                            <td>Agasha Maregeko</td>
-                            <td>54</td>
-                        </tr>
-                        <tr>
-                            <td>Jena Gaines</td>
-                            <td>20.02.2022-05.06.2020</td>
-                            <td>Agasha Maregeko</td>
-                            <td>54</td>
-                        </tr>
-                        <tr>
-                            <td>Quinn Flynn</td>
-                            <td>20.02.2022-05.06.2020</td>
-                            <td>Agasha Maregeko</td>
-                            <td>54</td>
-                        </tr>
-                        
+                        @endforeach
+
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th>Catégirie</th>
-                            <th>Date</th>
+                            <th>Ccours</th>
+                            <th>Date </th>
                             <th>Formateur</th>
                             <th>Etudiants</th>
                         </tr>
@@ -145,10 +90,7 @@
                 </table>
             </div>
         </div>
-
-
     </div>
-
 <div class="col-lg-4">
     <div class="card card-profile-feed">
         <div class="card-header card-header-action">

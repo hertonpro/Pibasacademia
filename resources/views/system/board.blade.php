@@ -24,7 +24,7 @@
                             </div>
                         </div>
                         <div>
-                            <span class="d-block display-5 text-dark mb-5">{{$user->count()}}</span>
+                            <span class="d-block display-5 text-dark mb-5">{{$users->count()}}</span>
                             <a href="{{url('admin/clients')}}"><small class="d-block">Liste de membres</small></a>
 
                         </div>
@@ -362,61 +362,25 @@
                         <table class="table table-sm table-hover">
                             <thead>
                                 <tr>
-                                    <th>Titres</th>
-                                    <th ><strong class="text)center">Cours</strong>
-                                    </th><th></th>
-                                    <th>Suivis</th>
+                                    <th>Cours</th>
+                                    <th >
+                                        <strong class="text)center">date</strong>
+                                    </th>
+                                    <th>Formateurs</th>
+                                    <th>Etudiants</th>
                                     <th class="w-20">Status</th>
                                     <th>Deadline</th>
                                 </tr>
-                                <tr>
-                                    <th></th>
-                                    <th>date debut</th>
-                                    <th>date fin</th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
+
                             </thead>
-                            <tbody>
-                                @foreach ($suivre as $item)
-                                    <tr><td>{{$itemformation->titre}}</td>
-                                        <td>{{date_create(substr($item->datecours, 1,9))->format('d/M/Y')}}</td>
-                                        <td>{{date_create(substr($item->datecours, 12,20))->format('d/M/Y')}}</td>
-                                        <td>
-                                        <a href="{{url('suivre/'.$item->cours_id)}}">
-                                                @foreach ($suivre as $itemsuivre)
-                                                    @if ($item->cours_id==$itemformation->formation_id)
-                                                        {{$item->count()}}
-                                                    @endif
-                                                @endforeach
-                                            </a>
-                                        </td>
-                                        <td>
-                                            @if (date_create(substr($item->datecours, 12,20))<=now())
-                                                <span class="badge badge-soft-success">Completed</span></td>
-                                            @else
-                                            <span class="badge badge-soft-danger">En cours</span></td>
-                                            @endif
-                                        <td><span class="d-flex align-items-center"><i
-                                                    class="zmdi zmdi-time-restore font-25 mr-10 text-light-40"></i><span>0</span></span>
-                                        </td>
-                                        <td>
-                                            <div class="progress-wrap lb-side-left mnw-125p">
-                                                <div class="progress-lb-wrap">
-                                                    <label class="progress-label mnw-25p">95%</label>
-                                                    <div class="progress progress-bar-xs">
-                                                        <div class="progress-bar bg-success w-95" role="progressbar"
-                                                            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                @foreach ($cours  as $itemcours)
                                 <tr>
-                                    <td>Web Application</td>
-                                    <td>Folkswagan</td>
+                                    @foreach ($formations  as $itemformat)
+                                        @if ($itemcours->formation==$itemformat->formation_id)
+                                        <td>{{$itemformat->titre}}</td>
+
+                                        @endif
+                                    @endforeach
                                     <td>12 Nov 2018</td>
                                     <td><span class="badge badge-soft-danger">Behind</span></td>
                                     <td><span class="d-flex align-items-center"><i
@@ -435,6 +399,8 @@
                                     </td>
                                     <td>15 Oct 2018</td>
                                 </tr>
+
+                                @endforeach
 
                             </tbody>
                         </table>
@@ -554,6 +520,65 @@
     </div>
     </div>
 </section>
+
+
+
+<tbody>
+    @foreach ($cours as $itemcours)
+        @foreach ($formations as $itemform)
+            @if ($itemcours->formation ==$itemform->formation_id  )
+            <tr>
+                 @foreach ($suivres as $itemuivre)
+                    @foreach ($users as $itemclient)
+                        @if( $itemcours->cours_id ==$itemuivre->cours_id && $itemcours->formation ==$itemclient->id)
+                                <td>{{$itemform->titre}}</td>
+                                <td>{{date_create(substr($itemcours->datecours,1,9))->format('d/M/Y')
+                                .'-'.
+                                date_create(substr($itemcours->datecours, 12,20))->format('d/M/Y')}}</td>
+                                <td>{{$itemclient->name1.' - '.$itemclient->name2}}</td>
+                                <td>{{$itemuivre->count()}}</td>
+                            @if ($itemuivre->count()==0)
+                                <td>
+                                    <div class="progress-wrap lb-side-left">
+                                        <div class="progress-lb-wrap">
+                                            <label class="progress-label mnw-25p">0%</label>
+                                            <div class="progress progress-bar-xs">
+                                                <div class="progress-bar bg-danger w-0" role="progressbar"
+                                                    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            @elseif($itemuivre->count()>=0 &&$itemuivre->count()<=50 )
+                                <td>
+                                    <div class="progress-wrap lb-side-left">
+                                        <div class="progress-lb-wrap">
+                                            <label class="progress-label mnw-25p">{{$itemuivre->count()}}%</label>
+                                            <div class="progress progress-bar-xs">
+                                                <div class="progress-bar bg-danger w-{{$itemuivre->count()}}" role="progressbar"
+                                                    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            @endif
+
+                            @if (date_create(substr($itemcours->datecours, 1,9))>=now())
+                                <td><span class="badge badge-soft-success">complet</span></td>
+                            @elseif(date_create(substr($itemcours->datecours, 10,20))>=now() )
+                                <td><span class="badge badge-soft-danger">Encours</span></td>
+                            @elseif(date_create(substr($itemcours->datecours, 10,20))>=now())
+                            <td><span class="badge badge-soft-info">Encours</span></td>
+                            @endif
+
+                            @endif
+
+                @endforeach
+            @endforeach
+        </tr>
+        @endif
+    @endforeach
+    @endforeach
 
 <!-- contents -->
 @endsection

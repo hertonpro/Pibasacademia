@@ -47,7 +47,7 @@
             <h3 class="tiles text-center p-3">Les formations disponibles</h3>
             <div class="hk-row">
                 @foreach ($formations as $itemform)
-                <div class="col-md-2 col-lg-6 col-sm-6 col-xs-6 ">
+                <div class="col-md-2 col-lg-6 col-sm-12 col-xs-12 ">
                     <div id="cad-tittle">
 
                             <a href="{{ url('forma', $itemform->formation_id)}}">
