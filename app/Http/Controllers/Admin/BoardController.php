@@ -10,6 +10,7 @@ use App\Lienscoursmodel;
 use App\SuivreModel;
 use App\User;
 use Illuminate\Http\Request;
+use PhpParser\Builder\Function_;
 
 class BoardController extends Controller
 {
@@ -40,6 +41,24 @@ class BoardController extends Controller
         compact(
             'formations','retraits','retraits1','formations','liens','cours',
             'retraits','suivre','user'
+        ));
+    }
+    public Function suivremembre($suivre){
+        $datecours=Coursmodel::where('cours_id',$suivre)->firstOrfail();
+        $retraits = retraits::where('statu', 0)->get();
+        $retraits1 = retraits::where('statu', 1)->get();
+        $formations  = formationM::all();
+        $formations=formationM::all();
+        $liens=Lienscoursmodel::all();
+        $suivremembre=SuivreModel::where('cours_id',$suivre)->get();
+        $cours=Coursmodel::all();
+        $user=User::all();
+        $retrait=retraits::all();
+        $suivre=SuivreModel::all();
+        return view('system/suivre',
+        compact(
+            'formations','retraits','retraits1','formations','liens','cours',
+            'retraits','suivre','user','suivremembre','datecours'
         ));
     }
     public function calendrier(){

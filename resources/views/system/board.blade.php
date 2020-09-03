@@ -357,6 +357,7 @@
     </div>
     <div class="card">
         <h3 class="card-head" id="formations">Formations</h3>
+<<<<<<< HEAD
         <div class="card-body ">
             <div class="table-wrap">
                 <div class="table-responsive">
@@ -436,6 +437,82 @@
                                             <div class="progress progress-bar-xs">
                                                 <div class="progress-bar bg-danger w-30" role="progressbar"
                                                     aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+=======
+            <div class="card-body ">
+                <div class="table-wrap">
+                    <div class="table-responsive">
+                        <table class="table table-sm table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Titres</th>
+                                    <th ><strong class="text)center">Cours</strong>
+                                    </th><th></th>
+                                    <th>Suivis</th>
+                                    <th class="w-20">Status</th>
+                                    <th>Deadline</th>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th>date debut</th>
+                                    <th>date fin</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($suivre as $item)
+                                    <tr><td>{{$itemformation->titre}}</td>
+                                        <td>{{date_create(substr($item->datecours, 1,9))->format('d/M/Y')}}</td>
+                                        <td>{{date_create(substr($item->datecours, 12,20))->format('d/M/Y')}}</td>
+                                        <td>
+                                        <a href="{{url('suivre/'.$item->cours_id)}}">
+                                                @foreach ($suivre as $itemsuivre)
+                                                    @if ($item->cours_id==$itemformation->formation_id)
+                                                        {{$item->count()}}
+                                                    @endif
+                                                @endforeach
+                                            </a>
+                                        </td>
+                                        <td>
+                                            @if (date_create(substr($item->datecours, 12,20))<=now())
+                                                <span class="badge badge-soft-success">Completed</span></td>
+                                            @else
+                                            <span class="badge badge-soft-danger">En cours</span></td>
+                                            @endif
+                                        <td><span class="d-flex align-items-center"><i
+                                                    class="zmdi zmdi-time-restore font-25 mr-10 text-light-40"></i><span>0</span></span>
+                                        </td>
+                                        <td>
+                                            <div class="progress-wrap lb-side-left mnw-125p">
+                                                <div class="progress-lb-wrap">
+                                                    <label class="progress-label mnw-25p">95%</label>
+                                                    <div class="progress progress-bar-xs">
+                                                        <div class="progress-bar bg-success w-95" role="progressbar"
+                                                            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                <tr>
+                                    <td>Web Application</td>
+                                    <td>Folkswagan</td>
+                                    <td>12 Nov 2018</td>
+                                    <td><span class="badge badge-soft-danger">Behind</span></td>
+                                    <td><span class="d-flex align-items-center"><i
+                                                class="zmdi zmdi-time-restore font-25 mr-10 text-light-40"></i><span>9</span></span>
+                                    </td>
+                                    <td>
+                                        <div class="progress-wrap lb-side-left">
+                                            <div class="progress-lb-wrap">
+                                                <label class="progress-label mnw-25p">30%</label>
+                                                <div class="progress progress-bar-xs">
+                                                    <div class="progress-bar bg-danger w-30" role="progressbar"
+                                                        aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+>>>>>>> 7aa3bed60476941701f054903bdabc72daabd5dc
                                             </div>
                                         </div>
                                     </div>

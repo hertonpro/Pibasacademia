@@ -125,12 +125,9 @@
                                         <option value="2">Admin</option>
                                         <option value="3">Associe</option>
                                         <option value="4">Formateur</option>
-
                                         @elseif(Auth::user()->role == 2)
                                         <option value="4">Formateur</option>
-
                                         @endif
-
                                         <option value="0">Client</option>
 
                                     </select>

@@ -41,11 +41,12 @@ class SuivreController extends Controller
             'cours_id' => 'required',
             'status'=>'required'
         ]);
+        // $USERS=pOST::U
+            $iii=$data['user_id'];
                  //return redirect('forma/'.$data['user_id'])->with('completed', 'Student has been saved!');
-
         $user=SuivreModel::where('user_id',$data['user_id'] and 'cours_id',$data['cours_id'] )->exists();
             if($user){
-                return redirect('forma/'.$data['cours_id'])->with('completed', 'Student has been saved!');
+                return redirect('forma/'. $iii)->with('completed', 'Student has been saved!');
             }else{
                $enr= SuivreModel::create([
                     'user_id' => $data['user_id'],
@@ -53,7 +54,7 @@ class SuivreController extends Controller
                     'status'=>$data['status']
                     ]);
                     if($enr){
-                return redirect('forma/'.$data['cours_id'])->with('completed', 'Student has been saved!');
+                return redirect('forma/'. $iii)->with('completed', 'Student has been saved!');
                     }
             }
 
