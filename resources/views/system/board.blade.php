@@ -225,128 +225,51 @@
         </div>
     </div>
     <div class="card">
-        <h3 class="card-head">Statisique</h3>
+        <h3 class="card-head">Articles </h3>
             <div class="card-body ">
                 <div class="table-wrap">
                     <div class="table-responsive">
                         <table class="table table-sm table-hover">
                             <thead>
                                 <tr>
-                                    <th>Project</th>
-                                    <th>Company</th>
-                                    <th>Update</th>
-                                    <th>Budget</th>
-                                    <th>Tasks</th>
-                                    <th class="w-20">Status</th>
-                                    <th>Deadline</th>
+                                    <th>image</th>
+                                    <th>titre</th>
+                                    <th>Créer</th>
+                                    <th>Mise à jour </th>
+                                    <th>Etat</th>
+                                    <th class="w-20">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Branding</td>
-                                    <td>Pineapple Inc</td>
-                                    <td>13 Nov 2018</td>
-                                    <td><span class="badge badge-soft-success">Completed</span></td>
-                                    <td><span class="d-flex align-items-center"><i
-                                                class="zmdi zmdi-time-restore font-25 mr-10 text-light-40"></i><span>0</span></span>
-                                    </td>
-                                    <td>
-                                        <div class="progress-wrap lb-side-left mnw-125p">
-                                            <div class="progress-lb-wrap">
-                                                <label class="progress-label mnw-25p">95%</label>
-                                                <div class="progress progress-bar-xs">
-                                                    <div class="progress-bar bg-success w-95" role="progressbar"
-                                                        aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                @foreach ($articles as $itemarticles)
+                                    <tr>
+                                        <td><img src="{{ asset('storage/'.$itemarticles->img) }}" class="avatar-img rounded d-40"></td>
+                                        <td>{{$itemarticles->titre}}</td>
+                                        <td>{{$itemarticles->created_at->format('d-M-Y')}}</td>
+                                        <td>{{$itemarticles->updated_at->format('d-M-Y')}}</td>
+                                        <td>
+                                            <div class="progress-wrap lb-side-left mnw-125p">
+                                                <div class="progress-lb-wrap">
+                                                    <label class="progress-label mnw-25p">95%</label>
+                                                    <div class="progress progress-bar-xs">
+                                                        <div class="progress-bar bg-success w-95" role="progressbar"
+                                                            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td>10 Nov 2018</td>
-                                </tr>
-                                <tr>
-                                    <td>Website</td>
-                                    <td>Gooole co.</td>
-                                    <td>30 Nov 2018</td>
-                                    <td><span class="badge badge-soft-primary">In Process</span></td>
-                                    <td><span class="d-flex align-items-center"><i
-                                                class="zmdi zmdi-time-restore font-25 mr-10 text-light-40"></i><span>3</span></span>
-                                    </td>
-                                    <td>
-                                        <div class="progress-wrap lb-side-left mnw-125p">
-                                            <div class="progress-lb-wrap">
-                                                <label class="progress-label mnw-25p">70%</label>
-                                                <div class="progress progress-bar-xs">
-                                                    <div class="progress-bar bg-primary w-70" role="progressbar"
-                                                        aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>13 Dec 2018</td>
-                                </tr>
-                                <tr>
-                                    <td>Collaterals</td>
-                                    <td>Big Energy</td>
-                                    <td>12 Nov 2018</td>
-                                    <td><span class="badge badge-soft-danger">Behind</span></td>
-                                    <td><span class="d-flex align-items-center"><i
-                                                class="zmdi zmdi-time-restore font-25 mr-10 text-light-40"></i><span>14</span></span>
-                                    </td>
-                                    <td>
-                                        <div class="progress-wrap lb-side-left mnw-125p">
-                                            <div class="progress-lb-wrap">
-                                                <label class="progress-label mnw-25p">35%</label>
-                                                <div class="progress progress-bar-xs">
-                                                    <div class="progress-bar bg-danger w-35" role="progressbar"
-                                                        aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>21 Oct 2018</td>
-                                </tr>
-                                <tr>
-                                    <td>Branding, Print</td>
-                                    <td>Novotel</td>
-                                    <td>10 Nov 2018</td>
-                                    <td><span class="badge badge-soft-primary">In process</span></td>
-                                    <td><span class="d-flex align-items-center"><i
-                                                class="zmdi zmdi-time-restore font-25 mr-10 text-light-40"></i><span>6</span></span>
-                                    </td>
-                                    <td>
-                                        <div class="progress-wrap lb-side-left mnw-125p">
-                                            <div class="progress-lb-wrap">
-                                                <label class="progress-label mnw-25p">85%</label>
-                                                <div class="progress progress-bar-xs">
-                                                    <div class="progress-bar bg-primary w-85" role="progressbar"
-                                                        aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>14 Nov 2018</td>
-                                </tr>
-                                <tr>
-                                    <td>Web Application</td>
-                                    <td>Folkswagan</td>
-                                    <td>12 Nov 2018</td>
-                                    <td><span class="badge badge-soft-danger">Behind</span></td>
-                                    <td><span class="d-flex align-items-center"><i
-                                                class="zmdi zmdi-time-restore font-25 mr-10 text-light-40"></i><span>9</span></span>
-                                    </td>
-                                    <td>
-                                        <div class="progress-wrap lb-side-left">
-                                            <div class="progress-lb-wrap">
-                                                <label class="progress-label mnw-25p">30%</label>
-                                                <div class="progress progress-bar-xs">
-                                                    <div class="progress-bar bg-danger w-30" role="progressbar"
-                                                        aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>15 Oct 2018</td>
-                                </tr>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="articles/{{ $articles->id }}/edit" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></a>
+                                            <form action="articles/delete/{{ $articles->id }}"  style="display: inline-block">
+                                                @csrf
+                                                @method('put')
+                                                <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-remove" ></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+
+
 
                             </tbody>
                         </table>
@@ -358,18 +281,17 @@
         <h3 class="card-head" id="formations">Formations</h3>
             <div class="card-body ">
                 <div class="table-wrap">
-                    <div class="table-responsive">
-                        <table class="table table-sm table-hover">
-                            <thead>
+                    <div class="d-flex align-items-center card-action-wrap table-wrap">
+                        <table id="datable_1" class="table table-hover ">
+                           <thead>
                                 <tr>
                                     <th>Cours</th>
                                     <th >
-                                        <strong class="text)center">date</strong>
+                                        <strong class="text-center">date</strong>
                                     </th>
                                     <th>Formateurs</th>
-                                    <th>Etudiants</th>
                                     <th class="w-20">Status</th>
-                                    <th>Deadline</th>
+                                    <th>Etudiants</th>
                                 </tr>
 
                             </thead>
@@ -393,24 +315,77 @@
                                         @endforeach
 
                                         @endif
-                                        
+
+
                                     @endforeach
-                                    <td><span class="badge badge-soft-danger">Behind</span></td>
-                                    <td><span class="d-flex align-items-center"><i
-                                                class="zmdi zmdi-time-restore font-25 mr-10 text-light-40"></i><span>9</span></span>
-                                    </td>
+                                    @foreach ($suivres as $itemuivre)
+                                    @if ($itemuivre->count()==0)
                                     <td>
                                         <div class="progress-wrap lb-side-left">
                                             <div class="progress-lb-wrap">
-                                                <label class="progress-label mnw-25p">30%</label>
+                                                <label class="progress-label mnw-25p">{{$itemuivre->count()*2}}%</label>
                                                 <div class="progress progress-bar-xs">
-                                                    <div class="progress-bar bg-danger w-30" role="progressbar"
-                                                        aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-danger w-{{$itemuivre->count()*2}}" role="progressbar"
+                                                        aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </td>
-                                    <td>15 Oct 2018</td>
+                                    <td><span class="badge badge-soft-danger">0</span></td>
+                                     @elseif($itemuivre->count()>=0 && $itemuivre->count()<=50 )
+                                        @if ($itemuivre->count()>25)
+                                            <td>
+                                                <div class="progress-wrap lb-side-left">
+                                                    <div class="progress-lb-wrap">
+                                                        <label class="progress-label mnw-25p">{{$itemuivre->count()*2}}%</label>
+                                                        <div class="progress progress-bar-xs">
+                                                            <div class="progress-bar bg-danger w-{{$itemuivre->count()*2}}" role="progressbar"
+                                                                aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                             <td><span class="badge badge-soft-danger"><i
+                                                class="zmdi zmdi-time-restore font-25 mr-10 text-light-40"></i>{{$itemuivre->count()}}</span></td>
+                                        @else
+                                        <td>
+                                            <div class="progress-wrap lb-side-left">
+                                                <div class="progress-lb-wrap">
+                                                    <label class="progress-label mnw-25p">{{$itemuivre->count()*2}}%</label>
+                                                    <div class="progress progress-bar-xs">
+                                                        <div class="progress-bar bg-danger w-{{$itemuivre->count()*2}}" role="progressbar"
+                                                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge badge-soft-info"><i
+                                            class="zmdi zmdi-time-restore font-25 mr-10 text-light-40"></i>{{$itemuivre->count()}}</span></td>
+                                        @endif
+                                    @elseif($itemuivre->count()==50)
+                                    <td>
+                                        <div class="progress-wrap lb-side-left">
+                                            <div class="progress-lb-wrap">
+                                                <label class="progress-label mnw-25p">{{$itemuivre->count()*2}}%</label>
+                                                <div class="progress progress-bar-xs">
+                                                    <div class="progress-bar bg-danger w-{{$itemuivre->count()*2}}" role="progressbar"
+                                                        aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge badge-soft-success"><i
+                                        class="zmdi zmdi-time-restore font-25 mr-10 text-light-40"></i>{{$itemuivre->count()}}</span></td>
+                                     @endif
+                                    @endforeach
+                                    @if (date_create(substr($itemcours->datecours, 1,9))>=now())
+                                    <td><span class="badge badge-soft-success">complet</span></td>
+                                    @elseif(date_create(substr($itemcours->datecours, 10,20))>=now() )
+                                        <td><span class="badge badge-soft-danger">Encours</span></td>
+                                    @elseif(date_create(substr($itemcours->datecours, 10,20))>=now())
+                                    <td><span class="badge badge-soft-info">Encours</span></td>
+                                    @endif
+
                                 </tr>
 
                                 @endforeach
@@ -535,64 +510,5 @@
 </section>
 
 
-
-<tbody>
-    @foreach ($cours as $itemcours)
-        @foreach ($formations as $itemform)
-            @if ($itemcours->formation ==$itemform->formation_id  )
-            <tr>
-                 @foreach ($suivres as $itemuivre)
-                    @foreach ($users as $itemclient)
-                        @if( $itemcours->cours_id ==$itemuivre->cours_id && $itemcours->formation ==$itemclient->id)
-                                <td>{{$itemform->titre}}</td>
-                                <td>{{date_create(substr($itemcours->datecours,1,9))->format('d/M/Y')
-                                .'-'.
-                                date_create(substr($itemcours->datecours, 12,20))->format('d/M/Y')}}</td>
-                                <td>{{$itemclient->name1.' - '.$itemclient->name2}}</td>
-                                <td>{{$itemuivre->count()}}</td>
-                            @if ($itemuivre->count()==0)
-                                <td>
-                                    <div class="progress-wrap lb-side-left">
-                                        <div class="progress-lb-wrap">
-                                            <label class="progress-label mnw-25p">0%</label>
-                                            <div class="progress progress-bar-xs">
-                                                <div class="progress-bar bg-danger w-0" role="progressbar"
-                                                    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            @elseif($itemuivre->count()>=0 &&$itemuivre->count()<=50 )
-                                <td>
-                                    <div class="progress-wrap lb-side-left">
-                                        <div class="progress-lb-wrap">
-                                            <label class="progress-label mnw-25p">{{$itemuivre->count()}}%</label>
-                                            <div class="progress progress-bar-xs">
-                                                <div class="progress-bar bg-danger w-{{$itemuivre->count()}}" role="progressbar"
-                                                    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            @endif
-
-                            @if (date_create(substr($itemcours->datecours, 1,9))>=now())
-                                <td><span class="badge badge-soft-success">complet</span></td>
-                            @elseif(date_create(substr($itemcours->datecours, 10,20))>=now() )
-                                <td><span class="badge badge-soft-danger">Encours</span></td>
-                            @elseif(date_create(substr($itemcours->datecours, 10,20))>=now())
-                            <td><span class="badge badge-soft-info">Encours</span></td>
-                            @endif
-
-                            @endif
-
-                @endforeach
-            @endforeach
-        </tr>
-        @endif
-    @endforeach
-    @endforeach
-
-<!-- contents -->
 @endsection
 

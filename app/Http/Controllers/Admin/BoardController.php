@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\articles;
 use App\Coursmodel;
 use App\retraits;
 use App\formationM;
@@ -37,10 +38,11 @@ class BoardController extends Controller
         $users=User::all();
         $retrait=retraits::all();
         $suivres=SuivreModel::all();
+        $articles=articles::orderBy('created_at', 'desc')->get();
         return view('system/board',
         compact(
             'formations','retraits','retraits1','formations','liens','cours',
-            'retraits','suivres','users',
+            'retraits','suivres','users','articles'
         ));
     }
     public Function suivremembre($suivre){

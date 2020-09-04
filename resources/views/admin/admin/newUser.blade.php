@@ -1,6 +1,6 @@
-{{-- @extends('layzoutst')
+@extends('layoutadmin')
 
-@section('content') --}}
+@section('content')
 
 <!-- HK Wrapper -->
 <div class="hk-wrapper">
@@ -129,4 +129,4 @@
                 </div>
             </div>
 
-{{-- @endsection --}}
+@endsection
