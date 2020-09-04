@@ -16,10 +16,6 @@
                         {{ session()->get('success') }}
                         </div><br />
                     @endif
-
-
-
-
                     <div class="table-wrap">
                     <table class="table table-hover w-100 display dataTable no-footer dtr-inline" role="grid" style="width: 1040px;">
 

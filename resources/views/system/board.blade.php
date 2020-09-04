@@ -259,12 +259,7 @@
                                             </div>
                                         </td>
                                         <td class="text-center">
-                                            <a href="articles/{{ $articles->id }}/edit" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></a>
-                                            <form action="articles/delete/{{ $articles->id }}"  style="display: inline-block">
-                                                @csrf
-                                                @method('put')
-                                                <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-remove" ></i></button>
-                                            </form>
+                                            <a href="articles/{{ $itemarticles->id }}" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
