@@ -84,7 +84,7 @@
  <!-- Slimscroll JavaScript -->
  <script src="{{  asset('dist/js/jquery.slimscroll.js')}}"></script>
 
-
+ <script src="{{  asset('dist/js/login-data.js')}}"></script>
  <!-- Gallery JavaScript -->
  <script src="{{  asset('vendors/lightgallery/dist/js/lightgallery-all.min.js')}}"></script>
  <script src="{{  asset('dist/js/froogaloop2.min.js')}}"></script>

@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\articles;
+use App\Coursmodel;
+use App\formationM;
+use App\Lienscoursmodel;
+use App\retraits;
+use App\SuivreModel;
+use App\User;
 use Illuminate\Http\Request;
 //use Intervention\Image\Facades\Image;
 
@@ -76,6 +82,22 @@ class ArticlesController extends Controller
     public function show($id)
     {
         //
+        $retraits = retraits::where('statu', 0)->get();
+        $retraits1 = retraits::where('statu', 1)->get();
+        $formations  = formationM::all();
+        $formations=formationM::all();
+        $liens=Lienscoursmodel::all();
+        $cours=Coursmodel::all();
+        $users=User::all();
+        $retrait=retraits::all();
+        $suivres=SuivreModel::all();
+        $articles=articles::orderBy('created_at', 'desc')->get();
+
+        $article = articles::where('id', $id)->firstOrfail();
+        return view('admin/articles/single', compact('articles','formations','retraits',
+        'retraits1','formations','liens','cours',
+        'retraits','suivres','users','article'));
+
     }
 
     /**

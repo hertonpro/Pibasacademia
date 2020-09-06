@@ -47,7 +47,7 @@
                                         <label class="custom-control-label font-14" for="same-address">Keep me logged in</label>
                                     </div>
                                     <button class="btn btn-primary btn-block" type="submit">Login</button>
-                                    
+
                                     <p class="text-center">Retour à la page d acceuil <a href="{{ route('home') }}">d'acceuil</a></p>
                                 </form>
                             </div>
