@@ -92,11 +92,12 @@ class ArticlesController extends Controller
         $retrait=retraits::all();
         $suivres=SuivreModel::all();
         $articles=articles::orderBy('created_at', 'desc')->get();
+        $articl=articles::orderBy('created_at', 'desc')->get();
 
         $article = articles::where('id', $id)->firstOrfail();
         return view('admin/articles/single', compact('articles','formations','retraits',
         'retraits1','formations','liens','cours',
-        'retraits','suivres','users','article'));
+        'retraits','suivres','users','article','articl'));
 
     }
 

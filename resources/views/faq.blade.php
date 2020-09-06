@@ -8,7 +8,7 @@
             <div class="container mt-sm-60 mt-30">
                 <div class="hk-row">
                     <section class="hk-sec-wrapper">
-                        <h5 class="hk-sec-title mb-25">Accordion Type 2</h5>
+                        <h5 class="hk-sec-title mb-25">Questions posées</h5>
                         <div class="row">
                             <div class="col-sm">
                                 <div class="accordion accordion-type-2" id="accordion_2">
@@ -18,6 +18,11 @@
                                             La synthèse des questions posées de manière récurrente sur <a href="{{url('/')}}"> Pibas Academia </a>
                                             </p>
                                         </div>
+
+                                    </div>
+                                    <div class="card">
+
+
                                         <div class="card-header d-flex justify-content-between activestate">
                                             <a role="button" data-toggle="collapse" href="#collapse_1i" aria-expanded="true">Collapse One</a>
                                         </div>

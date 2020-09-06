@@ -7,8 +7,8 @@
 <!-- contents -->
 <div class="hk-pg-header">
     <div>
-        <h2 class="hk-pg-title font-weight-600 mb-10">Articles</h2>
-    <p>Page d'administration<a href="{{url('board')}}"> voir.</a></p>
+        <h2 class="hk-pg-title font-weight-600 mb-10">Dashboard</h2>
+        <p>Page d'administration<a href="#"> Support.</a></p>
     </div>
 </div>
 <div class="hk-row">
@@ -31,9 +31,11 @@
                             <div class="inline-block dropdown">
                                 <a class="dropdown-toggle no-caret" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="ion ion-ios-more"></i></a>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#">Modifier</a>
-                                    <a class="dropdown-item" href="#">Supprimer</a>
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
                                     <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Separated link</a>
                                 </div>
                             </div>
                         </div>
@@ -156,7 +158,7 @@
             <div class="card-body pb-5">
                 @foreach ($articl as $itemart)
                     <div class="hk-row text-center">
-                        <div class="col-2 mb-15">
+                        <div class="col-4 mb-15">
                             <div class="w-100">
                                 <img src="{{asset('storage/'.$itemart->img)}}" alt="user" class="img-fluid rounded">
                             </div>
@@ -166,8 +168,8 @@
                 @endforeach
             </div>
         </div>
-        </div>
-    </div>
+                </div>
+            </div>
 </section>
 
 

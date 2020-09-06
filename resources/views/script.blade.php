@@ -46,7 +46,7 @@
 
     <!-- Init JavaScript -->
     <script src="{{  asset('dist/js/init.js')}}"></script>
-    <script src="{{  asset('dist/js/dashboard2-data.js')}}"></script>
+    {{-- <script src="{{  asset('dist/js/dashboard2-data.js')}}"></script> --}}
 
     <!-- Data Table JavaScript -->
     <script src="{{  asset('vendors/datatables.net/js/jquery.dataTables.min.js')}}"></script>
@@ -97,6 +97,9 @@
  <script src="{{  asset('vendors/jquery-toggles/toggles.min.js')}}"></script>
  <script src="{{  asset('dist/js/toggle-data.js')}}"></script>
 
+    <!-- Toastr JS -->
+    <script src="{{  asset('vendors/jquery-toast-plugin/dist/jquery.toast.min.js')}}"></script>
+    <script src="{{  asset('dist/js/toast-data.js')}}"></script>
  <!-- Select2 JavaScript -->
  <script src="{{  asset('vendors/select2/dist/js/select2.full.min.js')}}"></script>
  <script src="{{  asset('dist/js/select2-data.js')}}"></script>

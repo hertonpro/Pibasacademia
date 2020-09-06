@@ -2,110 +2,110 @@
 /*Dashboard Init*/
 
 "use strict";
-$(document).ready(function () {
-    /*Toaster Alert*/
-    $.toast({
-        heading: "Well done!",
-        text:
-            '<p>You have successfully completed level 1.</p><button class="btn btn-primary btn-sm mt-10">Play again</button>',
-        position: "top-right",
-        loaderBg: "#0f75bc",
-        class: "jq-toast-primary",
-        hideAfter: 3500,
-        stack: 6,
-        showHideTransition: "fade",
-    });
-    if ($("#area_chart").length > 0) {
-        var data = [
-            {
-                period: "Son",
-                iphone: 10,
-                ipad: 80,
-            },
-            {
-                period: "Mon",
-                iphone: 130,
-                ipad: 100,
-            },
-            {
-                period: "Tue",
-                iphone: 80,
-                ipad: 30,
-            },
-            {
-                period: "Wed",
-                iphone: 70,
-                ipad: 200,
-            },
-            {
-                period: "Thu",
-                iphone: 180,
-                ipad: 50,
-            },
-            {
-                period: "Fri",
-                iphone: 105,
-                ipad: 170,
-            },
-            {
-                period: "Sat",
-                iphone: 250,
-                ipad: 150,
-            },
-        ];
+// $(document).ready(function () {
+//     /*Toaster Alert*/
+//     $.toast({
+//         heading: "Well done!",
+//         text:
+//             '<p>You have successfully completed level 1.</p><button class="btn btn-primary btn-sm mt-10">Play again</button>',
+//         position: "top-right",
+//         loaderBg: "#0f75bc",
+//         class: "jq-toast-primary",
+//         hideAfter: 3500,
+//         stack: 6,
+//         showHideTransition: "fade",
+//     });
+//     if ($("#area_chart").length > 0) {
+//         var data = [
+//             {
+//                 period: "Son",
+//                 iphone: 10,
+//                 ipad: 80,
+//             },
+//             {
+//                 period: "Mon",
+//                 iphone: 130,
+//                 ipad: 100,
+//             },
+//             {
+//                 period: "Tue",
+//                 iphone: 80,
+//                 ipad: 30,
+//             },
+//             {
+//                 period: "Wed",
+//                 iphone: 70,
+//                 ipad: 200,
+//             },
+//             {
+//                 period: "Thu",
+//                 iphone: 180,
+//                 ipad: 50,
+//             },
+//             {
+//                 period: "Fri",
+//                 iphone: 105,
+//                 ipad: 170,
+//             },
+//             {
+//                 period: "Sat",
+//                 iphone: 250,
+//                 ipad: 150,
+//             },
+//         ];
 
-        var lineChart = Morris.Area({
-            element: "area_chart",
-            data: data,
-            xkey: "period",
-            ykeys: ["iphone", "ipad"],
-            labels: ["iphone", "ipad"],
-            pointSize: 0,
-            lineWidth: 0,
-            fillOpacity: 0.95,
-            pointStrokeColors: ["#97ca5a", "#0f75bc"],
-            behaveLikeLine: true,
-            grid: false,
-            hideHover: "auto",
-            lineColors: ["#97ca5a", "#0f75bc"],
-            resize: true,
-            redraw: true,
-            smooth: true,
-            gridTextColor: "#878787",
-            gridTextFamily: "Nunito",
-            parseTime: false,
-        });
-    }
-    if ($("#m_chart_4").length > 0) {
-        // Line Chart
-        var data = [
-            { y: "100", a: 10, b: 20, c: 40 },
-            { y: "200", a: 30, b: 50, c: 70 },
-            { y: "300", a: 20, b: 40, c: 50 },
-            { y: "400", a: 50, b: 70, c: 90 },
-            { y: "500", a: 10, b: 40, c: 100 },
-        ];
-        var lineChart = Morris.Line({
-            element: "m_chart_4",
-            data: data,
-            xkey: "y",
-            ykeys: ["a", "b", "c"],
-            labels: ["Total Income", "Total Outcome", "Total Expences"],
-            gridLineColor: "transparent",
-            resize: true,
-            gridTextColor: "#6f7a7f",
-            gridTextFamily: "Inherit",
-            hideHover: "auto",
-            behaveLikeLine: true,
-            smooth: false,
-            pointSize: 4,
-            lineWidth: 2,
-            pointFillColors: ["#fff", "#fff", "#fff"],
-            pointStrokeColors: ["#0f75bc", "#97ca5a", "#aed67e"],
-            lineColors: ["#0f75bc", "#97ca5a", "#aed67e"],
-        });
-    }
-});
+//         var lineChart = Morris.Area({
+//             element: "area_chart",
+//             data: data,
+//             xkey: "period",
+//             ykeys: ["iphone", "ipad"],
+//             labels: ["iphone", "ipad"],
+//             pointSize: 0,
+//             lineWidth: 0,
+//             fillOpacity: 0.95,
+//             pointStrokeColors: ["#97ca5a", "#0f75bc"],
+//             behaveLikeLine: true,
+//             grid: false,
+//             hideHover: "auto",
+//             lineColors: ["#97ca5a", "#0f75bc"],
+//             resize: true,
+//             redraw: true,
+//             smooth: true,
+//             gridTextColor: "#878787",
+//             gridTextFamily: "Nunito",
+//             parseTime: false,
+//         });
+//     }
+//     if ($("#m_chart_4").length > 0) {
+//         // Line Chart
+//         var data = [
+//             { y: "100", a: 10, b: 20, c: 40 },
+//             { y: "200", a: 30, b: 50, c: 70 },
+//             { y: "300", a: 20, b: 40, c: 50 },
+//             { y: "400", a: 50, b: 70, c: 90 },
+//             { y: "500", a: 10, b: 40, c: 100 },
+//         ];
+//         var lineChart = Morris.Line({
+//             element: "m_chart_4",
+//             data: data,
+//             xkey: "y",
+//             ykeys: ["a", "b", "c"],
+//             labels: ["Total Income", "Total Outcome", "Total Expences"],
+//             gridLineColor: "transparent",
+//             resize: true,
+//             gridTextColor: "#6f7a7f",
+//             gridTextFamily: "Inherit",
+//             hideHover: "auto",
+//             behaveLikeLine: true,
+//             smooth: false,
+//             pointSize: 4,
+//             lineWidth: 2,
+//             pointFillColors: ["#fff", "#fff", "#fff"],
+//             pointStrokeColors: ["#0f75bc", "#97ca5a", "#aed67e"],
+//             lineColors: ["#0f75bc", "#97ca5a", "#aed67e"],
+//         });
+//     }
+// });
 
 /*****E-Charts function start*****/
 var echartsConfig = function () {

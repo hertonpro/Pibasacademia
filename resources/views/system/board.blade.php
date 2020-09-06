@@ -259,7 +259,7 @@
                                             </div>
                                         </td>
                                         <td class="text-center">
-                                            <a href="articles/{{ $itemarticles->id }}" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></a>
+                                            <a href="articles/{{ $itemarticles->id }}" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
