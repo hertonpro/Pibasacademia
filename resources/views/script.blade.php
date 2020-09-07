@@ -119,3 +119,8 @@
  <script src="{{  asset('vendors/moment/min/moment.min.js')}}"></script>
  <script src="{{  asset('vendors/daterangepicker/daterangepicker.js')}}"></script>
  <script src="{{  asset('dist/js/daterangepicker-data.js')}}"></script>
+      <!-- Owl JavaScript -->
+      <script src="{{  asset('vendors/owl.carousel/dist/owl.carousel.min.js')}}"></script>
+
+      <!-- Owl Init JavaScript -->
+      <script src="{{  asset('dist/js/owl-data.js')}}"></script>

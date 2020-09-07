@@ -79,6 +79,25 @@ class ArticlesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function showall()
+    {
+        //
+        $retraits = retraits::where('statu', 0)->get();
+        $retraits1 = retraits::where('statu', 1)->get();
+        $formations  = formationM::all();
+        $formations=formationM::all();
+        $liens=Lienscoursmodel::all();
+        $cours=Coursmodel::all();
+        $users=User::all();
+        $retrait=retraits::all();
+        $suivres=SuivreModel::all();
+        $articles=articles::orderBy('created_at', 'desc')->get();
+        $articl=articles::orderBy('created_at', 'desc')->get();
+
+        return view('admin/articles/single2', compact('articles','formations','retraits',
+        'retraits1','formations','liens','cours',
+        'retraits','suivres','users','articl'));
+    }
     public function show($id)
     {
         //
@@ -98,7 +117,6 @@ class ArticlesController extends Controller
         return view('admin/articles/single', compact('articles','formations','retraits',
         'retraits1','formations','liens','cours',
         'retraits','suivres','users','article','articl'));
-
     }
 
     /**

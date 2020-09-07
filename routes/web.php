@@ -51,6 +51,7 @@ Route::patch('/contact/{contact}', 'ContactController@update');
  Route::get('article/{article}', 'HomeController@article');
 
 Route::resource('articles', 'ArticlesController');
+Route::get('voirplusart', 'ArticlesController@showall');
 
 
 

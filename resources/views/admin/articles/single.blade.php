@@ -151,7 +151,7 @@
         <div class="card card-profile-feed">
             <div class="card-header card-header-action">
                 <h6><span>Articles <span class="badge badge-soft-primary ml-5">212</span></span></h6>
-                <a href="#" class="font-14 ml-auto">Voir</a>
+            <a href="{{url('voirplusart')}}" class="font-14 ml-auto">Voir</a>
             </div>
             <div class="card-body pb-5">
                 @foreach ($articl as $itemart)
