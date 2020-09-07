@@ -62,7 +62,11 @@
         <div id="card">
             @foreach ($formations as $item)
             <section class="hk-sec-wrapper">
-                <h5 class="hk-sec-title">{{$item->titre}}</h5>
+                <h5 class="hk-sec-title">
+                    {{substr(
+                        ucfirst(mb_strtolower($item->titre)),0,40)
+                     }}...
+                   </h5>
                 <p class="mb-25">
                     {{$item->resume}}
                 </p>

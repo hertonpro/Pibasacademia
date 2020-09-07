@@ -140,7 +140,8 @@
                                                 <div class="dd-handle ">
                                                 </div>
                                                 <div class="dd3-content"> {{$it}}<a href="{{$itemitem->link}}"
-                                                        target="_blank">{{$itemitem->description}}</a>
+                                                        target="_blank">{{
+                                                            $itemitem->description}}</a>
                                                 </div>
                                             </li>
                                             @endforeach
@@ -274,7 +275,9 @@
                                                 class="d-block text-dark text-capitalize">{{  substr($itemrecent->titre, 1,15).'...'  }}</span>
                                         </a>
                                         <span
-                                            class="d-block font-13">{{  substr($itemrecent->titre, 1,20).'...'  }}</span>
+                                            class="d-block font-13">{{
+                                                 ucfirst(mb_strtolower(substr($itemrecent->content,1,100)))
+                                           }}</span>
                                     </div>
                                 </div>
                             </li>

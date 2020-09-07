@@ -340,8 +340,10 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                             <td><span class="badge badge-soft-danger"><i
-                                                class="zmdi zmdi-time-restore font-25 mr-10 text-light-40"></i>{{$itemuivre->count()}}</span></td>
+                                             <td><span class="badge badge-soft-danger">
+                                                <i class="icon-user"></i>
+
+                                                {{$itemuivre->count()}}</span></td>
                                         @else
                                         <td>
                                             <div class="progress-wrap lb-side-left">
@@ -354,8 +356,9 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td><span class="badge badge-soft-info"><i
-                                            class="zmdi zmdi-time-restore font-25 mr-10 text-light-40"></i>{{$itemuivre->count()}}</span></td>
+                                        <td><span class="badge badge-soft-info">
+                                            <i class="icon-user"></i>
+                                            {{$itemuivre->count()}}</span></td>
                                         @endif
                                     @elseif($itemuivre->count()==50)
                                     <td>
@@ -369,8 +372,12 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td><span class="badge badge-soft-success"><i
-                                        class="zmdi zmdi-time-restore font-25 mr-10 text-light-40"></i>{{$itemuivre->count()}}</span></td>
+                                    <td>
+                                        <span class="badge badge-soft-success">
+                                            <i class="icon-user"></i>
+                                            {{$itemuivre->count()}}
+                                        </span>
+                                    </td>
                                      @endif
                                     @endforeach
                                     @if (date_create(substr($itemcours->datecours, 1,9))>=now())
@@ -393,8 +400,7 @@
         </div>
     </div>
 </div>
-    <div class="card p-2">
-    </div>
+
     <div id="dem" class="card p-3" id="upline">
         <h3 class="p-4">Liste de demande de retrait</h3>
         <div class="d-flex align-items-center card-action-wrap table-wrap">
@@ -500,7 +506,6 @@
                 </tfoot>
             </table>
         </div>
-    </div>
     </div>
 </section>
 

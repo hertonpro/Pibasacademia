@@ -31,7 +31,7 @@ Route::get('formatio', 'HomeController@formatio');
 Route::post('/newUser', 'AdminController@create')->name('newUser');
 Route::get('/newUser', 'AdminController@newUser');
 Route::resource('/board', 'Admin\BoardController');
-Route::get('/suivre/{suivre}', 'Admin\BoardController@suivremembre');
+Route::get('/suivre/{suivre}', 'SuivreController@suivremembre');
 Route::get('/calendrier', 'Admin\BoardController@calendrier');
 Route::resource('profiles', 'ProfilController');
 
