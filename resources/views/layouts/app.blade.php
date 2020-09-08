@@ -11,6 +11,9 @@
     <div id="app">
         <nav class="navbar navbar-expand-xl fixed-top hk-navbar bg-white navbar-scroll">
             <div class="container">
+                <a href="{{ url('/home') }}" class="navbar-brand font-weight-700">
+                    <img class="brand-img d-inline-block align-top mr-10" src="dist/img/logo.png"
+                        alt="PiBas" />Academia</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
@@ -23,9 +26,7 @@
                     <ul class="navbar-nav mr-auto">
 
                         <li class="nav-item active">
-                            <a href="{{ url('/home') }}" class="navbar-brand font-weight-700">
-                                <img class="brand-img d-inline-block align-top mr-10" src="dist/img/logo.png"
-                                    alt="PiBas" />Academia</a>
+
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('#apropos') }}" class="nav-link">Apropos</a>

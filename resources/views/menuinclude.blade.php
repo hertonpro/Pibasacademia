@@ -1,21 +1,21 @@
 <div id="app">
     <nav class="navbar navbar-expand-xl fixed-top hk-navbar bg-white navbar-scroll">
         <div class="container">
-            <a href="{{ url('/home') }}" class="navbar-brand d-flex align-items-center" href="#">
-                <img class="brand-img d-inline-block align-top mr-10" src="dist/img/logo.png" alt="PiBas" />
-            </a>
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button> <p>Academia</p> 
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-
+                    <a href="{{ url('/home') }}" class="navbar-brand d-flex align-items-center" href="#">
+                        <img class="brand-img d-inline-block align-top mr-10" src="dist/img/logo.png" alt="PiBas" />
+                    </a>
                     <li class="nav-item active">
-                        <a href="{{ url('/home') }}" class="navbar-brand font-weight-700">Academia <span
-                                class="text-warning">(Beta)</span></a>
+                        <a href="{{ url('/home') }}" class="navbar-brand font-weight-700">Academia (Beta)<span
+                                class="text-warning"></span></a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ url('#apropos') }}" class="nav-link">Apropos</a>
