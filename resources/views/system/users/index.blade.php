@@ -14,9 +14,10 @@
 						<div class="avatar view overlay">
 							@if(App\Profile::where('user_id', Auth::user()->id)->exists())
 							<div class=" avatar-img rounded-circle fa fa-upload"
-								style="text-align: center;background-image: url('{{ asset('profilesImg/'.App\profile::where('user_id', Auth::user()->id)->firstOrfail()->img) }}');background-size: 100%;" alt="user">
+								style="text-align: center;background-image: url('{{ asset('profilesImg/'.App\profile::where('user_id', Auth::user()->id)->firstOrfail()->img) }}');background-size: 100%;"
+								alt="user">
 								{{-- <span class=" inputIcone display-1 rounded-circle "></span> --}}
-								<input name="img" id="upload_image"type="file" class="inputFile" value="" />
+								<input name="img" id="upload_image" type="file" class="inputFile" value="" />
 							</div>
 							@else
 							<button class="btn btn-info avatar-img rounded-circle" style="text-align: center;"
@@ -37,20 +38,22 @@
 									position: absolute;
 									cursor: pointer;
 								}
+
 								.ingputIcone {
-								margin-top: 0px;
-								left: 0px;
-								right: 0px;
-								top: 0px;
-								width: 100%;
-								height: 100%;
-								opacity: 0.2;
+									margin-top: 0px;
+									left: 0px;
+									right: 0px;
+									top: 0px;
+									width: 100%;
+									height: 100%;
+									opacity: 0.2;
 
 								}
+
 								.ha:hover {
-									border-radius: 50%;background-color: aliceblue;
+									border-radius: 50%;
+									background-color: aliceblue;
 								}
-
 							</style>
 
 
@@ -91,9 +94,6 @@
 			</li>
 			<li class="nav-item">
 				<a href="{{url('/formatio')}}" class="d-flex h-60p align-items-center nav-link">Formation</a>
-			</li>
-			<li class="nav-item">
-				<button class="btn btn-info" id="passM">Changer mot de passe</button>
 			</li>
 		</ul>
 	</div>
@@ -269,6 +269,7 @@
 
 
 				<div class="card-body">
+					<img src="{{ asset(Auth::user()->role.'png')}}" alt="" class="img-fluid card">
 					<form>
 						@csrf
 

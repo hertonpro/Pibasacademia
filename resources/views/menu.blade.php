@@ -137,9 +137,9 @@
                 <i class="dropdown-icon zmdi zmdi-account"></i><span>{{ __('Profil') }}</span></a> --}}
                 <a class="dropdown-item" href="{{ url('users') }}"><i class="dropdown-icon zmdi zmdi-card"></i><span>
                         Balance</span></a>
-                <a class="dropdown-item" href="{{ url('users/1/edit') }}"><i
+                <button class="dropdown-item" href="{{ url('users/1/edit') }}" id="passM"><i
                         class="dropdown-icon zmdi zmdi-card"></i><span>
-                        Profil</span></a>
+                        Profil</span></button>
                 <a class="dropdown-item" href="{{ url('inbox') }}"><i
                         class="dropdown-icon zmdi zmdi-email"></i><span>Inbox</span></a>
                 {{-- <a class="dropdown-item" href="setting"><i
