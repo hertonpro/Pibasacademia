@@ -122,7 +122,14 @@
                 <div class="media">
                     <div class="media-img-wrap">
                         <div class="avatar">
-                            <img src="{{asset('dist/img/avatar12.jpg')}}" alt=" user" class="avatar-img rounded-circle">
+
+                            @if(App\Profile::where('user_id', Auth::user()->id)->exists())
+                            <img src="{{ asset('profilesImg/'.App\profile::where('user_id', Auth::user()->id)->firstOrfail()->img) }}"
+                                alt="photo de profil" class="avatar-img rounded-circle">
+                            @else
+                            <img src="{{ asset('profilesImg/0000.png')}}" alt="photo de profil"
+                                class="avatar-img rounded-circle">
+                            @endif
                         </div>
                         <span class="badge badge-success badge-indicator"></span>
                     </div>
@@ -133,13 +140,15 @@
                 </div>
             </a>
             <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
-                {{-- <a class="dropdown-item" href="{{ url('/users/'.Auth::user()->id.'/edit') }}">
+                {{-- <a class="dropdown-item" href="@if(App\Profile::where('user_id', Auth::user()->id)->exists())
+                <img src="{{ asset('profilesImg/'.App\profile::where('user_id', Auth::user()->id)->firstOrfail()->img) }}"
+                alt="photo de profil" class="img-thumbnail flot-center">
+                @else
+                <img src="{{ asset('profilesImg/0000.png')}}" alt="photo de profil" class="img-thumbnail flot-center">
+                @endif{{ url('/users/'.Auth::user()->id.'/edit') }}">
                 <i class="dropdown-icon zmdi zmdi-account"></i><span>{{ __('Profil') }}</span></a> --}}
                 <a class="dropdown-item" href="{{ url('users') }}"><i class="dropdown-icon zmdi zmdi-card"></i><span>
                         Balance</span></a>
-                <button class="dropdown-item" href="{{ url('users/1/edit') }}" id="passM"><i
-                        class="dropdown-icon zmdi zmdi-card"></i><span>
-                        Profil</span></button>
                 <a class="dropdown-item" href="{{ url('inbox') }}"><i
                         class="dropdown-icon zmdi zmdi-email"></i><span>Inbox</span></a>
                 {{-- <a class="dropdown-item" href="setting"><i
@@ -177,34 +186,6 @@
                 <a href="javascript:void(0);" id="settings_panel_close" class="settings-panel-close"><span
                         class="feather-icon"><i data-feather="x"></i></span></a>
             </div>
-            <hr>
-            <h6 class="mb-5">Layout</h6>
-            <p class="font-14">Choose your preferred layout</p>
-            <div class="layout-img-wrap">
-                <div class="row">
-                    <a href="dashboard1.html" class="col-6 mb-30">
-                        <img class="rounded opacity-70" src="dist/img/layout1.png" alt="layout">
-                        <i class="zmdi zmdi-check"></i>
-                    </a>
-                    <a href="javascript:void(0);" class="col-6 mb-30 active">
-                        <img class="rounded opacity-70" src="dist/img/layout2.png" alt="layout">
-                        <i class="zmdi zmdi-check"></i>
-                    </a>
-                    <a href="dashboard3.html" class="col-6 mb-30">
-                        <img class="rounded opacity-70" src="dist/img/layout3.png" alt="layout">
-                        <i class="zmdi zmdi-check"></i>
-                    </a>
-                    <a href="dashboard4.html" class="col-6 mb-30">
-                        <img class="rounded opacity-70" src="dist/img/layout4.png" alt="layout">
-                        <i class="zmdi zmdi-check"></i>
-                    </a>
-                    <a href="dashboard5.html" class="col-6">
-                        <img class="rounded opacity-70" src="dist/img/layout5.png" alt="layout">
-                        <i class="zmdi zmdi-check"></i>
-                    </a>
-                </div>
-            </div>
-            <hr>
             <h6 class="mb-5">Navigation</h6>
             <p class="font-14">Menu comes in two modes: dark & light</p>
             <div class="button-list hk-nav-select mb-10">
@@ -228,10 +209,29 @@
             </div>
             <hr>
             <div class="d-flex justify-content-between align-items-center">
-                <h6>Scrollable Header</h6>
-                <div class="toggle toggle-sm toggle-simple toggle-light toggle-bg-primary scroll-nav-switch"></div>
+                <h6>Mot de passe</h6>
             </div>
-            <button id="reset_settings" class="btn btn-primary btn-block btn-reset mt-30">Reset</button>
+            <button id="passM" class="btn btn-primary btn-block btn-reset mt-30">Changer mot de passe</button>
+
+            <hr>
+            <div class="d-flex justify-content-between align-items-center">
+                <h6>Avatar</h6>
+
+            </div>
+            <p class="font-14">Change l'image de profile <br>
+                utiliser exclisivement le format <span class="text-danger">jpg,png,gif</span> </p> <br><br><br>
+            <div class="media-img-wrap ha d-flex">
+                <input name="img" id="upload_image" type="file" class="dropify" value="" accept="image/*" />
+
+
+            </div>
+            @if(App\Profile::where('user_id', Auth::user()->id)->exists())
+            <img src="{{ asset('profilesImg/'.App\profile::where('user_id', Auth::user()->id)->firstOrfail()->img) }}"
+                alt="photo de profil" class="img-thumbnail flot-center">
+            @else
+            <img src="{{ asset('profilesImg/0000.png')}}" alt="photo de profil" class="img-thumbnail flot-center">
+            @endif
+
         </div>
     </div>
     <img class="d-none" src="dist/img/logo-light.png" alt="brand" />

@@ -2,89 +2,7 @@
 
 @section('content')
 
-<!-- contents -->
-<div class="profile-cover-wrap overlay-wrap">
-	<div class="profile-cover-img" style="background-image:url({{url('dist/img/trans-bg.jpg')}})"></div>
-	<div class="bg-overlay bg-trans-dark-60"></div>
-	<div class="container profile-cover-content py-50">
-		<div class="hk-row">
-			<div class="col-lg-6">
-				<div class="media align-items-center">
-					<div class="media-img-wrap ha d-flex">
-						<div class="avatar view overlay">
-							@if(App\Profile::where('user_id', Auth::user()->id)->exists())
-							<div class=" avatar-img rounded-circle fa fa-upload"
-								style="text-align: center;background-image: url('{{ asset('profilesImg/'.App\profile::where('user_id', Auth::user()->id)->firstOrfail()->img) }}');background-size: 100%;"
-								alt="user">
-								{{-- <span class=" inputIcone display-1 rounded-circle "></span> --}}
-								<input name="img" id="upload_image" type="file" class="inputFile" value="" />
-							</div>
-							@else
-							<button class="btn btn-info avatar-img rounded-circle" style="text-align: center;"
-								alt="user"><span class="fa fa-upload"></span><input name="img" id="upload_image"
-									type="file" class="inputFile" value="" /></button>
-							@endif
-
-
-							<style type="text/css">
-								.inputFile {
-									margin-top: 0px;
-									left: 0px;
-									right: 0px;
-									top: 0px;
-									width: 100%;
-									height: 100%;
-									opacity: 0;
-									position: absolute;
-									cursor: pointer;
-								}
-
-								.ingputIcone {
-									margin-top: 0px;
-									left: 0px;
-									right: 0px;
-									top: 0px;
-									width: 100%;
-									height: 100%;
-									opacity: 0.2;
-
-								}
-
-								.ha:hover {
-									border-radius: 50%;
-									background-color: aliceblue;
-								}
-							</style>
-
-
-
-
-
-						</div>
-
-					</div>
-
-					<div class="media-body">
-						<div class="text-white text-capitalize display-6 mb-5 font-weight-400">
-							{{Auth::user()->name1.' '.Auth::user()->name2}}</div>
-						<div class="font-14 text-white"><span class="mr-5"><span
-									class="font-weight-500 pr-5">Matricule</span><span
-									class="mr-5">{{Auth::user()->pin}}</span></span></div>
-					</div>
-
-				</div>
-			</div>
-			<div class="col-lg-6">
-				<div class="button-list">
-					<a href="#" class="btn btn-dark btn-wth-icon icon-wthot-bg btn-rounded"><span
-							class="btn-text">Message {{Auth::user()->role}}</span><span class="icon-label"><i
-								class="icon ion-md-mail"></i>
-						</span></a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+@include('profil')
 <div class="bg-white shadow-bottom">
 	<div class="container">
 		<ul class="nav nav-light nav-tabs" id="resume" role="tablist">
@@ -213,7 +131,7 @@
 	                },
 	                error: function(data, textStatus, errorThrown){
 	                     alert(data.success);
-	                     $('.form-control').val('');
+	                     $('.form-control').val('Le mot de passe ne corspond à aucune autre');
 	                }
 	            });
 
@@ -269,13 +187,12 @@
 
 
 				<div class="card-body">
-					<img src="{{ asset(Auth::user()->role.'png')}}" alt="" class="img-fluid card">
 					<form>
 						@csrf
 
 						<div class="form-group row">
 							<label for=""
-								class="col-md-4 col-form-label text-md-right">{{ __('Last password') }}</label>
+								class="col-md-4 col-form-label text-md-right">{{ __('ancien mot de passe') }}</label>
 
 							<div class="col-md-6">
 								<input id="password-last" type="password"
@@ -292,7 +209,7 @@
 
 						<div class="form-group row">
 							<label for="password"
-								class="col-md-4 col-form-label text-md-right">{{ __('New password') }}</label>
+								class="col-md-4 col-form-label text-md-right">{{ __('Nouveau mot de passe') }}</label>
 
 							<div class="col-md-6">
 								<input id="password" type="password"
@@ -309,7 +226,7 @@
 
 						<div class="form-group row">
 							<label for="password-confirm"
-								class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+								class="col-md-4 col-form-label text-md-right">{{ __('Confirmez le mot de passe') }}</label>
 
 							<div class="col-md-6">
 								<input id="password-confirm" type="password" class="form-control"
