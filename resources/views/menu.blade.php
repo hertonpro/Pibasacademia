@@ -218,8 +218,8 @@
                 <h6>Avatar</h6>
 
             </div>
-            <p class="font-14">Change l'image de profile <br>
-                utiliser exclisivement le format <span class="text-danger">jpg,png,gif</span> </p> <br><br><br>
+            <p class="font-14">Change la photo de profile <br>
+                utiliser exclisivement le format image( <span class="text-danger">jpg,png,gif</span>) </p> <br><br><br>
             <div class="media-img-wrap ha d-flex">
                 <input name="img" id="upload_image" type="file" class="dropify" value="" accept="image/*" />
 

@@ -14,46 +14,12 @@
                                 alt="user">
                             </div>
                             @else
-                            <button class="btn btn-info avatar-img rounded-circle" style="text-align: center;"
-                                alt="user"><span class="fa fa-upload"></span><input name="img" id="upload_image"
-                                    type="file" class="inputFile" value="" /></button>
-                            <input name="img" id="upload_image" type="file" class="inputFile" value="" />
+                            <div class=" avatar-img rounded-circle"
+                                style="text-align: center;background-image: url('{{ asset('profilesImg/0000.png') }}');background-size: 100%;"
+                                alt="user">
+                            </div>
+
                             @endif
-
-
-                            <style type="text/css">
-                                .inputFile {
-                                    margin-top: 0px;
-                                    left: 0px;
-                                    right: 0px;
-                                    top: 0px;
-                                    width: 100%;
-                                    height: 100%;
-                                    opacity: 0;
-                                    position: absolute;
-                                    cursor: pointer;
-                                }
-
-                                .ingputIcone {
-                                    margin-top: 0px;
-                                    left: 0px;
-                                    right: 0px;
-                                    top: 0px;
-                                    width: 100%;
-                                    height: 100%;
-                                    opacity: 0.2;
-
-                                }
-
-                                .ha:hover {
-                                    border-radius: 50%;
-                                    background-color: aliceblue;
-                                }
-                            </style>
-
-
-
-
 
                         </div>
 
