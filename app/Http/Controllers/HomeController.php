@@ -37,7 +37,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $articles=articles::orderBy('created_at', 'desc')->get();
+        return view('home',compact('articles'));
     }
     public function apropos(){
         return view('clientacceuil');

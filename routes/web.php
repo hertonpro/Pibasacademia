@@ -95,6 +95,7 @@ Route::resource('transaction', 'Admin\TransactionController');
 Route::resource('cours', 'Admin\CoursController');
 //route inbox
 Route::resource('inbox', 'inboxController');
+Route::resource('message', 'inboxController@show');
 
 Route::post('/retrait', 'Admin\RetraitController@retrait')->name('retrait');
 Route::post('/retraitV', 'Admin\RetraitController@valide')->name('retraitV');

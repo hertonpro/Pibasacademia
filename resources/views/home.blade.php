@@ -182,50 +182,26 @@
                 <div class="row mt-3">
                     <div class="col-sm">
                         <div id="owl_demo_4" class="owl-carousel owl-theme">
+                            @foreach ($articles as $itemarticles)
                             <div class="item">
                                 <div class="card">
-                                    <img class="card-img-top" src="dist/img/slide1.jpg" alt="Card image cap">
+                                    <img class="card-img-top" src="{{ asset('storage/'.$itemarticles->img) }}" alt="Card image cap">
                                     <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make
-                                            up
-                                            the bulk
-                                            of the card's content.</p>
+                                        <p class="card-text"><a href="{{url('article', $itemarticles->id)}}"> {{
+                                        substr(
+                                           ucfirst(mb_strtolower($itemarticles->titre)),0,100)
+                                            }}.</a></p><br>
+                                        <p class="card-text">{{ substr(
+                                            ucfirst(mb_strtolower($itemarticles->content)),0,400)}}.</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="{{url('article', $itemarticles->id)}}" class="pull-right btn btn-sm-info">plus</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="card">
-                                    <img class="card-img-top" src="dist/img/slide2.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make
-                                            up
-                                            the bulk
-                                            of the card's content.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card">
-                                    <img class="card-img-top" src="dist/img/slide3.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make
-                                            up
-                                            the bulk
-                                            of the card's content.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="card">
-                                    <img class="card-img-top" src="dist/img/slide4.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make
-                                            up
-                                            the bulk
-                                            of the card's content.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+
+
                         </div>
                     </div>
                 </div>

@@ -72,16 +72,16 @@
                                                 </h6>
                                                 <ul class="list-group list-group-flush">
                                                     <li class="list-group-item d-flex align-items-center active">
-                                                        <i class="ion ion-md-sunny mr-15"></i>Receptions<span class="badge badge-light badge-pill ml-15">06</span>
+                                                        <i class="ion ion-md-sunny mr-15"></i>Terms &amp; conditions<span class="badge badge-light badge-pill ml-15">06</span>
                                                     </li>
                                                     <li class="list-group-item d-flex align-items-center ">
-                                                        <i class="ion ion-md-sunny mr-15"></i>Envoie<span class="badge badge-light badge-pill ml-15">06</span>
+                                                        <i class="ion ion-md-sunny mr-15"></i>Terms &amp; conditions<span class="badge badge-light badge-pill ml-15">06</span>
                                                     </li>
                                                     <li class="list-group-item d-flex align-items-center">
-                                                        <i class="ion ion-md-unlock mr-15"></i>Brouillon<span class="badge badge-light badge-pill ml-15">14</span>
+                                                        <i class="ion ion-md-unlock mr-15"></i>Privacy policy<span class="badge badge-light badge-pill ml-15">14</span>
                                                     </li>
                                                     <li class="list-group-item d-flex align-items-center">
-                                                        <i class="ion ion-md-bookmark mr-15"></i>corbeilles<span class="badge badge-light badge-pill ml-15">10</span>
+                                                        <i class="ion ion-md-bookmark mr-15"></i>Terms of use<span class="badge badge-light badge-pill ml-15">10</span>
                                                     </li>
                                                     <li class="list-group-item d-flex align-items-center">
                                                         <i class="ion ion-md-filing mr-15"></i>Documentation<span class="badge badge-light badge-pill ml-15">27</span>
@@ -136,7 +136,7 @@
                                                                                 aria-label="Toolbar with button groups">
                                                                                 <div class="btn-group" role="group"
                                                                                     aria-label="Third group">
-                                                                        <a class="text-success" href="{{url('message')}}"><i data-feather="edit"></i>Repondre</a>
+                                                                                    <a class="text-success" href="inbox//edit"><i data-feather="edit"></i>Repondre</a>
                                                                                 </div>
                                                                             </div>
                                                                         </td>
