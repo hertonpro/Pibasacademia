@@ -100,7 +100,7 @@ class SuivreController extends Controller
         $articles=articles::orderBy('created_at', 'desc')->get();
         $articl=articles::orderBy('created_at', 'desc')->get();
         $article = articles::where('id', $Cours_id)->orderBy('created_at', 'desc')->get();
-        return view('admin/articles/single', compact('articles','formations','retraits',
+        return view('system/Suivieclient', compact('articles','formations','retraits',
         'retraits1','formations','liens','cours',
         'retraits','suivres','users','article','articl'));
     }

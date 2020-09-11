@@ -63,64 +63,133 @@
                     <div class="col-lg-12">
                         <div class="row">
                             <div class="col-xl-12">
+                                <div class="container mt-sm-60 mt-30">
+                                    <div class="hk-row">
+                                        <div class="col-xl-4">
+                                            <div class="card">
+                                                <h6 class="card-header">
+                                                    Category
+                                                </h6>
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item d-flex align-items-center active">
+                                                        <i class="ion ion-md-sunny mr-15"></i>Terms &amp; conditions<span class="badge badge-light badge-pill ml-15">06</span>
+                                                    </li>
+                                                    <li class="list-group-item d-flex align-items-center">
+                                                        <i class="ion ion-md-unlock mr-15"></i>Privacy policy<span class="badge badge-light badge-pill ml-15">14</span>
+                                                    </li>
+                                                    <li class="list-group-item d-flex align-items-center">
+                                                        <i class="ion ion-md-bookmark mr-15"></i>Terms of use<span class="badge badge-light badge-pill ml-15">10</span>
+                                                    </li>
+                                                    <li class="list-group-item d-flex align-items-center">
+                                                        <i class="ion ion-md-filing mr-15"></i>Documentation<span class="badge badge-light badge-pill ml-15">27</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-8">
+                                            <div class="card card-lg">
+                                                <h3 class="card-header border-bottom-0">
+                                                    Terms and Conditions
+                                                </h3>
+                                                <div class="accordion accordion-type-2 accordion-flush" id="accordion_2">
+                                                    <div class="card">
+                                                        <div class="table-wrap">
+                                                            <table id="datable_1" class="table table-hover w-100 display pb-30">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Destinataire</th>
+                                                                        <th>Message</th>
+                                                                        <th>Date</th>
+                                                                    </tr>
+                                                                </thead>
 
+                                                                <tbody>
+                                                                    @foreach ($messages as $keymessage)
+                                                                    <tr>
+                                                                        <td>{{$keymessage->destination}}</td>
+                                                                        <td>
+                                                                            <div class="media-body">
+                                                                                <div class="media-heading">
+                                                                                    <a href="mail-single.html"
+                                                                                        class="m-r-10 text-warning">{{ ucfirst(mb_strtolower(substr($keymessage->destination,1,100)))}}</a>
+                                                                                    <span class="badge bg-amber">
+                                                                                        @if ($keymessage->status==0)
+                                                                                            Non lu
+                                                                                        @else
+                                                                                            lu
+                                                                                        @endif
+                                                                                        {{$keymessage->destination}}</span>
+                                                                                    <small class="float-right text-muted"><time
+                                                                                            class="hidden-sm-down" datetime="2017">12:35
+                                                                                            AM</time><i
+                                                                                            class="zmdi zmdi-attachment-alt"></i>
+                                                                                    </small>
+                                                                                </div>
+                                                                                <p class="msg">Vous avez commandé un retrait de 30 $ sur vos bonus.</p>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="btn-toolbar" role="toolbar"
+                                                                                aria-label="Toolbar with button groups">
+                                                                                <div class="btn-group" role="group"
+                                                                                    aria-label="Third group">
+                                                                                    <a class="text-success" href="inbox//edit"><i data-feather="edit"></i>Repondre</a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    @endforeach
+                                                                    <tr>
+                                                                        <td>SYST</td>
+                                                                        <td>
+                                                                            <div class="media-body">
+                                                                                <div class="media-heading">
+                                                                                    <a href="mail-single.html"
+                                                                                        class="m-r-10 text-warning">Simply dummy
+                                                                                        text</a>
+                                                                                    <span class="badge bg-amber">notification de
+                                                                                        retrait</span>
+                                                                                    <small class="float-right text-muted"><time
+                                                                                            class="hidden-sm-down" datetime="2017">12:35
+                                                                                            AM</time><i
+                                                                                            class="zmdi zmdi-attachment-alt"></i>
+                                                                                    </small>
+                                                                                </div>
+                                                                                <p class="msg">Vous avez commandé un retrait de 30 $ sur vos bonus.</p>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="btn-toolbar" role="toolbar"
+                                                                                aria-label="Toolbar with button groups">
+                                                                                <div class="btn-group" role="group"
+                                                                                    aria-label="Third group">
+                                                                                    <a class="text-success" href="inbox//edit"><i data-feather="edit"></i>Repondre</a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                                <tfoot>
+                                                                    <tr>
+                                                                        <th>Catégorie</th>
+                                                                        <th>Message</th>
+                                                                        <th></th>
+                                                                    </tr>
+                                                                </tfoot>
+                                                            </table>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col-sm">
-                                        <div class="table-wrap">
-                                            <table id="datable_1" class="table table-hover w-100 display pb-30">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Catégorie</th>
-                                                        <th>Message</th>
-                                                        <th></th>
-                                                    </tr>
-                                                </thead>
 
-                                                <tbody>
-                                                    {{-- @foreach ($clients as $client) --}}
-                                                    <tr>
-                                                        <td>SYST</td>
-                                                        <td>
-                                                            <div class="media-body">
-                                                                <div class="media-heading">
-                                                                    <a href="mail-single.html"
-                                                                        class="m-r-10 text-warning">Simply dummy
-                                                                        text</a>
-                                                                    <span class="badge bg-amber">notification de
-                                                                        retrait</span>
-                                                                    <small class="float-right text-muted"><time
-                                                                            class="hidden-sm-down" datetime="2017">12:35
-                                                                            AM</time><i
-                                                                            class="zmdi zmdi-attachment-alt"></i>
-                                                                    </small>
-                                                                </div>
-                                                                <p class="msg">Vous avez commandé un retrait de 30 $ sur vos bonus.</p>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-toolbar" role="toolbar"
-                                                                aria-label="Toolbar with button groups">
-                                                                <div class="btn-group" role="group"
-                                                                    aria-label="Third group">
-                                                                    <a class="text-success" href="inbox//edit"><i data-feather="edit"></i>Repondre</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    {{-- @endforeach --}}
-
-                                                </tbody>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th>Catégorie</th>
-                                                        <th>Message</th>
-                                                        <th></th>
-                                                    </tr>
-                                                </tfoot>
-                                            </table>
-
-
-                                        </div>
                                     </div>
                                 </div>
                             </div>

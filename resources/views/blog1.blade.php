@@ -11,26 +11,23 @@
             $i=1;
             @endphp
             @foreach ($articles as $item)
-            @if ($i++==1)
-
-
-            <div class="card">
-                <div class="position-relative">
-                    <img class="card-img-top d-block" src="{{ asset('storage/'.$item->img) }}" alt="Card image cap">
+                @if ($i++==1)
+                <div class="card">
+                    <div class="position-relative">
+                        <img class="card-img-top d-block" src="{{ asset('storage/'.$item->img) }}" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">{{$item->titre}}</h2>
+                        <p class="card-text">{{substr($item->content, 1,300)}} <a
+                                href="{{url('article', $item->id)}}">...</a></p>
+                    </div>
+                    <div class="card-footer text-muted justify-content-between">
+                        <div><span class="text-dark">Créé le </span>{{date('d.m.Y',strtotime($item->created_at))}}</div>
+                        <a class="btn btn-xs btn-info ml-15 w-sm-100p" href="{{url('article', $item->id)}}"><small
+                                class="text-muted">+ Plus</small></a>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h2 class="card-title">{{$item->titre}}</h2>
-                    <p class="card-text">{{substr($item->content, 1,300)}} <a
-                            href="{{url('article', $item->id)}}">...</a></p>
-                </div>
-                <div class="card-footer text-muted justify-content-between">
-                    <div><span class="text-dark">Créé le </span>{{date('d.m.Y',strtotime($item->created_at))}}</div>
-                    <a class="btn btn-xs btn-info ml-15 w-sm-100p" href="{{url('article', $item->id)}}"><small
-                            class="text-muted">+ Plus</small></a>
-                </div>
-            </div>
-            @endif
-
+                @endif
             @endforeach
             <div class="hk-pg-header">
                 <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i

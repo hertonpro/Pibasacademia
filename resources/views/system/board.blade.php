@@ -341,9 +341,10 @@
                                                 </div>
                                             </td>
                                              <td><span class="badge badge-soft-danger">
+                                             <a href="suivre/{{ $itemcours->cours_id}}">
                                                 <i class="icon-user"></i>
 
-                                                {{$itemuivre->count()}}</span></td>
+                                                {{$itemuivre->count()}}</a></span></td>
                                         @else
                                         <td>
                                             <div class="progress-wrap lb-side-left">
@@ -357,8 +358,10 @@
                                             </div>
                                         </td>
                                         <td><span class="badge badge-soft-info">
-                                            <i class="icon-user"></i>
-                                            {{$itemuivre->count()}}</span></td>
+                                            <a href="suivre/{{ $itemcours->cours_id }}">
+                                                <i class="icon-user"></i>
+
+                                                {{$itemuivre->count()}}</a></span></td>
                                         @endif
                                     @elseif($itemuivre->count()==50)
                                     <td>
@@ -374,8 +377,10 @@
                                     </td>
                                     <td>
                                         <span class="badge badge-soft-success">
-                                            <i class="icon-user"></i>
-                                            {{$itemuivre->count()}}
+                                           <a href="suivre/{{$itemcours->cours_id }}">
+                                                <i class="icon-user"></i>
+
+                                                {{$itemuivre->count()}}</a>
                                         </span>
                                     </td>
                                      @endif
