@@ -19,7 +19,7 @@
         </div>
       </div>
       <!-- /Row -->
-      @include('footerinclude')
+      @include('footer')
     </div>
   </div>
   <!-- /Container -->

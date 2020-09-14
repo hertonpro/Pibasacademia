@@ -178,14 +178,15 @@
             </div>
 
             <div class="mt-5">
-                <h3 class="hk-sec-title mt-3">blogs</h3>
+            <h3 class="hk-sec-title mt-3">blogs{{$articles->count()}}</h3>
                 <div class="row mt-3">
                     <div class="col-sm">
                         <div id="owl_demo_4" class="owl-carousel owl-theme">
-                            @foreach ($articles as $itemarticles)
+                            @foreach ($articles  ?? '' as $itemarticles)
                             <div class="item">
                                 <div class="card">
-                                    <img class="card-img-top" src="{{ asset('storage/'.$itemarticles->img) }}" alt="Card image cap">
+                                    <img class="card-img-top" src="{{ asset('storage/'.$itemarticles->img) }}"
+                                    alt="Card image cap" style="height: 15rem">
                                     <div class="card-body">
                                         <p class="card-text"><a href="{{url('article', $itemarticles->id)}}"> {{
                                         substr(

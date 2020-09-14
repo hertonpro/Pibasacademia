@@ -1,5 +1,6 @@
 <?php
 
+use App\articles;
 use Illuminate\Support\Facades\Route;
 use phpDocumentor\Reflection\Types\Resource_;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -17,9 +18,10 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 Route::get('/', function () {
 
-
+    $articles=articles::orderBy('created_at', 'desc');
+        return view('home',compact('articles'));
     // return view('home');
-     return view('home');
+    //  return view('home');
 
 });
 Auth::routes();
@@ -52,23 +54,14 @@ Route::patch('/contact/{contact}', 'ContactController@update');
 
 Route::resource('articles', 'ArticlesController');
 Route::get('voirplusart', 'ArticlesController@showall');
-
-
-
-
 //admin
 // route contact
 Route::resource('/contacts', 'ContactController');
-
- // route formation
- Route::resource('/formations', 'FormationController');
-
+// route formation
+Route::resource('/formations', 'FormationController');
 // route faq
-
 //formateurs
 Route::resource('formateurs', 'FormateurController');
-
-
 /// route client
 Route::resource('clients', 'ClientController');
 // route  entreprise
@@ -83,25 +76,17 @@ Route::resource('courss', 'CoursController');
 //lienc du cours
 Route::resource('liencours', 'LienscoursController');
 Route::resource('suivres', 'SuivreController');
-
 Route::resource('descfaqs', 'DescFaqController');
-
 Route::resource('users', 'Admin\UsersController');
 Route::resource('/admin/clients', 'Admin\ClientsController');
-
-
 //Route admin
 Route::resource('transaction', 'Admin\TransactionController');
 Route::resource('cours', 'Admin\CoursController');
 //route inbox
 Route::resource('inbox', 'inboxController');
 Route::resource('message', 'inboxController@show');
-
 Route::post('/retrait', 'Admin\RetraitController@retrait')->name('retrait');
 Route::post('/retraitV', 'Admin\RetraitController@valide')->name('retraitV');
 Route::post('/retraitC', 'Admin\RetraitController@confirm')->name('retraitC');
-
 Route::post('/profile', 'AdminController@profile')->name('profile');
 Route::post('/passwordM', 'AdminController@passwordM')->name('passwordM');
-
-
